@@ -1,23 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
 import {useState,useEffect} from "react";
+import Timer from "./component/Timer"
 function App() {
-  const[count,setCount] = useState(5);
-  useEffect(()=>{
-    const intervalId = setInterval(()=>{
-      setCount((prevCount)=>{
-        if(prevCount===0){
-          clearInterval(intervalId)
-          return 0;
-        }
-        return prevCount-1;
-      });
-    },1000)
-  },[])
+  const [showtimer,setShowtimer]=useState(true);
   return (
     <div className="App">
       <header className="App-header">
-        Countdown Timer : {count}
+        {showtimer && <Timer/>}
+        <button onClick={()=>setShowtimer(!showtimer)}>
+          {showtimer ? "HIDE COUNTER" : "SHOW COUNTER"}
+        </button>
       </header>
     </div>
   );
