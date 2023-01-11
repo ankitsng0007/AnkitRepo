@@ -42,6 +42,7 @@ function Todo(){
             console.log(res)
         })
     };
+    
     return(
         <div>
         <AddTodo handleAdd={handleAdd} />
