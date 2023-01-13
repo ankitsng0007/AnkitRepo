@@ -11,7 +11,9 @@ function App() {
   const [formData,setFormData]=useState(initstate);
 
   const handleChange=(e)=>{
-    console.log(e.target.name)
+   // console.log(e.target.name)
+   //console.log(e.target.value)
+    setFormData({...formData,[e.target.name]:e.target.value})
   };
   console.log(formData);
   return (
