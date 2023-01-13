@@ -5,20 +5,31 @@ const initstate={
   username:"",
   email:"",
   password:"",
-  country:""
+  country:"",
+  maritalStatus:false
 };
 function App() {
   const [formData,setFormData]=useState(initstate);
+  const [users,setUsers]=useState([]);
 
   const handleChange=(e)=>{
    // console.log(e.target.name)
    //console.log(e.target.value)
-    setFormData({...formData,[e.target.name]:e.target.value})
+   const value=
+   e.target.type==="checkbox"?e.target.checked : e.target.value
+    setFormData({...formData,[e.target.name]:value})
   };
-  console.log(formData);
+
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    console.log(formData);
+    setUsers([...users,formData]);
+    console.log(users);
+  };
+
   return (
     <div className="App">
-      <form>
+      <form onSubmit={handleSubmit}>
         <h1>Forms</h1>
         <label>Username : 
           <input placeholder='Enter Name'
@@ -55,7 +66,27 @@ function App() {
             <option value="canada">CANADA</option>
           </select>
         </label>
+        <br/>
+        <br/>
+        <label>
+          Marital Status :
+          <input 
+          type="checkbox"
+          name='maritalStatus'
+          value={formData.maritalStatus}
+          onChange={handleChange}
+          />
+        </label>
+        <br/>
+        <br/>
+        <input
+        type="submit"/>
       </form>
+      <br/>
+      <br/>
+      {users.map((el)=>
+        <li key={el.username}>{el.username}</li>
+      )}
     </div>
   );
 }
