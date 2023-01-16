@@ -5,7 +5,7 @@ import { useRef } from "react";
 function App() {
   const inputRef=useRef(null);
   const addTodo=()=>{
-
+     inputRef.current.focus();
   }
   console.log(inputRef)
   return (
