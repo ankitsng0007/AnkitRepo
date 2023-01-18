@@ -1,10 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
-import {useState,useRef} from "react";
+import {useState,useRef,useEffect} from "react";
 
 function App() {
   const [timer,setTimer] = useState(0)
   const ref=useRef(null);
+
+  useEffect(()=>{
+    const cleanUp=()=>{
+      stopTimer();
+    }
+  },[])
 
   const fixTimeString = (time)=>{
   return time <10 ? `0${time}`: time;
