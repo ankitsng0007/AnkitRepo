@@ -6,9 +6,9 @@ function App() {
   const ref=useRef();
   useEffect(()=>{
   },[])
-  const handleSubmit=(e)=>{
+  const handleSubmit=()=>{
   
-    console.log(e)
+    console.log(ref.current.files[0])
     
   }
   return (
