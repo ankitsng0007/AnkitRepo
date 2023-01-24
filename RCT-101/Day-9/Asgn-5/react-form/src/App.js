@@ -40,20 +40,16 @@ function App() {
         <label>
           Gender: 
           <select>
-          <option>Male</option>
-          <option>Female</option>
-          <option>Other</option>
+          <option value={M}>Male</option>
+          <option value={F}>Female</option>
+          <option value={O}>Other</option>
           </select>
         </label>
         <br/>
         <br/>
         <label>
           IsMarried: 
-          <select>
-          <option>Single</option>
-          <option>Married</option>
-          <option>Other</option>
-          </select>
+          <input type="checkbox" name="isMarried" value={isMarried}/>
         </label>
         <br/>
         <br/>
