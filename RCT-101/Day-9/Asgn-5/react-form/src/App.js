@@ -1,13 +1,68 @@
 import logo from './logo.svg';
 import './App.css';
+import {useState} from "react";
+const initState={
+  name:"",
+  email:"",
+  country:"",
+  isMarried:"",
+  gender:""
+};
 
 function App() {
+  const [formData,setFormData] = useState(initState);
+  const {name,isMarried,email,country,gender}=formData;
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>React Form</h1>
-      </header>
-    </div>
+     <div className="App">
+      <h1>React Form</h1>
+      <form onSubmit={()=>{}}>
+        <label>
+          Name: 
+          <input type="text" name="name" value={name}
+          placeholder="Enter Name"/>
+        </label>
+        <br/>
+        <br/>
+        <label>
+          Email: 
+          <input type="email" name="Email" value={email}
+          placeholder="Enter Email"/>
+        </label>
+        <br/>
+        <br/>
+        <label>
+          Country: 
+          <input type="text" name="country" value={country}
+          placeholder="Enter Country"/>
+        </label>
+        <br/>
+        <br/>
+        <label>
+          Gender: 
+          <select>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+          </select>
+        </label>
+        <br/>
+        <br/>
+        <label>
+          IsMarried: 
+          <select>
+          <option>Single</option>
+          <option>Married</option>
+          <option>Other</option>
+          </select>
+        </label>
+        <br/>
+        <br/>
+         
+          <input type="submit" />
+        <br/>
+        <br/>
+      </form>
+     </div>
   );
 }
 
