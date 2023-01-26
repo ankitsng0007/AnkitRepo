@@ -1,9 +1,8 @@
-import { Children } from "react";
 import { createContext } from "react";
 
 export const AppContext = createContext();
 
 function AppContextProvider({children}){
-    return <AppContext.Provider>{Children}</AppContext.Provider>
+    return <AppContext.Provider>{children}</AppContext.Provider>
 }
 export default AppContextProvider;
