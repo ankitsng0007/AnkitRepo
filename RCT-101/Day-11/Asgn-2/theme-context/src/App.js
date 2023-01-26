@@ -17,13 +17,24 @@ dark:{
 }
 function App() {
   const value = useContext(ThemeContext);
-  console.log(value);
+ // console.log(value);
   return (
     <div className="App"
     style={value.theme==="dark" ? style.dark:style.light}>
         <h1>Theme is {value.theme}</h1>
         <h3>To See The Magic Click on Button</h3>
-        <button onClick={value.toggleTheme}>Change Theme</button>
+        <button onClick={value.toggleTheme}
+        style={
+          value.theme==="dark"
+          ?{
+            background:"yellow",
+            color:"black",
+          }:{
+            background:"pink",
+            color:"black",
+          }
+        }
+        >Change Theme</button>
     </div>
   );
 }
