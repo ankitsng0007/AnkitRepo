@@ -1,0 +1,21 @@
+.myForm{
+    border: 1px solid red;
+    border-radius: 10px;
+    width: 400px;
+    margin: auto;
+}
+.myForm>*{
+    padding: 10px;
+    margin: auto;
+}
+.myForm input{
+    padding: 15px;
+    border: 0px;
+    border-bottom: 1px solid black;
+    margin: 10px;
+}
+.myForm input[type="submit"]{
+    background-color: aquamarine;
+    font-size: large;
+    border-radius: 10px;
+}
