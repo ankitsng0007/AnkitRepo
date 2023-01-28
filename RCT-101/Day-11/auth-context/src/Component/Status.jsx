@@ -2,13 +2,10 @@ import React from "react";
 import { AppContext } from "../Context/AppContextProvider";
 
 const Status=()=>{
+    const {isAuth,token}=React.useContext(AppContext);
     return(
         <div>Status
-            <AppContext.Consumer>
-                {(value)=>{
-                    return <div>Token is : {value.token}</div>
-                }}
-            </AppContext.Consumer>
+            <div>{isAuth ? `Token is ${token}`:`User is not registered.`}</div>
         </div>
     );
 }

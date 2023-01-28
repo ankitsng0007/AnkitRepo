@@ -2,9 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 import Form from "./Component/Form";
 import Status from './Component/Status';
+import LogInForm from './Component/LogInForm';
 
 function App() {
-
   const onSubmit=(e)=>{
     e.preventDefault();
     alert("Trying To Submit");
@@ -12,12 +12,9 @@ function App() {
   return (
     <div className="App">
         <h1>Auth Context</h1>
-        <Form onSubmit={onSubmit} title="LOG IN">
-          <input placeholder="Enter Name"/>
-        </Form>
+        <LogInForm/>
         <Status/>
     </div>
   );
 }
-
 export default App;
