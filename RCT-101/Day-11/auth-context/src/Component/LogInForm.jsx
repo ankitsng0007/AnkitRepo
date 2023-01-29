@@ -3,15 +3,15 @@ import { AppContext } from "../Context/AppContextProvider";
 import Form from "./Form";
 
 function LogInForm() {
-  const {setIsAuth,setToken}=React.useContext(AppContext)
+  const {handleLogIn}=React.useContext(AppContext)
+  const [userName,setUserName]=React.useState();
   const onSubmit=(e)=>{
     e.preventDefault();
-    setIsAuth(true);
-    setToken("ewjninec");
+    handleLogIn(userName);
   };
   return (
         <Form onSubmit={onSubmit} title="LOG IN">
-          <input placeholder="Enter Name"/>
+          <input value={userName} onChange={(e)=>setUserName(e.target.value)} placeholder="Enter Name"/>
         </Form>
   );
 }
