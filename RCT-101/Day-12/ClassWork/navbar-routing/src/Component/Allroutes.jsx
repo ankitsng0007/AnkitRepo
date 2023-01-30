@@ -13,7 +13,7 @@ return(
         <Route path="/users" element={<Users/>}></Route>
         <Route path="/about" element={<About/>}></Route>
         <Route path="/contact" element={<Contact/>} ></Route>
-        <Route path="/users/:id" element={<users/>}></Route>
+        <Route path="/users/:id" element={<SingleUserPage/>}></Route>
     </Routes>
 )
 }
