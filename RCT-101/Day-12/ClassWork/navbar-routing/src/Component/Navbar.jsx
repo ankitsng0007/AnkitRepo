@@ -12,7 +12,11 @@ return(
         justifyContent:"space-around",
     }}>
         {links.map((el)=>(
-            <NavLink key={el.path} to={el.path}>{el.title}</NavLink>
+            <NavLink 
+            style={({isActive})=>{
+                return isActive ? {color:"red"} : {color:"black"}
+            }}
+             key={el.path} to={el.path}>{el.title}</NavLink>
         ))}
     </div>
 )

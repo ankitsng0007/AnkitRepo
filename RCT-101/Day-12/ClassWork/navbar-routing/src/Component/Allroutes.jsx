@@ -1,13 +1,17 @@
 import React from "react";
 import { Routes,Route } from "react-router-dom";
+import  {Home } from "../Pages/Home";
+import { Users } from "../Pages/Users";
+import { About } from "../Pages/About";
+import { Contact } from "../Pages/Contact";
 
 export const Allroutes = ()=>{
 return(
     <Routes>
-        <Route path="/" element={<h1>Home</h1>}></Route>
-        <Route path="/users" element={<h1>Users</h1>}></Route>
-        <Route path="/about" element={<h1>About</h1>}></Route>
-        <Route path="/contact" element={<h1>Contact Us</h1>} ></Route>
+        <Route path="/" element={<Home/>}></Route>
+        <Route path="/users" element={<Users/>}></Route>
+        <Route path="/about" element={<About/>}></Route>
+        <Route path="/contact" element={<Contact/>} ></Route>
     </Routes>
 )
 }
