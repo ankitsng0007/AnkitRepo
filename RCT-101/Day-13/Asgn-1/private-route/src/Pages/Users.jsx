@@ -7,7 +7,7 @@ const getData=(url)=>{
 export const Users=()=>{
     const [data,setData] = React.useState();
     const [page,setPage] = React.useState(1);
-    const [searchParam,setSearchParam] = useSearchParams();
+    const [searchParams,setSearchParams] = useSearchParams();
     React.useEffect(()=>{
       getData(`https://reqres.in/api/users/?page=${page}`).then((res)=>{
         console.log(res);
@@ -16,7 +16,7 @@ export const Users=()=>{
     },[page])
 
     React.useEffect(()=>{
-      setSearchParam({page})
+      setSearchParams({page})
     },[page])
     return(
         <>
