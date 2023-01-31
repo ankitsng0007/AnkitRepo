@@ -12,7 +12,7 @@ export const Navbar=()=>{
             style={({isActive})=>{
                 return isActive? {color:"red"}:{color:"black"}
             }} 
-            to={el.path}>{el.title}</NavLink>
+            to={el.path} key={el.path}>{el.title}</NavLink>
         ))
     }</div>
     )

@@ -6,17 +6,18 @@ const getData=(url)=>{
 };
 export const  SingleUserPage=()=>{
     const {id} = useParams();
-    const [userDetail,setUserDetail] = React.useState();
+    const [userDetail,setUserDetail] = React.useState({});
     React.useEffect(()=>{
         getData(`https://reqres.in/api/users/${id}`).then((res)=>
-          setUserDetail(res.data)
+        setUserDetail(res.data)
         );
-    },[])
-    console.log(userDetail);
+    },[]);
+    console.log(userDetail)
     return(
         <>
         <img src={userDetail.avatar} alt="profile-pic" />
-        <h1>User : </h1>
+        <h1>User : {userDetail.first_name} {userDetail.last_name}</h1>
+        <h3>Email : {userDetail.email}</h3>
         </>
     );
 };

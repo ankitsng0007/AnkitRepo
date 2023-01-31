@@ -10,7 +10,6 @@ export const Users=()=>{
       getData(`https://reqres.in/api/users/?page=1`).then((res)=>{
         console.log(res);
         setData(res);
-        console.log(data.data);
       })
     },[])
     return(
