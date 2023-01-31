@@ -8,8 +8,13 @@ export const Home=()=>{
     }
     return(
         <>
-        <h1>Home</h1>
-        <button onClick={toggleAuth}>Log In</button>
+        <h1>Wellcome To Dashboard</h1>
+        <h3>To See The User,Please Log in First</h3>
+        <button onClick={toggleAuth}
+        style={{backgroundColor:"skyblue",
+                fontSize:"larger",
+            borderRadius:"10px"}}
+        >Log In</button>
         </>
     );
 };
