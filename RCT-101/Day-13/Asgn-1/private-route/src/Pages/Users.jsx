@@ -1,17 +1,23 @@
 import React from "react";
-import {Link ,Navigate} from "react-router-dom";
+import {Link ,Navigate,useSearchParams} from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext";
 const getData=(url)=>{
     return fetch(url).then((res)=>res.json());
 }
 export const Users=()=>{
     const [data,setData] = React.useState();
+    const [page,setPage] = React.useState(1);
+    const [searchParam,setSearchParam] = useSearchParams();
     React.useEffect(()=>{
-      getData(`https://reqres.in/api/users/?page=1`).then((res)=>{
+      getData(`https://reqres.in/api/users/?page=${page}`).then((res)=>{
         console.log(res);
         setData(res);
       })
-    },[])
+    },[page])
+
+    React.useEffect(()=>{
+      setSearchParam({page})
+    },[page])
     return(
         <>
         <h1>Users</h1>
@@ -22,6 +28,9 @@ export const Users=()=>{
               <Link to={`/users/${el.id}`}>More Detail</Link>
             </div>)}
         </ul>
+        <button disabled={page===1} onClick={()=>setPage(page-1)}>Prev</button>
+        <button>{page}</button>
+        <button disabled={page===2} onClick={()=>setPage(page+1)}>Next</button>
         </>
     );
 };
