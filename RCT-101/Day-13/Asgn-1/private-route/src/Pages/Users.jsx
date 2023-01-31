@@ -1,6 +1,6 @@
 import React from "react";
-import {Link} from "react-router-dom";
-
+import {Link ,Navigate} from "react-router-dom";
+import { AuthContext } from "../Context/AuthContext";
 const getData=(url)=>{
     return fetch(url).then((res)=>res.json());
 }
