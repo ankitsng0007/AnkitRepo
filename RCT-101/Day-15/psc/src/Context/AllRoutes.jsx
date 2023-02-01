@@ -6,6 +6,7 @@ import { Products } from "../Pages/Products";
 import { LogIn } from "../Pages/LogIn";
 import { NotFoundPage } from "../Pages/NotFound";
 import { PrivateRoute } from "./PrivateRoute";
+import { ProductDetail } from "../Pages/ProductDetail";
 
 export const AllRoutes=()=>{
     return(
@@ -15,6 +16,10 @@ export const AllRoutes=()=>{
             <Route path="/products" element={
             <PrivateRoute>
                 <Products/>
+            </PrivateRoute>}></Route>
+            <Route path="/productdetail" element={
+            <PrivateRoute>
+                <ProductDetail/>
             </PrivateRoute>}></Route>
             <Route path="/contact" element={<Contact/>}></Route>
             <Route path="/login" element={<LogIn/>}></Route>
