@@ -31,9 +31,9 @@ export const Products=()=>{
       <>
         <h1>Products</h1>
         <div>
-        <button>Order By Price-Ascending</button>
-        <button>Order By Price-Decending</button>
-        <button>Order By Price-Reset</button>
+        <button onClick={()=>{}}>Order By Price-Ascending</button>
+        <button onClick={()=>{}}>Order By Price-Decending</button>
+        <button onClick={()=>{}}>Order By Price-Reset</button>
       </div><br/>
       <div>
         <button>Filter By Jwellary</button>
