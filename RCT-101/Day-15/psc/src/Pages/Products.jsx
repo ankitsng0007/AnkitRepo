@@ -6,25 +6,25 @@ import {Link,useSearchParams} from "react-router-dom";
       value=1;
   }
   if(!value){
-    return value;
+   value=1;
   }
- }
+  return value;
+ };
 export const Products=()=>{
-  const [searchparams,setSearchParams] = useSearchParams();
   const [data,setData] = React.useState([]);
-  const [page,setPage] = React.useState(getCurrentPageUrl(
-    getCurrentPageUrl(searchparams.get("page"))) || 1
-  );
-const limit=2;
+  const [searchparams,setSearchParams] = useSearchParams();
+  const initPage = getCurrentPageUrl(searchparams.get("page"));
+  const [page,setPage] = React.useState(initPage);
+  const limit=2;
   React.useEffect(()=>{
-    fetch(`https://fakestoreapi.com/products?page=${page}&limit=${limit}`)
+    fetch(`https://fakestoreapi.com/products?limit=${limit}&page=${page}`)
     .then((res)=>res.json())
     .then((res)=>{
       setData(res);
     })
   },[page])
   React.useEffect(()=>{
-    const params = {page};
+    let params = {page};
     setSearchParams(params);
   },[page]);
     return(
