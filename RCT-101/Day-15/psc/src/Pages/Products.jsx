@@ -30,10 +30,17 @@ export const Products=()=>{
     return(
       <>
         <h1>Products</h1>
+        <div>
         <button>Order By Price-Ascending</button>
         <button>Order By Price-Decending</button>
         <button>Order By Price-Reset</button>
-
+      </div><br/>
+      <div>
+        <button>Filter By Jwellary</button>
+        <button>Filter By Electronics</button>
+        <button>Filter By Clothing</button>
+        <button>Reset Filter</button>
+      </div>
         <div style={{display:"grid",
                      gridTemplateColumns:"repeat(2,1fr",
                      wwidth:"80%",margin:"auto"}}>
