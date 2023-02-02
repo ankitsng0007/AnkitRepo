@@ -15,7 +15,7 @@ export const Products=()=>{
   const [searchparams,setSearchParams] = useSearchParams();
   const initPage = getCurrentPageUrl(searchparams.get("page"));
   const [page,setPage] = React.useState(initPage);
-  const limit=2;
+  const limit=10;
   React.useEffect(()=>{
     fetch(`https://fakestoreapi.com/products?limit=${limit}&page=${page}`)
     .then((res)=>res.json())
@@ -30,6 +30,10 @@ export const Products=()=>{
     return(
       <>
         <h1>Products</h1>
+        <button>Order By Price-Ascending</button>
+        <button>Order By Price-Decending</button>
+        <button>Order By Price-Reset</button>
+
         <div style={{display:"grid",
                      gridTemplateColumns:"repeat(2,1fr",
                      wwidth:"80%",margin:"auto"}}>
