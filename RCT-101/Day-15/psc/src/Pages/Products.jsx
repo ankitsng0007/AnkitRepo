@@ -1,8 +1,12 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {Link,useSearchParams} from "react-router-dom";
 
 export const Products=()=>{
+  const [searchparams,setSearchParams] = useSearchParams();
   const [data,setData] = React.useState();
+  const [page,setPage] = React.useState();
+
+
   React.useEffect(()=>{
     fetch(`https://fakestoreapi.com/products`)
     .then((res)=>res.json())
@@ -10,6 +14,10 @@ export const Products=()=>{
       setData(res);
     })
   },[])
+  React.useEffect(()=>{
+    const params = {page};
+    setSearchParams(params);
+  },[page]);
     return(
       <>
         <h1>Products</h1>
@@ -17,13 +25,12 @@ export const Products=()=>{
                      gridTemplateColumns:"repeat(2,1fr",
                      wwidth:"80%",margin:"auto"}}>
           {data?.map((el)=>(
-            <div style={{display:"flex",
-                         flexDirection:"column",
-                         alignItems:"centre",
-                         border:"1px solid",
+            <div style={{width:"300px",
+                         height:"400px",
+                         border:"1px solid #cecece",
                          margin:"auto",
-                         padding:"10px"
-                         }}>
+                         borderRadius:"10px",
+                         marginTop:"15px"}}>
               <img src={el.image} alt="item-pic"
               style={{width:"200px",height:"200px"}}/>
               <h3>{el.title}</h3>
