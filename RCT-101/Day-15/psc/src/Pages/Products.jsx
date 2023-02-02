@@ -36,10 +36,10 @@ export const Products=()=>{
         <button onClick={()=>{}}>Order By Price-Reset</button>
       </div><br/>
       <div>
-        <button>Filter By Jwellary</button>
-        <button>Filter By Electronics</button>
-        <button>Filter By Clothing</button>
-        <button>Reset Filter</button>
+        <button onClick={()=>{}}>Filter By Jwellary</button>
+        <button onClick={()=>{}}>Filter By Electronics</button>
+        <button onClick={()=>{}}>Filter By Clothing</button>
+        <button onClick={()=>{}}>Reset Filter</button>
       </div>
         <div style={{display:"grid",
                      gridTemplateColumns:"repeat(2,1fr",
