@@ -1,19 +1,28 @@
 import React from "react";
 import {Link,useSearchParams} from "react-router-dom";
-
+ const getCurrentPageUrl=(value)=>{
+  value=Number(value);
+  if(typeof value ==="number" && value<=0){
+      value=1;
+  }
+  if(!value){
+    return value;
+  }
+ }
 export const Products=()=>{
   const [searchparams,setSearchParams] = useSearchParams();
-  const [data,setData] = React.useState();
-  const [page,setPage] = React.useState();
-
-
+  const [data,setData] = React.useState([]);
+  const [page,setPage] = React.useState(getCurrentPageUrl(
+    getCurrentPageUrl(searchparams.get("page"))) || 1
+  );
+const limit=2;
   React.useEffect(()=>{
-    fetch(`https://fakestoreapi.com/products`)
+    fetch(`https://fakestoreapi.com/products?page=${page}&limit=${limit}`)
     .then((res)=>res.json())
     .then((res)=>{
       setData(res);
     })
-  },[])
+  },[page])
   React.useEffect(()=>{
     const params = {page};
     setSearchParams(params);
@@ -25,7 +34,7 @@ export const Products=()=>{
                      gridTemplateColumns:"repeat(2,1fr",
                      wwidth:"80%",margin:"auto"}}>
           {data?.map((el)=>(
-            <div style={{width:"300px",
+            <div key={el.id} style={{width:"300px",
                          height:"400px",
                          border:"1px solid #cecece",
                          margin:"auto",
@@ -39,6 +48,9 @@ export const Products=()=>{
             </div>
           ))}
         </div>
+        <button disabled={page===1} onClick={()=>setPage(page-1)}>Prev</button>
+        <button>{page}</button>
+        <button disabled={page===10} onClick={()=>setPage(page+1)}>Prev</button>
       </>
     )
 };
