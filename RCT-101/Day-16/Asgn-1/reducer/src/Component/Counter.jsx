@@ -1,7 +1,7 @@
-import React from "react";
+import {useState,useReducer} from "react";
 
 export const Counter=()=>{
-    const [count,setCount]=React.useState(0)
+    const [count,setCount]=useState(0)
     const handleIncrement=()=>{
         setCount(count+1);
     }
