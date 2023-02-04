@@ -1,18 +1,11 @@
 import {useState,useReducer} from "react";
+import { Reducer } from "./Reducer";
 
-const reducer=(state,action)=>{
-  if(action.type==="IncrementCount"){
-    return state +1;
-  }
-  if(action.type==="DecrementCount"){
-    return state - 1;
-  }
-    return state;
-}
+
 const IncAction={type:"IncrementCount"};
 const decAction={type:"DecrementCount"};
 export const Counter=()=>{
-    const [state,dispatch]=useReducer(reducer,0)
+    const [state,dispatch]=useReducer(Reducer,0)
    return(
     <div>
         <h1>Counter : {state}</h1>
