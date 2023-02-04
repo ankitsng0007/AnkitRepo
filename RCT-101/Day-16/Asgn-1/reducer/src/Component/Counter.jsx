@@ -1,18 +1,23 @@
 import {useState,useReducer} from "react";
 
+const reducer=(state,action)=>{
+  if(action.type==="IncrementCount"){
+    return state +1;
+  }
+  if(action.type==="DecrementCount"){
+    return state - 1;
+  }
+    return state;
+}
+const IncAction={type:"IncrementCount"};
+const decAction={type:"DecrementCount"};
 export const Counter=()=>{
-    const [count,setCount]=useState(0)
-    const handleIncrement=()=>{
-        setCount(count+1);
-    }
-    const handleDecrement=()=>{
-        setCount(count-1);
-    }
+    const [state,dispatch]=useReducer(reducer,0)
    return(
     <div>
-        <h1>Counter : {count}</h1>
-        <button onClick={handleIncrement}>Inc</button>
-        <button onClick={handleDecrement}>Dec</button>
+        <h1>Counter : {state}</h1>
+        <button onClick={()=>dispatch(IncAction)}>INC</button>
+        <button onClick={()=>dispatch(decAction)}>DEC</button>
     </div>
    )
 }
