@@ -10,8 +10,9 @@ export const IncrementByValue=(value)=>{
     payload:value
     }
 }
-export const DecrementByValue=(value)=> ({
+export const DecrementByValue=(value)=>{
+    return{
         type:"DecrementCountValue",
         payload:value
 }
-)
+}
