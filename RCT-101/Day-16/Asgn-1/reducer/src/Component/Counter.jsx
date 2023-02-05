@@ -7,11 +7,15 @@ import { IncrementByValue } from "./Action";
 import { DecrementByValue } from "./Action";
 
 export const Counter=()=>{
-    const [state,dispatch]=useReducer(Reducer,0);
+    const [state,dispatch]=useReducer(Reducer,{
+        count:0,
+        isAuth1:true,
+        todo:[]
+    });
     const [inputValue,setInputValue]= useState("");
    return(
     <div>
-        <h1>Counter : {state}</h1>
+        <h1>Counter : {state.count}</h1>
         <div>
         <button onClick={()=>dispatch(DecAction)}>DEC</button>
         <button onClick={()=>dispatch(ResetAction)}>RESET</button>
