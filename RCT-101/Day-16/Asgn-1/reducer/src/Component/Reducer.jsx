@@ -14,5 +14,9 @@ export const Reducer=(state,action)=>{
         case "IncrementCount": return state+1;
         case "DecrementCount": return state-1;
         case "ResetCount": return 0;
+        case "IncrementCountValue": return state + action.payload;
+        case "DecrementCountValue": return state + action.payload;
+        default:
+            return state;
     }
   }
