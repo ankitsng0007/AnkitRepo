@@ -1,6 +1,7 @@
 import { useState,useEffect } from "react";
 import { AddTodo } from "./AddTodo";
 import { getTodo } from "./api";
+import { TodoList } from "./TodoList";
 
 export const Todo=()=>{
     const [todo,setTodo]=useState([]);
@@ -25,7 +26,11 @@ export const Todo=()=>{
             <AddTodo handleAdd={handleAdd}/>
         <h1>Todo</h1>
         {  todo.map((el)=>(
-                <h3 key={el.id}>{el.title}</h3>
+                <TodoList 
+                title={el.title} 
+                status={el.status} 
+                id={el.id} 
+                key={el.id}/>
             ))}
             <button disabled={page===1} onClick={()=>setPage(page-1)}>Prev</button>
             <button>{page}</button>
