@@ -1,16 +1,28 @@
 import { useState,useEffect } from "react";
+import { AddTodo } from "./AddTodo";
 import { getTodo } from "./api";
 
 export const Todo=()=>{
     const [todo,setTodo]=useState([]);
     const [page,setPage] = useState(1);
     useEffect(()=>{
-        getTodo({page,limit:2,sort:"title",order:"asc"}).then((res)=> setTodo(res.data))
+        getTodo({page,limit:2,sort:"title",order:"asc"})
+        .then((res)=> setTodo(res.data))
         .catch((err)=>console.log("Error is", err))
         .finally(()=>console.log("Call Completed"))
     },[page]);
+
+    const handleAdd=(text)=>{
+      const item={
+        title:text,
+        status:false
+      }
+      console.log(item);
+    }
+
     return (
         <div>
+            <AddTodo handleAdd={handleAdd}/>
         <h1>Todo</h1>
         {  todo.map((el)=>(
                 <h3 key={el.id}>{el.title}</h3>
