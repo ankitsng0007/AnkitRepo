@@ -1,12 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import { Todo } from './Component/Todo';
 
 function App() {
   return (
     <div className="App">
-      <h1>Todo Axios</h1>
-      <input palaceholder="Add Something"/>
-      <button>Add</button>
+      <Todo/>
     </div>
   );
 }
