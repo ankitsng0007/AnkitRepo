@@ -6,6 +6,8 @@ export const Todo=()=>{
     const [page,setPage] = useState(1);
     useEffect(()=>{
         getTodo({page,limit:2,sort:"title",order:"asc"}).then((res)=> setTodo(res.data))
+        .catch((err)=>console.log("Error is", err))
+        .finally(()=>console.log("Call Completed"))
     },[page]);
     return (
         <div>
