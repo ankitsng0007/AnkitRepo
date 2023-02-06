@@ -5,7 +5,7 @@ export const Todo=()=>{
     const [todo,setTodo]=useState([]);
     const [page,setPage] = useState(1);
     useEffect(()=>{
-        getTodo({page,limit:2}).then((res)=> setTodo(res.data))
+        getTodo({page,limit:2,sort:"title",order:"asc"}).then((res)=> setTodo(res.data))
     },[page]);
     return (
         <div>
