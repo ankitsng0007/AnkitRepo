@@ -1,34 +1,19 @@
 {
   "todos": [
     {
-      "id": 2,
-      "title": "Learn JavaScript",
-      "status": true
-    },
-    {
-      "id": 4,
-      "title": "Learn python",
-      "status": false
-    },
-    {
-      "id": 5,
-      "title": "Learn express",
-      "status": false
-    },
-    {
-      "title": "Learn Node.js",
+      "title": "Read NewsPaper",
       "status": false,
-      "id": 6
+      "id": 1
     },
     {
-      "title": "learn CSS",
+      "title": "Learn React",
       "status": false,
-      "id": 7
+      "id": 2
     },
     {
-      "title": "learn c##",
+      "title": "java",
       "status": false,
-      "id": 8
+      "id": 3
     }
   ]
 }
