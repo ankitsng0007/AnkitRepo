@@ -10,3 +10,9 @@ export const getTodo=(params={})=>{
         }
     });
 }
+export const AddNewTodo=(item={})=>{
+    return axios.post(`http://localhost:8080/todos`,{
+        title: item.title,
+        status:item.status
+    })
+}

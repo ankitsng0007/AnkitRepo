@@ -1,16 +1,23 @@
 import { useState,useEffect } from "react";
 import { AddTodo } from "./AddTodo";
-import { getTodo } from "./api";
+import { getTodo,AddNewTodo } from "./api";
 import { TodoList } from "./TodoList";
 
 export const Todo=()=>{
+    const [loading,setLoading]=useState(false);
     const [todo,setTodo]=useState([]);
     const [page,setPage] = useState(1);
     useEffect(()=>{
+        setLoading(true)
         getTodo({page,limit:2,sort:"title",order:"asc"})
-        .then((res)=> setTodo(res.data))
-        .catch((err)=>console.log("Error is", err))
-        .finally(()=>console.log("Call Completed"))
+        .then((res)=> {
+        setLoading(false) 
+        setTodo(res.data)})
+        .catch((err)=>{
+        setLoading(false)
+        console.log("Error is", err)})
+        .finally(()=>
+        console.log("Call Completed"))
     },[page]);
 
     const handleAdd=(text)=>{
@@ -18,10 +25,15 @@ export const Todo=()=>{
         title:text,
         status:false
       }
-      console.log(item);
+      setLoading(true)
+      AddNewTodo(item);
     }
 
     return (
+        <>
+        <div>
+            {loading && "LOADING..."}
+        </div>
         <div>
             <AddTodo handleAdd={handleAdd}/>
         <h1>Todo</h1>
@@ -36,5 +48,6 @@ export const Todo=()=>{
             <button>{page}</button>
             <button onClick={()=>setPage(page+1)}>Next</button>
             </div>
+            </>
     )
 }
