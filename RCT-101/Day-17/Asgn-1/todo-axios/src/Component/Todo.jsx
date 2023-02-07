@@ -28,17 +28,22 @@ export const Todo=()=>{
         status:false
       }
       setLoading(true)
-      AddNewTodo(item);
-      handleGetTodo();
+      AddNewTodo(item)
+      .then(()=>{
+        handleGetTodo(); 
+        }).catch((err)=>setLoading(false)) 
     }
     const handleToggle=(id,status)=>{
         ToggleTodo(id,status)  
         .then(()=>{
         handleGetTodo(); 
-        })   
+        }).catch((err)=>setLoading(false))   
     }
     const handleDelete=(id)=>{
-        DeleteTodo(id)  
+        DeleteTodo(id)
+        .then(()=>{
+            handleGetTodo(); 
+            }).catch((err)=>setLoading(false))   
     }
     return (
         <>
