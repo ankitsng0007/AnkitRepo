@@ -34,12 +34,14 @@ export const Todo=()=>{
         }).catch((err)=>setLoading(false)) 
     }
     const handleToggle=(id,status)=>{
-        ToggleTodo(id,status)  
+        setLoading(true)
+        ToggleTodo(id,status)
         .then(()=>{
         handleGetTodo(); 
         }).catch((err)=>setLoading(false))   
     }
     const handleDelete=(id)=>{
+        setLoading(true)
         DeleteTodo(id)
         .then(()=>{
             handleGetTodo(); 
