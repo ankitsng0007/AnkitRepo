@@ -39,9 +39,6 @@ export const Todo=()=>{
     }
     const handleDelete=(id)=>{
         DeleteTodo(id)  
-        .then(()=>{
-        handleGetTodo(); 
-        })   
     }
     return (
         <>
@@ -57,7 +54,8 @@ export const Todo=()=>{
                 status={el.status} 
                 id={el.id} 
                 key={el.id} 
-                handleToggle={handleToggle}/>
+                handleToggle={handleToggle}
+                handleDelete={handleDelete}/>
             ))}
             <button disabled={page===1} onClick={()=>setPage(page-1)}>Prev</button>
             <button>{page}</button>

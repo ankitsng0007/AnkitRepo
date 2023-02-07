@@ -16,12 +16,15 @@ export const AddNewTodo=(item={})=>{
         status:item.status
     })
 }
-export const DeleteTodo=(id)=>{
+/*export const DeleteTodo=(id)=>{
     return({
         method:"DELETE",
         baseURL:"http://localhost:8080",
         url:`/todos/${id}`
     });
+}*/
+export const DeleteTodo=(id)=>{
+    return axios.delete(`http://localhost:8080/todos/${id}`)
 }
 export const ToggleTodo=(id,status)=>{
     return axios.patch(`http://localhost:8080/todos/${id}`,{

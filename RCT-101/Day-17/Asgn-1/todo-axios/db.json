@@ -1,11 +1,6 @@
 {
   "todos": [
     {
-      "id": 1,
-      "title": "Learn React",
-      "status": false
-    },
-    {
       "id": 2,
       "title": "Learn JavaScript",
       "status": true
@@ -34,21 +29,6 @@
       "title": "axios",
       "status": false,
       "id": 7
-    },
-    {
-      "title": "axios",
-      "status": false,
-      "id": 8
-    },
-    {
-      "title": "router",
-      "status": false,
-      "id": 9
-    },
-    {
-      "title": "css",
-      "status": false,
-      "id": 10
     }
   ]
 }
