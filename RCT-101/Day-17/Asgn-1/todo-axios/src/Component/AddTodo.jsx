@@ -7,6 +7,7 @@ export const AddTodo =({handleAdd})=>{
     }
     const handleSubmit=()=>{
         handleAdd(text);
+        alert("New Task Added !")
     }
     return(
         <div>

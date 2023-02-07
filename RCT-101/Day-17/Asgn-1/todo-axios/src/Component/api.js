@@ -16,3 +16,10 @@ export const AddNewTodo=(item={})=>{
         status:item.status
     })
 }
+export const DeleteTodo=(id)=>{
+    return({
+        method:"DELETE",
+        baseURL:"http://localhost:8080",
+        url:`/todos/${id}`
+    });
+}
