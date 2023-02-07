@@ -23,3 +23,8 @@ export const DeleteTodo=(id)=>{
         url:`/todos/${id}`
     });
 }
+export const ToggleTodo=(id,status)=>{
+    return axios.patch(`http://localhost:8080/todos/${id}`,{
+        status:!status
+    })
+}

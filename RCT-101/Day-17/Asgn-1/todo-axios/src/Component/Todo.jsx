@@ -1,15 +1,16 @@
 import { useState,useEffect } from "react";
 import { AddTodo } from "./AddTodo";
-import { getTodo,AddNewTodo } from "./api";
+import { getTodo,AddNewTodo,ToggleTodo } from "./api";
 import { TodoList } from "./TodoList";
 
 export const Todo=()=>{
     const [loading,setLoading]=useState(false);
     const [todo,setTodo]=useState([]);
     const [page,setPage] = useState(1);
+    const fetchUpdate
     useEffect(()=>{
         setLoading(true)
-        getTodo({page,limit:2,sort:"title",order:"asc"})
+        getTodo({page,limit:5,sort:"title",order:"asc"})
         .then((res)=> {
         setLoading(false) 
         setTodo(res.data)})
@@ -28,7 +29,9 @@ export const Todo=()=>{
       setLoading(true)
       AddNewTodo(item);
     }
-
+    const handleToggle=(id,newStatus)=>{
+        ToggleTodo(id,newStatus)      
+    }
     return (
         <>
         <div>
@@ -42,7 +45,8 @@ export const Todo=()=>{
                 title={el.title} 
                 status={el.status} 
                 id={el.id} 
-                key={el.id}/>
+                key={el.id} 
+                handleToggle={handleToggle}/>
             ))}
             <button disabled={page===1} onClick={()=>setPage(page-1)}>Prev</button>
             <button>{page}</button>
