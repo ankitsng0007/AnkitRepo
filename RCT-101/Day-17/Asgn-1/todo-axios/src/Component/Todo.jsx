@@ -1,14 +1,16 @@
 import { useState,useEffect } from "react";
 import { AddTodo } from "./AddTodo";
-import { getTodo,AddNewTodo,ToggleTodo } from "./api";
+import { getTodo,AddNewTodo,ToggleTodo,DeleteTodo } from "./api";
 import { TodoList } from "./TodoList";
 
 export const Todo=()=>{
     const [loading,setLoading]=useState(false);
     const [todo,setTodo]=useState([]);
     const [page,setPage] = useState(1);
-    const fetchUpdate
     useEffect(()=>{
+        handleGetTodo()
+    },[page]);
+    const handleGetTodo=()=>{
         setLoading(true)
         getTodo({page,limit:5,sort:"title",order:"asc"})
         .then((res)=> {
@@ -19,8 +21,7 @@ export const Todo=()=>{
         console.log("Error is", err)})
         .finally(()=>
         console.log("Call Completed"))
-    },[page]);
-
+    };
     const handleAdd=(text)=>{
       const item={
         title:text,
@@ -28,9 +29,19 @@ export const Todo=()=>{
       }
       setLoading(true)
       AddNewTodo(item);
+      handleGetTodo();
     }
-    const handleToggle=(id,newStatus)=>{
-        ToggleTodo(id,newStatus)      
+    const handleToggle=(id,status)=>{
+        ToggleTodo(id,status)  
+        .then(()=>{
+        handleGetTodo(); 
+        })   
+    }
+    const handleDelete=(id)=>{
+        DeleteTodo(id)  
+        .then(()=>{
+        handleGetTodo(); 
+        })   
     }
     return (
         <>
