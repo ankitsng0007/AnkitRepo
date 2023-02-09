@@ -1,4 +1,4 @@
-import {Input,Button, Heading, Container, Stack, FormControl, FormLabel} from "@chakra-ui/react";
+import {Input,Button, Heading, Container, Stack, FormControl, FormLabel, Box, HStack, PinInput, PinInputField} from "@chakra-ui/react";
 import { useState } from "react";
 
 export const Form=()=>{
@@ -20,6 +20,16 @@ export const Form=()=>{
                 },1000)
             }}>Sign Up</Button>
         </FormControl>
+        <Box>
+            <HStack>
+                <PinInput>
+                    <PinInputField/>
+                    <PinInputField/>
+                    <PinInputField/>
+                    <PinInputField/>
+                </PinInput>
+            </HStack>
+        </Box>
         </Container>
     )
 }
