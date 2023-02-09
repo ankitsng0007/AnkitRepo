@@ -4,7 +4,6 @@ export const Form=()=>{
     return(
         <Container>
         <Heading>Form</Heading>
-        <Stack gap="1rem">
         <Box>
         <Input type="email" placeholder="Enter Email Adress"/>
         <Input type="password" placeholder="Enter Password"/>
@@ -12,7 +11,6 @@ export const Form=()=>{
         <Box>
             <Button>Sign Up</Button>
         </Box>
-        </Stack>
         </Container>
     )
 }
