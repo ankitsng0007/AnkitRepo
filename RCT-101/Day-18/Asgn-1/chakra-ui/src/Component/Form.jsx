@@ -3,6 +3,7 @@ import { useState } from "react";
 
 export const Form=()=>{
     const [loading,setLoading]=useState(false);
+    const [otp,setOtp]=useState("");
     return(
         <Container>
         <Heading>Form</Heading>
@@ -19,10 +20,10 @@ export const Form=()=>{
                     setLoading(false)
                 },1000)
             }}>Sign Up</Button>
-        </FormControl>
+            </FormControl>
         <Box>
             <HStack>
-                <PinInput>
+                <PinInput otp value={otp} onChange={(value)=>{setOtp(value)}}>
                     <PinInputField/>
                     <PinInputField/>
                     <PinInputField/>
@@ -30,6 +31,7 @@ export const Form=()=>{
                 </PinInput>
             </HStack>
         </Box>
+        <box><Heading>{otp}</Heading></box>
         </Container>
     )
 }
