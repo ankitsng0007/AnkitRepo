@@ -1,6 +1,8 @@
 import {Input,Button, Heading, Container, Stack, FormControl, FormLabel} from "@chakra-ui/react";
+import { useState } from "react";
 
 export const Form=()=>{
+    const [loading,setLoading]=useState(false);
     return(
         <Container>
         <Heading>Form</Heading>
@@ -9,7 +11,14 @@ export const Form=()=>{
         <Input type="email" id="email" placeholder="Enter Email Adress"/>
         <FormLabel>Password</FormLabel>
         <Input type="password" id="pass" placeholder="Enter Password"/>
-            <Button onClick={()=>{}}>Sign Up</Button>
+            <Button 
+                isLoading={loading} 
+                onClick={()=>{
+                setLoading(true);
+                setTimeout(()=>{
+                    setLoading(false)
+                },1000)
+            }}>Sign Up</Button>
         </FormControl>
         </Container>
     )
