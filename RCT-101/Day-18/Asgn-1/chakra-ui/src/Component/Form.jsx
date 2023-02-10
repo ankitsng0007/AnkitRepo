@@ -1,6 +1,6 @@
 import {Input,Button, Heading, Container, Stack,
      FormControl, FormLabel, Box, 
-     HStack, PinInput, PinInputField, Select,option} from "@chakra-ui/react";
+     HStack, PinInput, PinInputField, Select,option, Menu, MenuButton, MenuList, MenuItem} from "@chakra-ui/react";
 import { useState } from "react";
 
 export const Form=()=>{
@@ -41,6 +41,19 @@ export const Form=()=>{
                 <option value="3">option 3</option>
             </Select>
         </box>
+        <Box>
+            <Menu>
+            <MenuButton as={Button}>
+                Actions
+            </MenuButton>
+            <MenuList>
+                <MenuItem>Download</MenuItem>
+                <MenuItem>Create a copy</MenuItem>
+                <MenuItem>Mark As Draft</MenuItem>
+                <MenuItem>Delete</MenuItem>
+            </MenuList>
+            </Menu>
+        </Box>
         </Container>
     )
 }
