@@ -43,7 +43,7 @@ export const Form=()=>{
         </box>
         <Box>
             <Menu>
-            <MenuButton as={Button}>
+            <MenuButton as={Button} rightIcon={<chevronDownIcon />}>
                 Actions
             </MenuButton>
             <MenuList>
