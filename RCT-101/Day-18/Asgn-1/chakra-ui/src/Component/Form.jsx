@@ -2,6 +2,7 @@ import {Input,Button, Heading, Container, Stack,
      FormControl, FormLabel, Box, 
      HStack, PinInput, PinInputField, Select,option, Menu, MenuButton, MenuList, MenuItem} from "@chakra-ui/react";
 import { useState } from "react";
+import { ChevronDownIcon} from "@chakra-ui/icons";
 
 export const Form=()=>{
     const [loading,setLoading]=useState(false);
@@ -43,7 +44,7 @@ export const Form=()=>{
         </box>
         <Box>
             <Menu>
-            <MenuButton as={Button} rightIcon={<chevronDownIcon />}>
+            <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
                 Actions
             </MenuButton>
             <MenuList>
