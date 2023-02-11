@@ -4,12 +4,13 @@ export const Layout=()=>{
     console.log(items);
     return(
         <Box>
+            <SimpleGrid columns={{base:1,sm:2,md:3,lg:4,xl:5,"2xl":6}} spacing={2}>
             {items.map((el)=>(
-                
+                <Box key={el}>{el}</Box>
             ))}
+            </SimpleGrid>
             </Box>
-
-            {/*<SimpleGrid columns={4} spacing={10}>
+              /*<SimpleGrid columns={4} spacing={10}>
                 <Box bg="red" height={10}></Box>
                 <Box bg="red" height={10}></Box>
                 <Box bg="red" height={10}></Box>
@@ -17,7 +18,6 @@ export const Layout=()=>{
                 <Box bg="red" height={10}></Box>
                 <Box bg="red" height={10}></Box>
                 <Box bg="red" height={10}></Box>
-    </SimpleGrid>*/}
-        
-    )
+    </SimpleGrid>*/
+    );
 }
