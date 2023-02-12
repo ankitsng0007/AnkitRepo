@@ -6,7 +6,7 @@ export const Layout=()=>{
         <Box>
             <SimpleGrid columns={{base:1,sm:2,md:3,lg:4,xl:5,"2xl":6}} spacing={2}>
             {items.map((el)=>(
-                <Box key={el}>{el}</Box>
+                <Box bg="red" height={10} key={el}>{el}</Box>
             ))}
             </SimpleGrid>
             </Box>
