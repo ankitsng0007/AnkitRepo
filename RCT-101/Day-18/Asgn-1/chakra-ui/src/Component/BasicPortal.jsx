@@ -3,12 +3,17 @@ import React from "react";
 
 export const BasicPortal=()=>{
     const {isOpen,onClose,onOpen}=useDisclosure();
+    const cancelRef=React.useRef();
     return(
         <>
         <Button colorScheme="red" onClick={onOpen}>
             Clicking on This opens the Alert Dialog
         </Button>
-        <AlertDialog>
+        <AlertDialog 
+        isOpen={isOpen}
+        leastDestructiveRef={cancelRef}
+        onClose={onClose}
+        >
             <AlertDialogOverlay>
                 <AlertDialogContent>
                     <AlertDialogHeader>
@@ -18,10 +23,10 @@ export const BasicPortal=()=>{
                         Alert Dailog Body comes Here.
                     </AlertDialogBody>
                     <AlertDialogFooter>
-                        <Button>
+                        <Button ref={cancelRef} onClick={onClose}>
                             Cancel
                         </Button>
-                        <Button>
+                        <Button colorScheme="red" onClick={onClose}>
                             Delete
                         </Button>
                     </AlertDialogFooter>
