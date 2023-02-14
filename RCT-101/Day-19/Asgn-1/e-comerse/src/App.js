@@ -6,7 +6,7 @@ import { theme } from './Theme/Theme.config';
 function App() {
   return (
     <div className="App">
-      <h1>E-Com</h1>
+      <h1>E-Comerse</h1>
       <Listing theme={theme}/>
     </div>
   );
