@@ -3,7 +3,7 @@ import { Button } from "@chakra-ui/react"
 export const Listing=()=>{
     return(
         <>
-        <Button>Click Me</Button>
+        <Button variant={["sm","base","md"]}>Click Me</Button>
         </>
     )
 }
