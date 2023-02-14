@@ -1,4 +1,4 @@
-import { Box, Button, Img, SimpleGrid } from "@chakra-ui/react"
+import { Box, Button, Center, Img, SimpleGrid, Text } from "@chakra-ui/react"
 import axios, {Axios} from "axios";
 import { useEffect, useState } from "react";
 
@@ -17,8 +17,8 @@ export const Listing=()=>{
                 data && data.map((el)=>{
                     return(
                         <Box key={el.id}>
-                            <Img src="el.imageURL" boxSize="100px"/>
-                            {el.name}
+                            <Img src={el.imageURL} boxSize="100px" />
+                            <Text>{el.name}</Text>
                         </Box>
                     )
                 })
