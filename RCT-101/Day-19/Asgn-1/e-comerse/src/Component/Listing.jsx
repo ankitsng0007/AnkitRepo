@@ -12,13 +12,13 @@ export const Listing=()=>{
     return(
         <>
         {/*<Button variant={["sm","base","md"]}>Click Me</Button>*/}
-        <SimpleGrid columns="2" spacing={5}>
+        <SimpleGrid columns={[1,2,2,3]} spacing={5}>
             {
                 data && data.map((el)=>{
                     return(
                         <Box key={el.id}>
                             <Img src={el.imageURL} boxSize="100px" />
-                            <Text>{el.name}</Text>
+                            <Text align="left">{el.name}</Text>
                         </Box>
                     )
                 })
