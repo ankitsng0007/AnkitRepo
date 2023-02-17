@@ -1,5 +1,5 @@
 import { Box, Button, Center, Img, SimpleGrid, Text } from "@chakra-ui/react"
-import axios, {Axios} from "axios";
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -18,7 +18,7 @@ export const Listing=()=>{
             {
                 data && data.map((el)=>{
                     return(
-                        <Box key={el.id} onClick={()=>navigate("/items")}>
+                        <Box key={el.id}>
                             <Img src={el.imageURL} boxSize="100px" />
                             <Text align="left">{el.name}</Text>
                         </Box>

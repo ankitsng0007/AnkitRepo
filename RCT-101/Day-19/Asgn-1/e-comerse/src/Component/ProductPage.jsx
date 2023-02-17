@@ -1,5 +1,6 @@
 import { Box, Img, SimpleGrid } from "@chakra-ui/react"
-import { useState,useEffect } from "react"
+import { useState,useEffect } from "react";
+import axios from "axios";
 
 export const ProductPage=()=>{
     const [id,setId] = useState("");
