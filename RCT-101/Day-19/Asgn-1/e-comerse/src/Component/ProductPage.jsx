@@ -4,7 +4,9 @@ import axios from "axios";
 
 export const ProductPage=()=>{
     const [id,setId] = useState("");
-    useEffect({},[])
+    useEffect({
+        
+    },[])
     return(
         <>
         <h1>Product</h1>
