@@ -18,7 +18,7 @@ export const Listing=()=>{
             {
                 data && data.map((el)=>{
                     return(
-                        <Box key={el.id} onClick={()=>navigate("/items")}>
+                        <Box key={el.id} onClick={()=>navigate(`/items/${el.id}`)}>
                             <Img src={el.imageURL} boxSize="100px" />
                             <Text align="left">{el.name}</Text>
                         </Box>

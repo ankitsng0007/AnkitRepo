@@ -8,7 +8,7 @@ export const RoutePage=()=>{
         <div>
       <Routes>
         <Route path="/" exact element={<Listing/>} />
-        <Route path="/items" exact element={<ProductPage/>} />
+        <Route path="/items/:id" exact element={<ProductPage/>} />
       </Routes>
       </div>
     )
