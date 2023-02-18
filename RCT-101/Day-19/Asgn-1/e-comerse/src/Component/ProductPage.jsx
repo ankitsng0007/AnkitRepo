@@ -6,7 +6,7 @@ export const ProductPage=()=>{
     const [data,setData]=useState("");
     useEffect(()=>{
         axios.get(`http://localhost:8080/items/${(window.location.href).split("items/")[1]}`)
-        .then(res=>setData)
+        .then(res=>setData(res.data))
     },[])
     console.log(data);
     return(
