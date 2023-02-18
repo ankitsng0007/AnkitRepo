@@ -1,9 +1,11 @@
-import { Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Container, Img, SimpleGrid,Text } from "@chakra-ui/react"
+import { Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Button, Container, Img, SimpleGrid,Text } from "@chakra-ui/react"
 import { useState,useEffect } from "react";
 import axios from "axios";
 
 export const ProductPage=()=>{
     const [data,setData]=useState("");
+    const [isModalVisible,setIsModalVisible] = useState(false);
+
     useEffect(()=>{
         axios.get(`http://localhost:8080/items/${(window.location.href).split("items/")[1]}`)
         .then(res=>setData(res.data))
@@ -33,6 +35,7 @@ export const ProductPage=()=>{
                 </Container>
                 <Text>{data.name}</Text>
                 <Text>Price : Rs.{data.price}</Text>
+                <Button>View More</Button>
             </Box>
         </SimpleGrid>
             </>
