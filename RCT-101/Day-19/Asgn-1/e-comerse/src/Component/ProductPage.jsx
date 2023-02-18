@@ -3,10 +3,12 @@ import { useState,useEffect } from "react";
 import axios from "axios";
 
 export const ProductPage=()=>{
-    const [id,setId]=useState("");
+    const [data,setData]=useState("");
     useEffect(()=>{
-        console.log(window.location.href);
+        axios.get(`http://localhost:8080/items/${(window.location.href).split("items/")[1]}`)
+        .then(res=>setData)
     },[])
+    console.log(data);
     return(
         <>
         <h1>Product</h1>
