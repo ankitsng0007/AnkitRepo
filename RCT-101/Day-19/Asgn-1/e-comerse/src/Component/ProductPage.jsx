@@ -1,4 +1,4 @@
-import { Box, Img, SimpleGrid } from "@chakra-ui/react"
+import { Box, Container, Img, SimpleGrid,Text } from "@chakra-ui/react"
 import { useState,useEffect } from "react";
 import axios from "axios";
 
@@ -12,11 +12,17 @@ export const ProductPage=()=>{
     return(
         <>
         <h1>Product</h1>
-        <SimpleGrid>
+        <SimpleGrid columns={[1,2,2,3]}>
             <Box>
-                <Img src="" />
+                <Img src={data.imageURL} />
             </Box>
-            <Box></Box>
+            <Box>
+                <Container>
+                    {data.description}
+                </Container>
+                <Text>{data.name}</Text>
+                <Text>Price : Rs.{data.price}</Text>
+            </Box>
         </SimpleGrid>
             </>
     )
