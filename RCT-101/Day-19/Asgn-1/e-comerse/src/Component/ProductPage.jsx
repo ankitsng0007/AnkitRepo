@@ -1,6 +1,7 @@
 import { Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Button, Container, Img, SimpleGrid,Text } from "@chakra-ui/react"
 import { useState,useEffect } from "react";
 import axios from "axios";
+import { DescModal } from "./DescModal";
 
 export const ProductPage=()=>{
     const [data,setData]=useState("");
@@ -36,6 +37,7 @@ export const ProductPage=()=>{
                 <Text>{data.name}</Text>
                 <Text>Price : Rs.{data.price}</Text>
                 <Button>View More</Button>
+                <DescModal />
             </Box>
         </SimpleGrid>
             </>
