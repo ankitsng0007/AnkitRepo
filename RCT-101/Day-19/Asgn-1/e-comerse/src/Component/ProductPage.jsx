@@ -1,4 +1,4 @@
-import { Box, Container, Img, SimpleGrid,Text } from "@chakra-ui/react"
+import { Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Container, Img, SimpleGrid,Text } from "@chakra-ui/react"
 import { useState,useEffect } from "react";
 import axios from "axios";
 
@@ -11,6 +11,17 @@ export const ProductPage=()=>{
     console.log(data);
     return(
         <>
+        <Breadcrumb spacing="8px">
+        <BreadcrumbItem>
+        <BreadcrumbLink href="#">Home</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbItem>
+        <BreadcrumbLink href="#">About</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbItem>
+        <BreadcrumbLink href="#">Contact</BreadcrumbLink>
+        </BreadcrumbItem>
+        </Breadcrumb>
         <h1>Product</h1>
         <SimpleGrid columns={[1,2,2,3]}>
             <Box>
