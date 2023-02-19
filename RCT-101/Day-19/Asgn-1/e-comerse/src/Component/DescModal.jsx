@@ -2,7 +2,7 @@ import { Button, Modal, ModalContent,ModalHeader,ModalBody, useDisclosure, Modal
 
 export const DescModal=(isModalVisible,setIsModalVisible,data)=>{
  //    const {isOpen,onClose,onOpen} = useDisclosure();
- const onClose=()=>{
+ const onClose = ()=>{
     setIsModalVisible(false);
  }
     return(
