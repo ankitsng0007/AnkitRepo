@@ -1,12 +1,18 @@
-import { Button, Modal, ModalContent, useDisclosure } from "@chakra-ui/react"
+import { Button, Modal, ModalContent,ModalHeader,ModalBody, useDisclosure, ModalFooter } from "@chakra-ui/react"
 
-export const DescModal=()=>{
-    const [isOpen,onClose,onOpen] = useDisclosure();
+export const DescModal=(isModalVisible,setIsModalVisible,data)=>{
+    const {isOpen,onClose,onOpen} = useDisclosure();
     return(
         <>
         <Button>Open Modal</Button>
-        <Modal>
-            <ModalContent></ModalContent>
+        <Modal onClose={isModalVisible} >
+            <ModalContent>
+                <ModalHeader>Title</ModalHeader>
+                <ModalBody>My First Modal</ModalBody>
+                <ModalFooter>
+                    <Button colorScheme="blue" onClick={onClose}>Close</Button>
+                </ModalFooter>
+            </ModalContent>
         </Modal>
         </>
     )
