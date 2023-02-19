@@ -38,7 +38,10 @@ export const ProductPage=()=>{
                 <Text>Price : Rs.{data.price}</Text>
                 <Button onClick={()=>{setIsModalVisible(true)}}>View More</Button>
                 {
-                    isModalVisible && <DescModal />
+                    isModalVisible && 
+                    <DescModal 
+                    isModalVisible={isModalVisible}
+                    setIsModalVisible={setIsModalVisible} />
                 }
             </Box>
         </SimpleGrid>
