@@ -6,7 +6,7 @@ export const DescModal=(isModalVisible,setIsModalVisible,data)=>{
     setIsModalVisible(false);
  }
     return(
-        <>
+        <>  
         {/*<Button>Open Modal</Button>*/}
         <Modal isO onClose={onClose}>
             <ModalContent>
