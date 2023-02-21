@@ -1,6 +1,6 @@
 import { Button, Modal, ModalContent,ModalHeader,ModalBody, useDisclosure, ModalFooter } from "@chakra-ui/react"
 
-export const DescModal=(isModalVisible,setIsModalVisible,data)=>{
+export const DescModal=({isModalVisible,setIsModalVisible,data})=>{
  //    const {isOpen,onClose,onOpen} = useDisclosure();
  const onClose = ()=>{
     setIsModalVisible(false);
