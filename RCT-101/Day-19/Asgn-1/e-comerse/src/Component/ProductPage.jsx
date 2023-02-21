@@ -41,7 +41,8 @@ export const ProductPage=()=>{
                     isModalVisible && 
                     <DescModal 
                     isModalVisible={isModalVisible}
-                    setIsModalVisible={setIsModalVisible} />
+                    setIsModalVisible={setIsModalVisible}
+                    data={data.description} />
                 }
             </Box>
         </SimpleGrid>
