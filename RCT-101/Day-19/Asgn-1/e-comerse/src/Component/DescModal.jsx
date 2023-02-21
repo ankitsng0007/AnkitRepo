@@ -8,7 +8,7 @@ export const DescModal=(isModalVisible,setIsModalVisible,data)=>{
     return(
         <>  
         {/*<Button>Open Modal</Button>*/}
-        <Modal isOpen={isOpen} onClose={onClose}>
+        <Modal isOpen={isModalVisible} onClose={onClose}>
             <ModalContent>
                 <ModalHeader>Title</ModalHeader>
                 <ModalBody>My First Modal</ModalBody>
