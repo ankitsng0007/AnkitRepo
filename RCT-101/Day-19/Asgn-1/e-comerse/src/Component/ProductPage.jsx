@@ -6,11 +6,16 @@ import { DescModal } from "./DescModal";
 export const ProductPage=()=>{
     const [data,setData]=useState("");
     const [isModalVisible,setIsModalVisible] = useState(false);
-    const [isLoading,setIsLoading] =useState(true);
+    const [isLoading,setIsLoading] =useState(false);
 
     useEffect(()=>{
         axios.get(`http://localhost:8080/items/${(window.location.href).split("items/")[1]}`)
-        .then(res=>setData(res.data))
+        .then(res=>{
+            setData(res.data)
+            setTimeout(()=>{
+                setIsLoading(true)
+            },2000)
+        })
     },[])
     console.log(data);
     return(
@@ -39,7 +44,7 @@ export const ProductPage=()=>{
                 </Skeleton>
                 <Text>{data.name}</Text>
                 <Text>Price : Rs.{data.price}</Text>
-                <Button onClick={()=>{setIsModalVisible(true)}}>View More</Button>
+                <Button variant={["base","sm","md"]} onClick={()=>{setIsModalVisible(true)}}>View More</Button>
                 {
                     isModalVisible && 
                     <DescModal 
