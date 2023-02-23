@@ -6,6 +6,7 @@ import { DescModal } from "./DescModal";
 export const ProductPage=()=>{
     const [data,setData]=useState("");
     const [isModalVisible,setIsModalVisible] = useState(false);
+    const [isLoading,setIsLoading] =useState(true);
 
     useEffect(()=>{
         axios.get(`http://localhost:8080/items/${(window.location.href).split("items/")[1]}`)
@@ -31,7 +32,7 @@ export const ProductPage=()=>{
                 <Img src={data.imageURL} />
             </Box>
             <Box>
-                <Skeleton>
+                <Skeleton isLoaded={isLoading}>
                 <Container>
                     {data.description}
                 </Container>
