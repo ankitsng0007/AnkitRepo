@@ -1,4 +1,4 @@
-import { Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Button, Container, Img, SimpleGrid,Text } from "@chakra-ui/react"
+import { Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Button, Container, Img, SimpleGrid,Skeleton,Text } from "@chakra-ui/react"
 import { useState,useEffect } from "react";
 import axios from "axios";
 import { DescModal } from "./DescModal";
@@ -31,9 +31,11 @@ export const ProductPage=()=>{
                 <Img src={data.imageURL} />
             </Box>
             <Box>
+                <Skeleton>
                 <Container>
                     {data.description}
                 </Container>
+                </Skeleton>
                 <Text>{data.name}</Text>
                 <Text>Price : Rs.{data.price}</Text>
                 <Button onClick={()=>{setIsModalVisible(true)}}>View More</Button>
