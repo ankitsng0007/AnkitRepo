@@ -8,6 +8,6 @@ export const ProfileForm=()=>{
         w="full"
         p={10}
         alignItems="flex-start"
-        bg="orange.300"></VStack>
+        bg="orange.100"></VStack>
     )
 }
