@@ -1,4 +1,4 @@
-import { FormControl, FormLabel, Grid, GridItem, Heading, Input, Text, VStack } from "@chakra-ui/react";
+import { FormControl, FormLabel, Grid, GridItem, Heading, Input, Text, Textarea, VStack } from "@chakra-ui/react";
 import React from "react";
 
 export const ProfileForm=()=>{
@@ -62,40 +62,31 @@ export const ProfileForm=()=>{
   </GridItem>
   <GridItem colSpan={1}>
     <FormControl isRequired>
-        <FormLabel>Name</FormLabel>
-        <Input 
-        placeholder="Name"
+        <FormLabel>Adress</FormLabel>
+        <Textarea
+        placeholder="Adress"
         type="text"
-        name="name"
+        name="address"
+        onChange={handleChange}
+        resize="none"/>
+    </FormControl>
+  </GridItem>
+  <GridItem colSpan={1}>
+    <FormControl isRequired>
+        <FormLabel>Country</FormLabel>
+        <Input 
+        placeholder="Country"
+        type="text"
+        name="country"
         onChange={handleChange}/>
     </FormControl>
   </GridItem>
   <GridItem colSpan={1}>
     <FormControl isRequired>
-        <FormLabel>Name</FormLabel>
+        <FormLabel>Profile Pic</FormLabel>
         <Input 
-        placeholder="Name"
-        type="text"
-        name="name"
-        onChange={handleChange}/>
-    </FormControl>
-  </GridItem>
-  <GridItem colSpan={1}>
-    <FormControl isRequired>
-        <FormLabel>Name</FormLabel>
-        <Input 
-        placeholder="Name"
-        type="text"
-        name="name"
-        onChange={handleChange}/>
-    </FormControl>
-  </GridItem>
-  <GridItem colSpan={1}>
-    <FormControl isRequired>
-        <FormLabel>Name</FormLabel>
-        <Input 
-        placeholder="Name"
-        type="text"
+        placeholder="Profile-pic"
+        type="file"
         name="name"
         onChange={handleChange}/>
     </FormControl>
