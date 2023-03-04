@@ -32,31 +32,31 @@ export const ProfileForm=()=>{
   </GridItem>
   <GridItem colSpan={1}>
     <FormControl isRequired>
-        <FormLabel>Name</FormLabel>
+        <FormLabel>Phone</FormLabel>
         <Input 
-        placeholder="Name"
-        type="text"
-        name="name"
+        placeholder="Phone"
+        type="number"
+        name="phone"
         onChange={handleChange}/>
     </FormControl>
   </GridItem>
   <GridItem colSpan={1}>
     <FormControl isRequired>
-        <FormLabel>Name</FormLabel>
+        <FormLabel>Email</FormLabel>
         <Input 
-        placeholder="Name"
-        type="text"
-        name="name"
+        placeholder="Email"
+        type="email"
+        name="email"
         onChange={handleChange}/>
     </FormControl>
   </GridItem>
   <GridItem colSpan={1}>
     <FormControl isRequired>
-        <FormLabel>Name</FormLabel>
+        <FormLabel>Age</FormLabel>
         <Input 
-        placeholder="Name"
+        placeholder="Age"
         type="text"
-        name="name"
+        name="age"
         onChange={handleChange}/>
     </FormControl>
   </GridItem>
