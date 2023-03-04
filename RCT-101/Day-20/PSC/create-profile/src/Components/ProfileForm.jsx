@@ -1,7 +1,10 @@
-import { Heading, Text, VStack } from "@chakra-ui/react";
+import { FormControl, FormLabel, Grid, GridItem, Heading, Input, Text, VStack } from "@chakra-ui/react";
 import React from "react";
 
 export const ProfileForm=()=>{
+    const handleChange=()=>{
+
+    }
     return(
         <VStack
         h="full"
@@ -12,6 +15,92 @@ export const ProfileForm=()=>{
             <VStack>
                 <Heading>Create Profile Here</Heading>
                 <Text>Please Fill in All Detial</Text>
+                <Grid
+  h='200px'
+  templateColumns='repeat(2, 1fr)'
+  gap={4}
+>
+  <GridItem colSpan={1}>
+    <FormControl isRequired>
+        <FormLabel>Name</FormLabel>
+        <Input 
+        placeholder="Name"
+        type="text"
+        name="name"
+        onChange={handleChange}/>
+    </FormControl>
+  </GridItem>
+  <GridItem colSpan={1}>
+    <FormControl isRequired>
+        <FormLabel>Name</FormLabel>
+        <Input 
+        placeholder="Name"
+        type="text"
+        name="name"
+        onChange={handleChange}/>
+    </FormControl>
+  </GridItem>
+  <GridItem colSpan={1}>
+    <FormControl isRequired>
+        <FormLabel>Name</FormLabel>
+        <Input 
+        placeholder="Name"
+        type="text"
+        name="name"
+        onChange={handleChange}/>
+    </FormControl>
+  </GridItem>
+  <GridItem colSpan={1}>
+    <FormControl isRequired>
+        <FormLabel>Name</FormLabel>
+        <Input 
+        placeholder="Name"
+        type="text"
+        name="name"
+        onChange={handleChange}/>
+    </FormControl>
+  </GridItem>
+  <GridItem colSpan={1}>
+    <FormControl isRequired>
+        <FormLabel>Name</FormLabel>
+        <Input 
+        placeholder="Name"
+        type="text"
+        name="name"
+        onChange={handleChange}/>
+    </FormControl>
+  </GridItem>
+  <GridItem colSpan={1}>
+    <FormControl isRequired>
+        <FormLabel>Name</FormLabel>
+        <Input 
+        placeholder="Name"
+        type="text"
+        name="name"
+        onChange={handleChange}/>
+    </FormControl>
+  </GridItem>
+  <GridItem colSpan={1}>
+    <FormControl isRequired>
+        <FormLabel>Name</FormLabel>
+        <Input 
+        placeholder="Name"
+        type="text"
+        name="name"
+        onChange={handleChange}/>
+    </FormControl>
+  </GridItem>
+  <GridItem colSpan={1}>
+    <FormControl isRequired>
+        <FormLabel>Name</FormLabel>
+        <Input 
+        placeholder="Name"
+        type="text"
+        name="name"
+        onChange={handleChange}/>
+    </FormControl>
+  </GridItem>
+</Grid>
             </VStack>
         </VStack>
     )
