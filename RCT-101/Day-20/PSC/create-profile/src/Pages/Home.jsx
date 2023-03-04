@@ -6,7 +6,7 @@ import { ProfileForm } from "../Components/ProfileForm";
 export const Home =()=>{
     return(
         <Container maxW="container.xl" p={0}>
-            <Flex h="100vh" py={20}>
+            <Flex h="200vh"  py={20}>
             <ProfileForm />
              <Profile />
             </Flex>

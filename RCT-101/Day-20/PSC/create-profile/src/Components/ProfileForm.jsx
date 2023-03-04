@@ -1,4 +1,4 @@
-import { FormControl, FormLabel, Grid, GridItem, Heading, Input, Select, Text, Textarea, VStack } from "@chakra-ui/react";
+import { Button, FormControl, FormLabel, Grid, GridItem, Heading, Input, Select, Text, Textarea, VStack } from "@chakra-ui/react";
 import React from "react";
 
 export const ProfileForm=()=>{
@@ -60,7 +60,7 @@ export const ProfileForm=()=>{
         onChange={handleChange}/>
     </FormControl>
   </GridItem>
-  <GridItem colSpan={1}>
+  <GridItem colSpan={2}>
     <FormControl isRequired>
         <FormLabel>Adress</FormLabel>
         <Textarea
@@ -71,7 +71,7 @@ export const ProfileForm=()=>{
         resize="none"/>
     </FormControl>
   </GridItem>
-  <GridItem colSpan={1}>
+  <GridItem colSpan={2}>
     <FormControl isRequired>
         <FormLabel>Country</FormLabel>
         <Select>
@@ -87,7 +87,7 @@ export const ProfileForm=()=>{
         </Select>
     </FormControl>
   </GridItem>
-  <GridItem colSpan={1}>
+  <GridItem colSpan={2}>
     <FormControl isRequired>
         <FormLabel>Profile Pic</FormLabel>
         <Input 
@@ -95,6 +95,11 @@ export const ProfileForm=()=>{
         type="file"
         name="name"
         onChange={handleChange}/>
+    </FormControl>
+  </GridItem>
+  <GridItem>
+    <FormControl>
+        <Button w="full">Create Profile</Button>
     </FormControl>
   </GridItem>
 </Grid>
