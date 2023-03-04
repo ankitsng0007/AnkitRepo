@@ -1,4 +1,4 @@
-import { FormControl, FormLabel, Grid, GridItem, Heading, Input, Text, Textarea, VStack } from "@chakra-ui/react";
+import { FormControl, FormLabel, Grid, GridItem, Heading, Input, Select, Text, Textarea, VStack } from "@chakra-ui/react";
 import React from "react";
 
 export const ProfileForm=()=>{
@@ -74,11 +74,17 @@ export const ProfileForm=()=>{
   <GridItem colSpan={1}>
     <FormControl isRequired>
         <FormLabel>Country</FormLabel>
-        <Input 
+        <Select>
         placeholder="Country"
         type="text"
         name="country"
-        onChange={handleChange}/>
+        onChange={handleChange}
+        <option>India</option>
+        <option>UAE</option>
+        <option>USA</option>
+        <option>China</option>
+        <option>Canada</option>
+        </Select>
     </FormControl>
   </GridItem>
   <GridItem colSpan={1}>
