@@ -19,7 +19,7 @@ export const ProfileForm=()=>{
       setFormData({...formData,[name]:val})
     };
     const handleClick=()=>{
-
+      setFormData(initState);
     };
     console.log(formData);
     const {name,phone,email,age,adress,country,profile_pic} = formData;
