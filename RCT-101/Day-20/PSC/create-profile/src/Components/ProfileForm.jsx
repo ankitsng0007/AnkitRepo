@@ -16,6 +16,9 @@ export const ProfileForm=()=>{
     const handleChange=(e)=>{
 
     }
+    const handleClick=()=>{
+
+    };
     const {name,phone,email,age,adress,country,profile_pic} = formData;
     return(
         <VStack
@@ -118,7 +121,10 @@ export const ProfileForm=()=>{
   </GridItem>
   <GridItem>
     <FormControl>
-        <Button w="full">Create Profile</Button>
+        <Button 
+        w="full" 
+        variant="outline"
+        onClick={handleClick}>Create Profile</Button>
     </FormControl>
   </GridItem>
 </Grid>
