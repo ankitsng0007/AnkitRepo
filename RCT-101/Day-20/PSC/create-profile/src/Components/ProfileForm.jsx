@@ -1,10 +1,22 @@
 import { Button, FormControl, FormLabel, Grid, GridItem, Heading, Input, Select, Text, Textarea, VStack } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
+
+const initState={
+  name:"",
+  phone:"",
+  email:"",
+  age:"",
+  adress:"",
+  country:"",
+  profile_pic:""
+}
 
 export const ProfileForm=()=>{
-    const handleChange=()=>{
+  const [formData,setFormData] = useState(initState);
+    const handleChange=(e)=>{
 
     }
+    const {name,phone,email,age,adress,country,profile_pic} = formData;
     return(
         <VStack
         h="full"
@@ -27,6 +39,7 @@ export const ProfileForm=()=>{
         placeholder="Name"
         type="text"
         name="name"
+        value={name}
         onChange={handleChange}/>
     </FormControl>
   </GridItem>
@@ -37,6 +50,7 @@ export const ProfileForm=()=>{
         placeholder="Phone"
         type="number"
         name="phone"
+        value={phone}
         onChange={handleChange}/>
     </FormControl>
   </GridItem>
@@ -47,6 +61,7 @@ export const ProfileForm=()=>{
         placeholder="Email"
         type="email"
         name="email"
+        value={email}
         onChange={handleChange}/>
     </FormControl>
   </GridItem>
@@ -57,6 +72,7 @@ export const ProfileForm=()=>{
         placeholder="Age"
         type="text"
         name="age"
+        value={age}
         onChange={handleChange}/>
     </FormControl>
   </GridItem>
@@ -66,7 +82,8 @@ export const ProfileForm=()=>{
         <Textarea
         placeholder="Adress"
         type="text"
-        name="address"
+        name="adress"
+        value={adress}
         onChange={handleChange}
         resize="none"/>
     </FormControl>
@@ -78,6 +95,7 @@ export const ProfileForm=()=>{
         placeholder="Country"
         type="text"
         name="country"
+        value={country}
         onChange={handleChange}
         <option>India</option>
         <option>UAE</option>
@@ -93,7 +111,8 @@ export const ProfileForm=()=>{
         <Input 
         placeholder="Profile-pic"
         type="file"
-        name="name"
+        name="profile_pic"
+        value={profile_pic}
         onChange={handleChange}/>
     </FormControl>
   </GridItem>
