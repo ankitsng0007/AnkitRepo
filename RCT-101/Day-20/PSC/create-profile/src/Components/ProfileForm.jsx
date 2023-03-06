@@ -14,11 +14,14 @@ const initState={
 export const ProfileForm=()=>{
   const [formData,setFormData] = useState(initState);
     const handleChange=(e)=>{
-
-    }
+      const {name,value} = e.target;
+      const val = name==="age" ? Number(value):value;
+      setFormData({...formData,[name]:val})
+    };
     const handleClick=()=>{
 
     };
+    console.log(formData);
     const {name,phone,email,age,adress,country,profile_pic} = formData;
     return(
         <VStack
