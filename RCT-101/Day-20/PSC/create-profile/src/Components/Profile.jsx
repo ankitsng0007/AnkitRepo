@@ -16,6 +16,7 @@ export const Profile=()=>{
         h="full"
         w="full"
         p={10}
+        spacing={4}
         alignItems="flex-start"
         bg="gray.100">
             <Center width="full">

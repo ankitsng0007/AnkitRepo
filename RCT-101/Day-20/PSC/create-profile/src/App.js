@@ -7,7 +7,7 @@ import {Flex,Spacer,Box,Heading,ButtonGroup,Button, Container, HStack} from "@ch
 
 function App() {
   return (
-    <Container>
+    <Container maxW="8xl">
     <Flex minWidth='max-content' alignItems='center' gap='2'>
   <Box p='2'>
     <Heading size='md'>Chakra App</Heading>
