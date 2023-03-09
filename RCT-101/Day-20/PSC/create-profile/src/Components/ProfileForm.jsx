@@ -38,7 +38,7 @@ export const ProfileForm=()=>{
   templateColumns='repeat(2, 1fr)'
   gap={4}
 >
-  <GridItem colSpan={1}>
+  <GridItem colSpan={{base:2,md:2}}>
     <FormControl isRequired>
         <FormLabel>Name</FormLabel>
         <Input 
@@ -49,7 +49,7 @@ export const ProfileForm=()=>{
         onChange={handleChange}/>
     </FormControl>
   </GridItem>
-  <GridItem colSpan={1}>
+  <GridItem colSpan={{base:2,md:1}}>
     <FormControl isRequired>
         <FormLabel>Phone</FormLabel>
         <Input 
