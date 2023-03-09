@@ -1,4 +1,4 @@
-import { Box, Image, VStack } from "@chakra-ui/react";
+import { Box, Text, Center, Divider, Image, SimpleGrid, VStack } from "@chakra-ui/react";
 import React from "react";
 
 const users = {
@@ -18,12 +18,51 @@ export const Profile=()=>{
         p={10}
         alignItems="flex-start"
         bg="gray.100">
-            <Box>
+            <Center width="full">
                 <Image 
                 boxSize=""
                 src={users.profile_pic}
                 borderRadius="full"/>
-            </Box>
+            </Center>
+            <Divider />
+            <SimpleGrid column={2} width="full" spacing={5}>
+                <Box>
+                    <Text>Name</Text>
+                </Box>
+                <Box>
+                    <Text>{users.name}</Text>
+                </Box>
+                <Box>
+                    <Text>Phone</Text>
+                </Box>
+                <Box>
+                    <Text>{users.phone}</Text>
+                </Box>
+                <Box>
+                    <Text>Email</Text>
+                </Box>
+                <Box>
+                    <Text>{users.email}</Text>
+                </Box>
+                <Box>
+                    <Text>Age</Text>
+                </Box>
+                <Box>
+                    <Text>{users.age}</Text>
+                </Box>
+                <Box>
+                    <Text>Adress</Text>
+                </Box>
+                <Box>
+                    <Text>{users.adress}</Text>
+                </Box>
+                <Box>
+                    <Text>Country</Text>
+                </Box>
+                <Box>
+                    <Text>{users.country}</Text>
+                </Box>
+            </SimpleGrid>
         </VStack>
     )
 }
