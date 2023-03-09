@@ -15,18 +15,21 @@ export const Profile=()=>{
         <VStack
         h="full"
         w="full"
-        p={10}
+        p={4}
         spacing={4}
         alignItems="flex-start"
         bg="gray.100">
             <Center width="full">
                 <Image 
-                boxSize=""
+                boxSize="xs"
                 src={users.profile_pic}
                 borderRadius="full"/>
             </Center>
             <Divider />
-            <SimpleGrid column={2} width="full" spacing={5}>
+            <SimpleGrid
+            columns={2} 
+            width="full" 
+            spacing={5}>
                 <Box>
                     <Text>Name</Text>
                 </Box>
