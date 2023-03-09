@@ -8,7 +8,7 @@ export const Home =()=>{
         <Container 
         maxWidth={{base:"full", md:"container.xl"}} 
         p={{base:2, md:0}}>
-            <Flex h="250vh" w="full" py={10} direction={{base:"column",md:"row"}}>
+            <Flex h="250vh" w="full" py={10} direction={{base:"column-reverse",md:"row"}}>
             <ProfileForm />
              <Profile />
             </Flex>
