@@ -29,10 +29,10 @@ export const Products =()=>{
                     boxSize="sm"/>
                   </Box>
                   <Box>
-                    <Text>{el.title}</Text>
+                    <Text fontSize="xl" color="blue">{el.title}</Text>
                   </Box>
                   <Box>
-                    <Text>INR : {el.price}</Text>
+                    <Text fontSize="2xl" color="red" as="b">INR : {el.price}</Text>
                   </Box>
                 </VStack>
             </GridItem>
