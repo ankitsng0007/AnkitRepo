@@ -1,4 +1,4 @@
-import { Box, Container, Grid, GridItem, Image, VStack } from "@chakra-ui/react";
+import { Box, Text, Container, Grid, GridItem, Image, VStack } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -15,7 +15,11 @@ export const Products =()=>{
     return(
         <Container maxW={{base:"full",lg:"container.xl"}}
         p={{base:2,lg:0}}>
-        <Grid templateColumns={{base:"repeat(1,1fr)",md:"repeat(2,1fr)",lg:"repeat(3,1fr)"}}>
+        <Grid templateColumns={
+            {base:"repeat(1,1fr)",
+            md:"repeat(2,1fr)",
+            lg:"repeat(3,1fr)"}} 
+            gap={5}>
           {data && data.map((el)=>(
             <GridItem key={el.id}>
                 <VStack>
@@ -25,7 +29,7 @@ export const Products =()=>{
                     boxSize="sm"/>
                   </Box>
                   <Box>
-                    {el.title}
+                    <Text>{el.title}</Text>
                   </Box>
                 </VStack>
             </GridItem>
