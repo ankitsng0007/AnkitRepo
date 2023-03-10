@@ -22,6 +22,7 @@ export const Products =()=>{
             gap={5}>
           {data && data.map((el)=>(
             <GridItem key={el.id}>
+                <Box boxShadow='outline' p='6' rounded='md' bg='white'>
                 <VStack>
                   <Box>
                     <Image src={el.image} 
@@ -35,6 +36,7 @@ export const Products =()=>{
                     <Text fontSize="2xl" color="red" as="b">INR : {el.price}</Text>
                   </Box>
                 </VStack>
+                </Box>
             </GridItem>
           ))}
         </Grid>
