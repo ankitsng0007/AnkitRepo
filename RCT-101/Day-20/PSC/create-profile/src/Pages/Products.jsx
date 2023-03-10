@@ -15,12 +15,14 @@ export const Products =()=>{
     return(
         <Container maxW={{base:"full",lg:"container.xl"}}
         p={{base:2,lg:0}}>
-        <Grid templateColumns={{ base:1, md:2, lg:3 }}>
+        <Grid>
           {data && data.map((el)=>(
             <GridItem key={el.id}>
                 <VStack>
                   <Box>
-                    <Image src={el.image} alt="product-img"/>
+                    <Image src={el.image} 
+                    alt="product-img"
+                    boxSize="md"/>
                   </Box>
                   <Box>
                     {el.title}
