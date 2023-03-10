@@ -31,6 +31,9 @@ export const Products =()=>{
                   <Box>
                     <Text>{el.title}</Text>
                   </Box>
+                  <Box>
+                    <Text>INR : {el.price}</Text>
+                  </Box>
                 </VStack>
             </GridItem>
           ))}
