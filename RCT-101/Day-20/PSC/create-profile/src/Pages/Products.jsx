@@ -22,7 +22,7 @@ export const Products =()=>{
             gap={5}>
           {data && data.map((el)=>(
             <GridItem key={el.id}>
-                <Box boxShadow='outline' p='6' rounded='md' bg='white'>
+                <Box boxShadow='outline' p='6' rounded='md' bg='white' height="550">
                 <VStack>
                   <Box>
                     <Image src={el.image} 
