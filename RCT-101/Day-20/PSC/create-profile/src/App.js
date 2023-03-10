@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import {Link, Route,Routes} from "react-router-dom";
 import { Home } from './Pages/Home';
-import { Example } from './Pages/Example';
+import { Products } from './Pages/Products';
 import {Flex,Spacer,Box,Heading,ButtonGroup,Button, Container, HStack} from "@chakra-ui/react"
 
 function App() {
@@ -15,12 +15,12 @@ function App() {
   <Spacer />
   <HStack>
     <Link to="/">Home</Link>
-    <Link to="/dashboard">Dashboard</Link>
+    <Link to="/products">Products</Link>
   </HStack>
 </Flex>
     <Routes>
       <Route path='/' element={<Home/>}></Route>
-      <Route path='/dashboard' element={<Example/>}></Route>
+      <Route path='/products' element={<Products/>}></Route>
     </Routes>
     </Container>
   );

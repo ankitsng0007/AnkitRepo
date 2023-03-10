@@ -1,5 +1,6 @@
 import { Button, FormControl, FormLabel, Grid, GridItem, Heading, Input, Select, Text, Textarea, VStack } from "@chakra-ui/react";
 import React, { useState } from "react";
+import axios from "axios";
 
 const initState={
   name:"",
@@ -18,9 +19,18 @@ export const ProfileForm=()=>{
       const val = name==="age" ? Number(value):value;
       setFormData({...formData,[name]:val})
     };
+
     const handleClick=()=>{
+      //setFormData(initState);
+      axios({
+        method:"post",
+        url:"http://localhost:8080/users",
+        data:formData,
+      }).then((res)=>{
+      });
       setFormData(initState);
     };
+
     console.log(formData);
     const {name,phone,email,age,adress,country,profile_pic} = formData;
     return(
