@@ -1,5 +1,5 @@
 
-const reducer=(oldState,action)=>{
+export const reducer=(oldState,action)=>{
     const {type,payload} = action;
     switch(type){
 
