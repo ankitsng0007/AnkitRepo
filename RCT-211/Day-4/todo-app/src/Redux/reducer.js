@@ -1,0 +1,4 @@
+
+const reducer=(oldState,action)=>{
+    
+}
