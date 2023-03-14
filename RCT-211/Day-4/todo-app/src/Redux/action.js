@@ -12,3 +12,4 @@ const handleReduce = (payload) => {
         payload
     }
 }
+export {handleAdd,handleReduce}
