@@ -10,7 +10,7 @@ function Counter() {
         dispatch(handleAdd(1));
     }
     const reduceHandle= () =>{
-        dispatch(handleReduce(2));
+        dispatch(handleReduce(1));
     }
   return (
     <div>
