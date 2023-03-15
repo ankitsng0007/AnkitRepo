@@ -2,6 +2,10 @@ import React from 'react';
 import TodoInput from './TodoInput';
 
 function Todo() {
+    const getTodos=()=>{
+
+    }
+    
   return (
     <div>
       <h1>TODO</h1>
