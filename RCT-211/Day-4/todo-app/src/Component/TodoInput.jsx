@@ -5,7 +5,7 @@ function TodoInput() {
   return (
     <div>
       <input value={text} onChange={(e)=>setText(e.target.value)}/>
-      <button>Add Todo</button>
+      <button>ADD TODO</button>
     </div>
   );
 }
