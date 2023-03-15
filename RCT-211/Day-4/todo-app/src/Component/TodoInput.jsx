@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function TodoInput() {
+function TodoInput() { 
+    const [text,setText] = useState("");
   return (
     <div>
-      <input />
+      <input value={text} onChange={(e)=>setText(e.target.value)}/>
       <button>Add Todo</button>
     </div>
   );
