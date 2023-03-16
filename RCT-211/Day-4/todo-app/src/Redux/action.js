@@ -17,7 +17,7 @@ const getTodosRequest=()=>{
         type:types.GET_TODOS_REQUEST,
     }
 };
-const getTodosSuccess=()=>{
+const getTodosSuccess=(payload)=>{
     return{
         type:types.GET_TODOS_SUCCESS,
         payload,
