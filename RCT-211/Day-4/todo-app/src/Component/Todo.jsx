@@ -6,6 +6,7 @@ function Todo() {
     const getTodos=()=>{
       axios.get("http://localhost:8080/todos")
       .then((res)=>{
+        
         //sucess
       }).catch((err)=>{
         //error

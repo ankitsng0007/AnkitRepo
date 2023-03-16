@@ -11,5 +11,21 @@ const handleReduce = (payload) => {
         type:types.REDUCE,
         payload
     }
+};
+const getTodosRequest=()=>{
+    return{
+        type:types.GET_TODOS_REQUEST,
+    }
+};
+const getTodosSuccess=()=>{
+    return{
+        type:types.GET_TODOS_SUCCESS,
+        payload,
+    }
+};
+const getTodosError=()=>{
+    return{
+        type:types.GET_TODOS_ERROR,
+    }
 }
-export {handleAdd,handleReduce}
+export {handleAdd,handleReduce,getTodosRequest,getTodosSuccess,getTodosError}

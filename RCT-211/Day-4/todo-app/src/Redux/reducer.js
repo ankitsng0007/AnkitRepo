@@ -1,6 +1,7 @@
 import * as types from "./actionTypes";
 
-const initState={ count:20 }
+const initState={ count:20, todos:[], isLoading:false, isError:false }
+
 const reducer =(oldState = initState,action)=>{
     const {type,payload}=action;
     
