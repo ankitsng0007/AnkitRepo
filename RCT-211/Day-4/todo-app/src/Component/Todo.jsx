@@ -19,6 +19,15 @@ function Todo() {
         dispatch(getTodosError());
       })
     }
+    const addTodo = (title)=>{
+      if(title){
+        const payload={
+          title,
+          status:false
+        }
+        dispatch(postTodoRequest())
+      }
+    }
     useEffect(()=>{
       getTodos();
     },[])
