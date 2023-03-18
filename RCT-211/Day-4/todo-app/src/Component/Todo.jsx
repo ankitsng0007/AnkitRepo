@@ -15,11 +15,13 @@ function Todo() {
       .then((res)=>{
         dispatch(getTodosSuccess(res.data));
         //sucess
-      }).catch((err)=>{
+      })
+      .catch((err)=>{
         //error
         dispatch(getTodosError());
       })
     }
+    console.log("rendering");
     const addTodo = (title)=>{
       if(title){
         const payload={
