@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 
 function TodoInput() { 
     const [text,setText] = useState("");
+    const handlePost=()=>{
+      
+    }
   return (
     <div>
       <input value={text} onChange={(e)=>setText(e.target.value)}/>
-      <button>ADD TODO</button>
+      <button onClick={handlePost}>ADD TODO</button>
     </div>
   );
 }
