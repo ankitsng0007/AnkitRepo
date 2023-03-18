@@ -28,4 +28,24 @@ const getTodosError=()=>{
         type:types.GET_TODOS_ERROR,
     }
 }
-export {handleAdd,handleReduce,getTodosRequest,getTodosSuccess,getTodosError}
+const postTodosRequest=()=>{
+    return{
+        type:types.GET_TODOS_REQUEST,
+    }
+};
+const postTodosSuccess=(payload)=>{
+    return{
+        type:types.GET_TODOS_SUCCESS,
+        payload,
+    }
+};
+const postTodosError=()=>{
+    return{
+        type:types.GET_TODOS_ERROR,
+    }
+}
+export {
+    handleAdd,handleReduce,
+    getTodosRequest,getTodosSuccess,getTodosError,
+    postTodosError,postTodosRequest,postTodosSuccess
+}
