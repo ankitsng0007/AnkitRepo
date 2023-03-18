@@ -30,7 +30,7 @@ function Todo() {
        todos.map((el)=>{
         return(
             <div key={el.id}>
-                {el.title}
+                {el.title} - {el.status ? "True" : "False"}
             </div>
         )
        })}
