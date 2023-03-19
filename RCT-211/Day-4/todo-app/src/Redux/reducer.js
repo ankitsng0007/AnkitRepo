@@ -20,7 +20,7 @@ const reducer =(oldState = initState,action)=>{
         case types.POST_TODOS_REQUEST:
             return{...oldState,isLoading:true,};
         case types.POST_TODOS_SUCCESS:
-            return{...oldState,isLoading:false,todos:[...oldState.todos,payload],};
+            return{...oldState,isLoading:false,todos:payload};
         case types.POST_TODOS_ERROR:
             return{...oldState,isLoading:false}
             default:
