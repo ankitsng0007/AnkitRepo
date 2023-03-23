@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
       <Counter/>
-      <Todo/>
+      {isAuth && <Todo/>}
     </div>
   );
 }
