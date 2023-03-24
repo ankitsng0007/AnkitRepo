@@ -10,8 +10,8 @@ function Todo() {
     const dispatch = useDispatch();
     const {todos,isLoading} = useSelector((reduxStore)=>{
       return{
-        todos:reduxStore.todos,
-        isLoading:reduxStore.isLoading,
+        todos:reduxStore.TodoReducer.todos,
+        isLoading:reduxStore.TodoReducer.isLoading,
       }
     },shallowEqual);
     const getTodos=()=>{
