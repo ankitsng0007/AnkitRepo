@@ -3,14 +3,24 @@ import './App.css';
 import Counter from './Component/Counter';
 import Todo from './Component/Todo';
 import { useSelector } from 'react-redux';
+import { useState } from 'react';
 
 function App() {
-  //const isAuth = useSelector((store)=>store.AuthReducer.isAuth)
+  const isAuth = useSelector((store)=>store.AuthReducer.isAuth)
+  const [userEmail,setUserEmail] = useState("");
   return (
     <div className='App'>
       <Counter/>
       <br/>
-      <Todo/>
+      <div>
+        <input type="email"
+        placeholder='Enter Email'
+        value={userEmail}
+        onChange={(e)=>{e.target.value}}/>
+        <input/>
+        <button>Log In</button>
+      </div>
+      {isAuth && <Todo/>}
     </div>
   );
 }
