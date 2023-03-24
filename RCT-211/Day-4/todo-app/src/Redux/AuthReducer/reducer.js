@@ -28,6 +28,8 @@ const reducer=( oldState=initState,action )=>{
                 isAuth:false,
                 isAuthError:true
             };
+            default:
+                return oldState;
     }
 }
 export {reducer};
