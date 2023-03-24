@@ -50,7 +50,7 @@ function Todo() {
     <div>
       <h1>TODO</h1>
       <TodoInput addTodo={addTodo}/>
-      {todos.length>0 && 
+      { todos.length>0 &&
        todos.map((el)=>{
         return(
             <div key={el.id}>
