@@ -2,9 +2,9 @@ import React ,{useEffect}from 'react';
 import TodoInput from './TodoInput';
 import axios from "axios";
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
-import { getTodosError, getTodosRequest, getTodosSuccess, postTodosError, postTodosRequest, postTodosSuccess } from '../Redux/action';
+import { getTodosError, getTodosRequest, getTodosSuccess, postTodosError, postTodosRequest, postTodosSuccess } from '../Redux/TodoReducer/action';
 import { store } from '../Redux/store';
-import { POST_TODOS_ERROR } from '../Redux/actionTypes';
+import { POST_TODOS_ERROR } from '../Redux/TodoReducer/actionTypes';
 
 function Todo() {
     const dispatch = useDispatch();

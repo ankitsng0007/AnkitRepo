@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { handleAdd, handleReduce } from '../Redux/action';
+import { handleAdd, handleReduce } from '../Redux/TodoReducer/action';
 
 function Counter() {
     const count = useSelector((reduxStore) => reduxStore.count);
