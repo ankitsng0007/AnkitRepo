@@ -17,11 +17,11 @@ function App() {
         <input type="email"
         placeholder='Enter Email'
         value={userEmail}
-        onChange={(e)=>{e.target.value}} />
+        onChange={(e)=>(e.target.value)} />
         <input type="password"
         placeholder='Enter Password'
         value={password}
-        onChange={(e)=>{e.target.value}} />
+        onChange={(e)=>(e.target.value)} />
         <button>Log In</button>
       </div>
       {isAuth && <Todo/>}
