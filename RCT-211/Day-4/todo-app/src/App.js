@@ -9,6 +9,9 @@ function App() {
   const isAuth = useSelector((store)=>store.AuthReducer.isAuth)
   const [userEmail,setUserEmail] = useState("");
   const [password,setPassword] = useState("");
+  const handleLogin=()=>{
+    
+  }
   return (
     <div className='App'>
       <Counter/>
@@ -17,12 +20,12 @@ function App() {
         <input type="email"
         placeholder='Enter Email'
         value={userEmail}
-        onChange={(e)=>(e.target.value)} />
+        onChange={(e)=>setUserEmail(e.target.value)} />
         <input type="password"
         placeholder='Enter Password'
         value={password}
-        onChange={(e)=>(e.target.value)} />
-        <button>Log In</button>
+        onChange={(e)=>setPassword(e.target.value)} />
+        <button onClick={handleLogin}>Log In</button>
       </div>
       {isAuth && <Todo/>}
     </div>
