@@ -4,6 +4,8 @@ import Counter from './Component/Counter';
 import Todo from './Component/Todo';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
+import { USER_LOGIN_REQUEST } from './Redux/AuthReducer/actionTypes';
+import { loginRequest, loginSuccess } from './Redux/AuthReducer/action';
 
 function App() {
   const isAuth = useSelector((store)=>store.AuthReducer.isAuth)
@@ -15,7 +17,13 @@ function App() {
       const payload={
         email:userEmail,
         password:userPassword
-      }
+      };
+      dispatch(loginRequest());
+      axios.post("https://reqres.in/api/login",payload)
+      .then((res)=>{
+        console.log(res.data);
+        dispatch(loginSuccess(res.data));
+      })
     }
   }
   return (
