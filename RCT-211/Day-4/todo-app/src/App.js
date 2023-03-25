@@ -2,15 +2,21 @@ import logo from './logo.svg';
 import './App.css';
 import Counter from './Component/Counter';
 import Todo from './Component/Todo';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 
 function App() {
   const isAuth = useSelector((store)=>store.AuthReducer.isAuth)
   const [userEmail,setUserEmail] = useState("");
-  const [password,setPassword] = useState("");
+  const [userPassword,setUserPassword] = useState("");
+  const dispatch = useDispatch();
   const handleLogin=()=>{
-    
+    if(userEmail){
+      const payload={
+        email:userEmail,
+        password:userPassword
+      }
+    }
   }
   return (
     <div className='App'>
@@ -23,8 +29,8 @@ function App() {
         onChange={(e)=>setUserEmail(e.target.value)} />
         <input type="password"
         placeholder='Enter Password'
-        value={password}
-        onChange={(e)=>setPassword(e.target.value)} />
+        value={userPassword}
+        onChange={(e)=>setUserPassword(e.target.value)} />
         <button onClick={handleLogin}>Log In</button>
       </div>
       {isAuth && <Todo/>}
