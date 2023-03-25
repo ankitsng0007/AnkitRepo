@@ -23,7 +23,7 @@ function App() {
       axios.post("https://reqres.in/api/login",payload)
       .then((res)=>{
         console.log(res.data);
-        dispatch(loginSuccess(res.data));
+        dispatch(loginSuccess(res.data.token));
       })
       .catch((err)=>{
         dispatch(loginError());
