@@ -25,7 +25,7 @@ function App() {
         console.log(res.data);
         dispatch(loginSuccess(res.data.token));
       })
-      .catch((e)=>{
+      .catch((err)=>{
         dispatch(loginError());
       })
     }
