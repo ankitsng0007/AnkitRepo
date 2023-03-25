@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
 import Counter from './Component/Counter';
 import Todo from './Component/Todo';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { USER_LOGIN_REQUEST } from './Redux/AuthReducer/actionTypes';
-import { loginRequest, loginSuccess } from './Redux/AuthReducer/action';
+import { loginError, loginRequest, loginSuccess } from './Redux/AuthReducer/action';
 
 function App() {
   const isAuth = useSelector((store)=>store.AuthReducer.isAuth)
@@ -24,8 +25,11 @@ function App() {
         console.log(res.data);
         dispatch(loginSuccess(res.data));
       })
+      .catch((err)=>{
+        dispatch(loginError());
+      })
     }
-  }
+  };
   return (
     <div className='App'>
       <Counter/>
