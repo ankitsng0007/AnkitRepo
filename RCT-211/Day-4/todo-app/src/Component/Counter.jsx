@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { handleAdd, handleReduce } from "../Redux/CounterReducer/action"
 
 function Counter() {
-    const count = useSelector((reduxStore) =>
-     reduxStore.CountetReducer.count);
+    const count = useSelector((store) =>
+     store.CountetReducer.count);
     const dispatch = useDispatch();
 
     const addHandle=()=>{

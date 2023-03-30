@@ -1,17 +1,4 @@
 import * as types from "./actionTypes";
-
-const handleAdd = (payload) => {
-    return{
-        type : types.ADD,
-        payload
-    }
-};
-const handleReduce = (payload) => {
-    return{
-        type:types.REDUCE,
-        payload
-    }
-};
 const getTodosRequest=()=>{
     return{
         type:types.GET_TODOS_REQUEST,
@@ -45,7 +32,6 @@ const postTodosError=()=>{
     }
 }
 export {
-    handleAdd,handleReduce,
     getTodosRequest,getTodosSuccess,getTodosError,
     postTodosError,postTodosRequest,postTodosSuccess
 }
