@@ -10,10 +10,11 @@ const logger1=(store)=>(next)=>(action)=>{
     return temp;
 }
 const logger2=(store)=>(next)=>(action)=>{
+    console.log("Dispatching action 2-c");
     const temp=next(action);
     return temp;
 }
 const rootReducer = combineReducers({CounterReducer, TodoReducer,AuthReducer});
-const store = legacy_createStore(rootReducer,applyMiddleware(logger1));
+const store = legacy_createStore(rootReducer,applyMiddleware(logger1,logger2));
 
 export {store};
