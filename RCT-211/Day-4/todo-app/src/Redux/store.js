@@ -12,6 +12,7 @@ const logger1=(store)=>(next)=>(action)=>{
 const logger2=(store)=>(next)=>(action)=>{
     console.log("Dispatching action 2-c");
     const temp=next(action);
+    console.log("after temp 2-d");
     return temp;
 }
 const rootReducer = combineReducers({CounterReducer, TodoReducer,AuthReducer});
