@@ -1,4 +1,4 @@
-import { combineReducers, legacy_createStore,applyMiddleware } from "redux";
+import { combineReducers, legacy_createStore,applyMiddleware,compose } from "redux";
 import { reducer as CounterReducer } from "./CounterReducer/reducer";
 import { reducer as TodoReducer } from "./TodoReducer/reducer";
 import {reducer as AuthReducer} from "./AuthReducer/reducer";
@@ -16,6 +16,8 @@ const logger2=(store)=>(next)=>(action)=>{
     return temp;
 }
 const rootReducer = combineReducers({CounterReducer, TodoReducer,AuthReducer});
-const store = legacy_createStore(rootReducer,applyMiddleware(logger1,logger2));
+const composeEnhancers=window._REDUX_DEVTOOLS_EXTENSION_COMPOSE_|| compose;
+
+const store = legacy_createStore(rootReducer,composeEnhancers(applyMiddleware(logger1,logger2)));
 
 export {store};
