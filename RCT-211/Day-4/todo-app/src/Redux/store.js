@@ -6,9 +6,13 @@ import {reducer as AuthReducer} from "./AuthReducer/reducer";
 const logger1=(store)=>(next)=>(action)=>{
     console.log("Dispatching action object 1-a")
     const temp= next(action); //go to the next middleware if there is any,else go to the reducer function.
+    console.log("after temp 1-b");
     return temp;
 }
-
+const logger2=(store)=>(next)=>(action)=>{
+    const temp=next(action);
+    return temp;
+}
 const rootReducer = combineReducers({CounterReducer, TodoReducer,AuthReducer});
 const store = legacy_createStore(rootReducer,applyMiddleware(logger1));
 
