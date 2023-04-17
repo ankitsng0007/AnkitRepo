@@ -9,6 +9,26 @@
       "title": "LEARN GIT",
       "status": false,
       "id": 2
+    },
+    {
+      "title": "Learn CSS",
+      "status": false,
+      "id": 3
+    },
+    {
+      "title": "Learn React",
+      "status": false,
+      "id": 4
+    },
+    {
+      "title": "Learn JAVA",
+      "status": false,
+      "id": 5
+    },
+    {
+      "title": "cnhjdc",
+      "status": false,
+      "id": 6
     }
   ]
 }

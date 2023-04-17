@@ -27,6 +27,7 @@ function Todo() {
       })
     }
     console.log("rendering");
+
     const addTodo = (title)=>{
       if(title){
         const payload={
@@ -43,6 +44,7 @@ function Todo() {
           })
       }
     }
+    
     useEffect(()=>{
       getTodos();
     },[])
