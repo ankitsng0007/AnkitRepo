@@ -6,7 +6,7 @@ const initState = {
     isError:false,
 }
 const reducer = (oldState=initState,action)=>{
-    const {type,action} = action;
+    const {type,payload} = action;
     switch(type){
         case types.GET_BOOKS_REQEST:
             return {...oldState,isLoading:true };
