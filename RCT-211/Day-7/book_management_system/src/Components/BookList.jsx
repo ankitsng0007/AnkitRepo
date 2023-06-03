@@ -11,7 +11,11 @@ function BookList() {
   },[books.length,dispatch]);
   return (
     <div>
-      BookList
+      {books.length > 0 &&
+      books.map((singleBook)=>{
+        return 
+        <BookCard bookData={singleBook} />;
+      })}
     </div>
   );
 }
