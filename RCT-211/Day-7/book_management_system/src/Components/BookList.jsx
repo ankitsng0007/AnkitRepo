@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
 import {useSelector,useDispatch} from "react-redux";
 import {getBooks} from "../Redux/action";
+import BookCard from './BookCard';
+
 function BookList() {
   const books = useSelector((store)=>store.books);
   const dispatch = useDispatch();
   useEffect(()=>{
+    //if i don't ave any books in redux then make the API call
     if(books.length===0){
       dispatch(getBooks());
     }
@@ -12,7 +15,7 @@ function BookList() {
   return (
     <div>
       {books.length > 0 &&
-      books.map((singleBook)=>{
+      books.map(singleBook=>{
         return 
         <BookCard bookData={singleBook} />;
       })}

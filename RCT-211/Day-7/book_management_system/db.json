@@ -2,8 +2,29 @@
   "books": [
     {
       "id": 1,
-      "title": "Rich Dad",
-      "author": "Ankit"
+      "book_name": "Rich Dad",
+      "author": "Ankit",
+      "cover_photo":"",
+      "category":"Novel",
+      "release_year":"2016",
+      "no_of_chapters":"7",
+      "chapter":[
+        {"name":"Farmer" , "pages":"20"},
+        {"name":"Bussinessman" , "page":"25"}
+      ]
+    },
+    {
+      "id": 1,
+      "book_name": "Full Stack Web Development",
+      "author": "Massai",
+      "cover_photo":"",
+      "category":"Acedemic",
+      "release_year":"2019",
+      "no_of_chapters":"24",
+      "chapter":[
+        {"name":"HTML" , "pages":"20"},
+        {"name":"CSS" , "page":"25"}
+      ]
     }
   ]
 }
