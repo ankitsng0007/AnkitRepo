@@ -1,7 +1,10 @@
-import React, { useEffect, useState, useSearchParams} from 'react';
+import React, { useEffect, useState } from 'react';
+import {useSearchParams} from "react-router-dom"
 
 function FilterComp() {
   const [searchParams,setSearchParams] = useSearchParams()
+  const initialCategory = searchParams.getAll("category");
+  console.log("initialcategory",initialCategory)
   const [category,setCategory] = useState([]);
   const handleFilterCheckbox =(e)=>{
      //check if data is present in the category.
