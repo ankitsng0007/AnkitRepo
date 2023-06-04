@@ -32,11 +32,19 @@ function FilterComp() {
     <div>
       <h3>Filter Component</h3>
       <div>
-        <input type='checkbox'value='Novel' onChange={handleFilterCheckbox}/>
+        <input 
+        type='checkbox'
+        value='Novel'
+        checked={category.includes("Novel")} 
+        onChange={handleFilterCheckbox}/>
         <label>Novel</label>
       </div>
       <div>
-        <input type='checkbox' value="Motivational" onChange={handleFilterCheckbox}/>
+        <input 
+        type='checkbox' 
+        value="Motivational" 
+        checked={category}
+        onChange={handleFilterCheckbox}/>
         <label>Motivational</label>
       </div>
       <div>
