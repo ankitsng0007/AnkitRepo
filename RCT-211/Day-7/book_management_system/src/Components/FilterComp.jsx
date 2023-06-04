@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function FilterComp() {
+  const [category,setCategory] = useState([]);
   const handleFilterCheckbox =()=>{
+     //check if data is present in the category.
 
+     //if yes,then remove it (the user has unchecked the checkbox)
+
+     //else add it in the category array,
+     
   }
   return (
     <div>
