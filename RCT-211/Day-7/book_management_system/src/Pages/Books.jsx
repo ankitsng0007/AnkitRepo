@@ -25,7 +25,7 @@ border: 1px solid red;
 `;
 const FilterWraper =styled.div`
 width: 300px;
-border: 2px solid blue;
+border: 1px solid blue;
 `;
 const BookWraper= styled.div`
 width : 100%;
@@ -33,5 +33,6 @@ border: 2px solid green;
 display:grid;
 grid-template-columns: repeat(auto-fit,minmax(300px,max-content));
 grid-gap: 10px;
+justify-content: centre;
 `;
 export default Books;

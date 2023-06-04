@@ -14,7 +14,124 @@
       ]
     },
     {
-      "id": 1,
+      "id": 2,
+      "book_name": "Full Stack Web Development",
+      "author": "Massai",
+      "cover_photo":"",
+      "category":"Acedemic",
+      "release_year":"2019",
+      "no_of_chapters":"24",
+      "chapter":[
+        {"name":"HTML" , "pages":"20"},
+        {"name":"CSS" , "page":"25"}
+      ]
+    },
+    {
+      "id": 3,
+      "book_name": "Full Stack Web Development",
+      "author": "Massai",
+      "cover_photo":"",
+      "category":"Acedemic",
+      "release_year":"2019",
+      "no_of_chapters":"24",
+      "chapter":[
+        {"name":"HTML" , "pages":"20"},
+        {"name":"CSS" , "page":"25"}
+      ]
+    },
+    {
+      "id": 4,
+      "book_name": "Full Stack Web Development",
+      "author": "Massai",
+      "cover_photo":"",
+      "category":"Science",
+      "release_year":"2019",
+      "no_of_chapters":"24",
+      "chapter":[
+        {"name":"HTML" , "pages":"20"},
+        {"name":"CSS" , "page":"25"}
+      ]
+    },
+    {
+      "id": 5,
+      "book_name": "Full Stack Web Development",
+      "author": "Massai",
+      "cover_photo":"",
+      "category":"science",
+      "release_year":"2019",
+      "no_of_chapters":"24",
+      "chapter":[
+        {"name":"HTML" , "pages":"20"},
+        {"name":"CSS" , "page":"25"}
+      ]
+    },
+    {
+      "id": 6,
+      "book_name": "Full Stack Web Development",
+      "author": "Massai",
+      "cover_photo":"",
+      "category":"Novel",
+      "release_year":"2019",
+      "no_of_chapters":"24",
+      "chapter":[
+        {"name":"HTML" , "pages":"20"},
+        {"name":"CSS" , "page":"25"}
+      ]
+    },
+    {
+      "id": 7,
+      "book_name": "Full Stack Web Development",
+      "author": "Massai",
+      "cover_photo":"",
+      "category":"Novel",
+      "release_year":"2012",
+      "no_of_chapters":"24",
+      "chapter":[
+        {"name":"HTML" , "pages":"20"},
+        {"name":"CSS" , "page":"25"}
+      ]
+    },
+    {
+      "id": 8,
+      "book_name": "Full Stack Web Development",
+      "author": "Massai",
+      "cover_photo":"",
+      "category":"Novel",
+      "release_year":"2012",
+      "no_of_chapters":"24",
+      "chapter":[
+        {"name":"HTML" , "pages":"20"},
+        {"name":"CSS" , "page":"25"}
+      ]
+    },
+    {
+      "id": 9,
+      "book_name": "Full Stack Web Development",
+      "author": "Massai",
+      "cover_photo":"",
+      "category":"Novel",
+      "release_year":"2016",
+      "no_of_chapters":"24",
+      "chapter":[
+        {"name":"HTML" , "pages":"20"},
+        {"name":"CSS" , "page":"25"}
+      ]
+    },
+    {
+      "id": 10,
+      "book_name": "Full Stack Web Development",
+      "author": "Massai",
+      "cover_photo":"",
+      "category":"science",
+      "release_year":"2019",
+      "no_of_chapters":"24",
+      "chapter":[
+        {"name":"HTML" , "pages":"20"},
+        {"name":"CSS" , "page":"25"}
+      ]
+    },
+    {
+      "id": 11,
       "book_name": "Full Stack Web Development",
       "author": "Massai",
       "cover_photo":"",
