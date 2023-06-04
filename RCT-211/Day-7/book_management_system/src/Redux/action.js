@@ -17,10 +17,10 @@ const getBookError=()=>{
         type: types.GET_BOOKS_ERROR
     }
 };
-const getBooks = ()=>
+const getBooks = (params)=>
     (dispatch)=>{
         dispatch(getBookRequest());
-        return axios.get("http://localhost:8080/books")
+        return axios.get("http://localhost:8080/books",params)
         .then((r)=>{
             dispatch(getBookSuccess(r.data));
         })
