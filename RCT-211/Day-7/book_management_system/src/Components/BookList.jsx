@@ -3,7 +3,7 @@ import {useSelector,useDispatch} from "react-redux";
 import {getBooks} from "../Redux/action";
 import BookCard from './BookCard';
 
-function BookList() {
+const BookList = () => {
   const books = useSelector((store)=>store.books);
   const dispatch = useDispatch();
   
@@ -13,14 +13,14 @@ function BookList() {
       dispatch(getBooks());
     }
   },[books.length,dispatch]);
-  return 
+  return (
     <div>
       {books.length > 0 &&
       books.map(singleBook => {
-        return 
-        <BookCard bookData={singleBook} />;
+        return (
+        <BookCard bookData={singleBook} />);
       })}
-    </div>;
+    </div>);
 };
 
 export default BookList;
