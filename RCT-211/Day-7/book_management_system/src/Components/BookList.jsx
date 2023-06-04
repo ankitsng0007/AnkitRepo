@@ -15,7 +15,7 @@ const BookList = () => {
     }
   },[books.length,dispatch]);
   return (
-    <div>
+    <>
       {books.length > 0 &&
       books.map(item => {
         return (
@@ -23,7 +23,7 @@ const BookList = () => {
         <BookCard bookData={item} />
         </BookCardWrraper>);
       })}
-    </div>);
+    </>);
 };
 const BookCardWrraper = styled.div`
 width:300px;
