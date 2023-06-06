@@ -43,12 +43,16 @@ function FilterComp() {
         <input 
         type='checkbox' 
         value="Motivational" 
-        checked={category}
+        checked={category.includes("Motivational")}
         onChange={handleFilterCheckbox}/>
         <label>Motivational</label>
       </div>
       <div>
-        <input type='checkbox' value="Science" onChange={handleFilterCheckbox}/>
+        <input 
+        type='checkbox' 
+        value="Science" 
+        checked={category.includes("Science")}
+        onChange={handleFilterCheckbox}/>
         <label>Science</label>
       </div>
     </div>
