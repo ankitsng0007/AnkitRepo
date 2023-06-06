@@ -55,6 +55,17 @@ function FilterComp() {
         onChange={handleFilterCheckbox}/>
         <label>Science</label>
       </div>
+      <div>
+        <h3>Sort Component</h3>
+        <div>
+          <input type='radio' value="asc" name='sortBy'/>
+          <label>Ascending</label>
+        </div>
+        <div>
+          <input type='radio' value="dec" name='sortBy'/>
+          <label>Decending</label>
+        </div>
+      </div>
     </div>
   );
 }
