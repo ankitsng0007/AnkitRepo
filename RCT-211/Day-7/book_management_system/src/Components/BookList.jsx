@@ -17,10 +17,10 @@ const BookList = () => {
     if(location || books.length===0){
       const getBooksParams = {
         params : {
-          category:searchParams.getAll("category"),
+          category:searchParams.getAll("category")
         }
       }
-      dispatch(getBooks());
+      dispatch(getBooks(getBooksParams));
     }
   },[books.length,dispatch, location.search]);
   return (
