@@ -6,6 +6,7 @@ function FilterComp() {
   const initialCategory = searchParams.getAll("category");
   console.log("initialcategory",initialCategory)
   const [category,setCategory] = useState([]);
+  const [ sort, setSort ] = useState("")
   const handleFilterCheckbox =(e)=>{
      //check if data is present in the category.
        const newCategories = [...category];
@@ -21,6 +22,7 @@ function FilterComp() {
   };
   console.log(category);
   // if the category changes then update the value in url search params,
+  
   useEffect(()=>{
     let params={};
     params.category= category;
