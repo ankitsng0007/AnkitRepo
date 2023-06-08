@@ -1,5 +1,5 @@
 import {legacy_createStore,compose, applyMiddleware} from "redux";
-import { reducer } from "./reducer";
+import { reducer } from "./AppData/reducer";
 import thunk from "redux-thunk";
 
 const composeEnhancer= window.

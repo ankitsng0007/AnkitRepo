@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import {useSelector,useDispatch} from "react-redux";
-import {getBooks} from "../Redux/action";
+import {getBooks} from "../Redux/AppData/action";
 import BookCard from './BookCard';
 import styled from 'styled-components';
 import { useLocation } from 'react-router';
