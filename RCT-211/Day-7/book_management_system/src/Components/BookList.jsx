@@ -22,10 +22,11 @@ const BookList = () => {
           _sort: sortBy && "release_year",
           _order: sortBy,
         },
-      }
+      };
       dispatch(getBooks(getBooksParams));
     }
-  },[books.length,dispatch, location.search]);
+  //},[books.length,dispatch, location.search]);
+  },[location.search]);
   return (
     <>
       {books.length > 0 &&

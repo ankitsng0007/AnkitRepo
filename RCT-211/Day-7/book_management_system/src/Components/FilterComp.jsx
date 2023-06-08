@@ -4,13 +4,13 @@ import {useSearchParams} from "react-router-dom"
 function FilterComp() {
   const [searchParams,setSearchParams] = useSearchParams()
   const initialCategory = searchParams.getAll("category");
-  console.log("initialcategory",initialCategory)
+  //console.log("initialcategory",initialCategory)
   
   const initialSort = searchParams.getAll("sort");
   console.log(initialSort);
 
   const [category,setCategory] = useState([]);
-  const [ sort, setSortBy ] = useState(initialSort[0] || "")
+  const [ sort, setSortBy ] = useState(initialSort[0] || "");
   const handleFilterCheckbox =(e)=>{
      //check if data is present in the category.
        const newCategories = [...category];
@@ -24,7 +24,7 @@ function FilterComp() {
       }
       setCategory(newCategories);
   };
-  console.log(category);
+  //console.log(category);
   
   const handleSort = (e)=>{
     setSortBy(e.target.value);
@@ -78,7 +78,7 @@ function FilterComp() {
         <br/>
           <input 
           type='radio' 
-          value="dec" 
+          value="desc" 
           name='sortBy'
           defaultChecked={sort==="desc"}/>
           <label>Decending</label>
