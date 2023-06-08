@@ -63,12 +63,19 @@ function FilterComp() {
       </div>
       <div>
         <h3>Sort Component</h3>
-        <div>
-          <input type='radio' value="asc" name='sortBy'/>
+        <div onChange={handleSort}>
+          <input 
+          type='radio' 
+          value="asc" 
+          name='sortBy'
+          defaultChecked={sort==="asc"} />
           <label>Ascending</label>
-        </div>
-        <div>
-          <input type='radio' value="dec" name='sortBy'/>
+        <br/>
+          <input 
+          type='radio' 
+          value="dec" 
+          name='sortBy'
+          defaultChecked={sort==="desc"}/>
           <label>Decending</label>
         </div>
       </div>
