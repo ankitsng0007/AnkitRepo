@@ -5,8 +5,12 @@ function FilterComp() {
   const [searchParams,setSearchParams] = useSearchParams()
   const initialCategory = searchParams.getAll("category");
   console.log("initialcategory",initialCategory)
+  
+  const initialSort = searchParams.getAll("sort");
+  console.log(initialSort);
+
   const [category,setCategory] = useState([]);
-  const [ sort, setSortBy ] = useState("")
+  const [ sort, setSortBy ] = useState(initialSort[0] || "")
   const handleFilterCheckbox =(e)=>{
      //check if data is present in the category.
        const newCategories = [...category];
@@ -31,8 +35,9 @@ function FilterComp() {
     let params={};
     params.category= category;
     console.log(params);
+    sort && (params.sort=sort);
     setSearchParams(params);
-  },[category,setSearchParams]);
+  },[category,setSearchParams, sort ]);
 
   return (
     <div>
