@@ -7,7 +7,7 @@ import { useLocation } from 'react-router';
 import { useSearchParams } from 'react-router-dom';
 
 const BookList = () => {
-  const books = useSelector((store)=>store.books);
+  const books = useSelector((store)=>store.AppReducer.books);
   const dispatch = useDispatch();
   const location = useLocation();
   const [searchParams] = useSearchParams();
