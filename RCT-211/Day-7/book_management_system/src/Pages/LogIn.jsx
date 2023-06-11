@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { login } from '../Redux/AuthData/action';
+import { useLocation, useNavigate } from 'react-router';
 
 function LogIn() {
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const location = useLocation
 
   const handleSubmit = (e)=>{
     e.preventDefault();
@@ -13,6 +16,7 @@ function LogIn() {
       dispatch(login({email,password}))
       .then((r)=>{
         //do something
+        navigate("/");
       });
     }
   };
