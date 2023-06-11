@@ -17,7 +17,13 @@ function MainRoutes() {
         <SingleBook />
         </RequireAuth>
         } />
-        <Route path='/books/:id/edit' element={<EditBook />} />
+        <Route 
+        path='/books/:id/edit' 
+        element={
+          <RequireAuth>
+        <EditBook />
+        </RequireAuth>
+        } />
         <Route path='/login' element={<LogIn />} />
         <Route path='*' element={<h3>Page Not Found</h3>} />
     </Routes>
