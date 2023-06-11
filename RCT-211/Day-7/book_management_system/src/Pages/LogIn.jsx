@@ -8,7 +8,10 @@ function LogIn() {
   const [password,setPassword] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const location = useLocation
+  const location = useLocation();
+  console.log("Location in login page",location);
+
+  const comingFrom = location.state?.data || "/";
 
   const handleSubmit = (e)=>{
     e.preventDefault();
@@ -16,7 +19,7 @@ function LogIn() {
       dispatch(login({email,password}))
       .then((r)=>{
         //do something
-        navigate("/");
+        navigate(comingFrom);
       });
     }
   };
