@@ -1,12 +1,24 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { login } from '../Redux/AuthData/action';
 
 function LogIn() {
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
+  const dispatch = useDispatch();
 
+  const handleSubmit = (e)=>{
+    e.preventDefault();
+    if(email && password){
+      dispatch(login({email,password}))
+      .then((r)=>{
+        //do something
+      });
+    }
+  };
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <label>Enter Email</label>
           <input 

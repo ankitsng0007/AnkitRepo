@@ -4,7 +4,7 @@ import {getBooks} from "../Redux/AppData/action";
 import BookCard from './BookCard';
 import styled from 'styled-components';
 import { useLocation } from 'react-router';
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 
 const BookList = () => {
   const books = useSelector((store)=>store.AppReducer.books);
@@ -33,7 +33,9 @@ const BookList = () => {
       books.map(item => {
         return (
           <BookCardWrraper key={item.id}>
+        <Link to={`/books/${item.id}`}>
         <BookCard bookData={item} />
+        </Link>
         </BookCardWrraper>);
       })}
     </>);
