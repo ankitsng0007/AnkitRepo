@@ -32,6 +32,11 @@ function EditBook() {
 
   return (
     <div>
+      <h2>Edit Book</h2>
+      <div>
+        <label>Title</label>
+        <input value={title} onChange={(e)=>setTitle(e.target.value)}/>
+      </div>
       
     </div>
   );

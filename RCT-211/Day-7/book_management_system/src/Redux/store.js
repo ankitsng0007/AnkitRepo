@@ -6,6 +6,13 @@ import thunk from "redux-thunk";
 const rootReducer = combineReducers({AuthReducer,AppReducer});
 const composeEnhancer= window.
 __REDUX_DEVTOOLS_EXTENSION_COMPOSE__|| compose;
+
+const customMiddleware = store => next => action =>{
+    if(typeof action === "function"){
+        //action ->login(dispatch)
+        return action(store.dispatch)
+    }
+}
 const store = legacy_createStore(
     rootReducer,
     composeEnhancer(applyMiddleware(thunk))
