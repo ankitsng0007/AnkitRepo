@@ -14,10 +14,15 @@ function SingleBook() {
       console.log(book);
       book && setCurrentBook(book);
     }
-  },[id]);
+  },[id,books]);
   return (
     <div>
-      <h3>SingleBook</h3>
+      <h2>SingleBook</h2>
+      <div>Book Name :- {currentBook.book_name}</div>
+      <div>Author :- {currentBook.author}</div>
+      <div>Category :- {currentBook.category}</div>
+      <div>Release Year :- {currentBook.release_year}</div>
+      <div>No Of Chapters :- {currentBook.no_of_chapters}</div>
     </div>
   );
 }
