@@ -37,7 +37,10 @@ function EditBook() {
         <label>Title</label>
         <input value={title} onChange={(e)=>setTitle(e.target.value)}/>
       </div>
-      
+      <div>
+        <label>Author</label>
+        <input />
+      </div>
     </div>
   );
 }

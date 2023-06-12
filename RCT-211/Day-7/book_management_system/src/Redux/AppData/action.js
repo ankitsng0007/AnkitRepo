@@ -28,4 +28,7 @@ const getBooks = (params)=>
             dispatch(getBookError());
         });
     };
+
+    //patch
+    //{id:2, book_name:"Modified Book Name"}
 export {getBooks};
