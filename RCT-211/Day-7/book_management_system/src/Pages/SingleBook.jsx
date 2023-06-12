@@ -12,7 +12,7 @@ function SingleBook() {
       const book = books.find((item)=>item.id ===Number(id));
       console.log(book);
     }
-  },[])
+  },[id]);
   return (
     <div>
       
