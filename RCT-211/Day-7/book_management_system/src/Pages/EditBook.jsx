@@ -8,6 +8,7 @@ function EditBook() {
   const books = useSelector((store)=>store.AppReducer.books);
   const [currentBook,setCurrentBook] = useState({});
   const dispatch = useDispatch();
+  const [title,setTitle] = useState("");
 
   //fetching the data -> get all the books.
   useEffect(()=>{
@@ -18,7 +19,16 @@ function EditBook() {
 
   //get the data from the redux store.
   //find the book from the list of book.
-  
+  useEffect(()=>{
+    if(id){
+      const book = books.find((item)=>item.id === Number(id));
+      console.log(book);
+      book && setCurrentBook(book);
+      book && setTitle(book.book_name);
+    }
+  },[id,books]);
+  console.log("in Edit Page",currentBook);
+
 
   return (
     <div>
