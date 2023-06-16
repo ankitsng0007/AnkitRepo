@@ -2,7 +2,7 @@ import React from 'react';
 import useTimeout from '../Hooks/useTimeout';
 
 const TimeoutComp = () => {
-    const showText = useTimeout();
+    const showText = useTimeout(3000);
 
   return (
     <div>

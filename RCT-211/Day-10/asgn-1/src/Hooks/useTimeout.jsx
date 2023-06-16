@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 
-const useTimeout = () => {
+const useTimeout = (delay) => {
     const [showText,setShowText]  = useState(false);
 
     useEffect(()=>{
     const id = setTimeout(()=>{
         setShowText((prev)=>!prev);
-    },3000);
+    },delay);
     return ()=>{
         clearTimeout(id);
     };
-},[])
+},[delay])
 
   return showText;
 };

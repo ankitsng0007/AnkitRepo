@@ -4,7 +4,7 @@ import useTimeout from './Hooks/useTimeout';
 import TimeoutComp from './Components/TimeoutComp';
 
 function App() {
-  const showText = useTimeout();
+ const showText = useTimeout();
 
   return (
     <div className="App">
