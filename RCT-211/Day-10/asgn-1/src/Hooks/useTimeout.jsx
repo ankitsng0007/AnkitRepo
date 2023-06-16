@@ -11,6 +11,7 @@ const useTimeout = () => {
         clearTimeout(id);
     };
 },[])
+
   return showText;
 };
 
