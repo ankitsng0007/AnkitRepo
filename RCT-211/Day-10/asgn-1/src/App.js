@@ -2,7 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import useTimeout from './Hooks/useTimeout';
 import TimeoutComp from './Components/TimeoutComp';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useDebounce } from './Hooks/useDebounce';
 
 function App() {
  const showText = useTimeout();
@@ -11,7 +12,17 @@ function App() {
  const handleScrollEvent =()=>{
   setScrollNum((prev)=> prev + 1);
  };
+useDebounce(()=>{
+  console.log("After Debounce",scrollNum);
+  //API Call;
+},1000);
 
+useEffect(()=>{
+  window.addEventListener("scroll",handleScrollEvent);
+  return ()=>{
+    window.removeEventListener("scroll",handleScrollEvent);
+  };
+},[]);
   return (
     <div className="App">
   <h1>App Component</h1>
