@@ -1,6 +1,6 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef } from "react";
 
-const useDebounce = (func,delay){
+const useDebounce = (func,delay)=>{
     const debounceId = useRef();
     useEffect (()=>{
         clearTimeout(debounceId.current);
