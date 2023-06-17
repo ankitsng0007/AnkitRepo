@@ -7,5 +7,7 @@ const useDebounce = (func,delay){
         let newDebounceId = setTimeout(()=>{
             func();
         },delay);
-    })
-}
+        debounceId.current = newDebounceId;
+    },[delay,func]);
+};
+export {useDebounce};
