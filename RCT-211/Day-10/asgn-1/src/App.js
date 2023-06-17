@@ -16,6 +16,9 @@ function App() {
     <div className="App">
   <h1>App Component</h1>
   <TimeoutComp/>  
+  <div style={{position:"sticky",top:"100px"}}>
+    <h3>Scroll Num :{ scrollNum }</h3>
+  </div>
     </div>
   );
 }
