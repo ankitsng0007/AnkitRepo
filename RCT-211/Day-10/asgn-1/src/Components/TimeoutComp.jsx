@@ -6,7 +6,7 @@ const TimeoutComp = () => {
 
   return (
     <div>
-      {showText && <h3>TimeOut Component</h3>}
+      {showText && <h3>TimeOut Component  (Delay 3sec)</h3>}
     </div>
   );
 }
