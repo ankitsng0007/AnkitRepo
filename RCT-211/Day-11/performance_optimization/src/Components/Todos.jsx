@@ -8,14 +8,14 @@ const initialState = [
   {id:1, title:"Learn Python", status:false },
 ]
 const Todos = () => {
-  const [todo,setTodo] = useState(initialState);
+  const [todos,setTodos] = useState(initialState);
 
   return (
     <div>
       <h1>Todos</h1>
       <input />
       <button>Add</button>
-      {Todos.length && Todos.map(item =>{
+      {todos.length && todos.map(item =>{
         return (<TodoItems key={item.id} {...item}/>)
       })}
 

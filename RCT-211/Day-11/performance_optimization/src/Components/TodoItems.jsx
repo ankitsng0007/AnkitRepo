@@ -1,9 +1,10 @@
 import React from 'react';
 
-const TodoItems = () => {
+const TodoItems = ({ id,title,status }) => {
   return (
-    <div>
-      
+    <div style={{display:"flex", justifyContent:"center" }}>
+      <div>{title}</div>
+      <div>{status ? "True" : "False" }</div>
     </div>
   );
 }
