@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Todo = () => {
+const Todos = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const Todo = () => {
   );
 }
 
-export default Todo;
+export default Todos;
