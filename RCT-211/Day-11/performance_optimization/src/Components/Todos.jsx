@@ -9,12 +9,26 @@ const initialState = [
 ]
 const Todos = () => {
   const [todos,setTodos] = useState(initialState);
+  const [currentTodo,setCurrentTodo] = useState("");
+  
+  const handleChange = (e)=>{
+    setCurrentTodo(e.target.value);
+  };
+  const handleAddTask = ()=>{
+    const payload = {
+      id: todos.length +1,
+      status: false,
+      title: currentTodo
+    };
+    setTodos([...todos,payload]);
+    setCurrentTodo("");
+  };
 
   return (
     <div>
       <h1>Todos</h1>
-      <input />
-      <button>Add</button>
+      <input value={currentTodo} onChange={handleChange}/>
+      <button onClick={handleAddTask}>Add</button>
       {todos.length && todos.map(item =>{
         return (<TodoItems key={item.id} {...item}/>)
       })}
