@@ -8,7 +8,7 @@ const expensiveOperation =(ms) =>{
     return true;
 };
 
-const TodoItems = ({ id,title,status }) => {
+const TodoItems = ({ id,title,status,handleToggle,handleDelete }) => {
   //syncronus function that takes some time
   expensiveOperation(200);
 
@@ -16,8 +16,8 @@ const TodoItems = ({ id,title,status }) => {
     <div style={{display:"flex", justifyContent:"center" }}>
       <div>{title}</div>
       <div>{status ? "True" : "False" }</div>
-      <button onClick={handleToggle(id)}>Toggle</button>
-      <button onClick={handleDelete(id)}>Delete</button>
+      <button onClick={() => handleToggle(id)}>Toggle</button>
+      <button onClick={() => handleDelete(id)}>Delete</button>
     </div>
   );
 }

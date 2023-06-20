@@ -23,6 +23,12 @@ const Todos = () => {
     setTodos([...todos,payload]);
     setCurrentTodo("");
   };
+  const handleToggle = ()=>{
+    let newtodos = todos.map((item)=>{
+      return item.id===id ? {...item,status: !item.status} : item;
+    });
+    setTodos(newtodos);
+  };
 
   return (
     <div>
