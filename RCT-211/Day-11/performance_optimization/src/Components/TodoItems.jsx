@@ -20,4 +20,4 @@ const TodoItems = ({ id,title,status }) => {
   );
 }
 
-export default TodoItems;
+export default React.memo(TodoItems);
