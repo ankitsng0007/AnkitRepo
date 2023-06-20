@@ -16,6 +16,8 @@ const TodoItems = ({ id,title,status }) => {
     <div style={{display:"flex", justifyContent:"center" }}>
       <div>{title}</div>
       <div>{status ? "True" : "False" }</div>
+      <button onClick={handleToggle(id)}>Toggle</button>
+      <button onClick={handleDelete(id)}>Delete</button>
     </div>
   );
 }
