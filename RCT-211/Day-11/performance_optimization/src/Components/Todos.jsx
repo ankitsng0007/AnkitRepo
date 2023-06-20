@@ -29,7 +29,7 @@ const Todos = () => {
     });
     setTodos(newtodos);
   };
-  const handleDelete = ()=>{
+  const handleDelete = (id)=>{
     let newtodos = todos.filter((item)=>item.id !==id);
     setTodos(newtodos);
   };
@@ -40,7 +40,10 @@ const Todos = () => {
       <input value={currentTodo} onChange={handleChange}/>
       <button onClick={handleAddTask}>Add</button>
       {todos.length && todos.map(item =>{
-        return (<TodoItems key={item.id} {...item}/>)
+        return (<TodoItems key={item.id} 
+          {...item} 
+          handleDelete={handleDelete} 
+          handleToggle={handleToggle} />)
       })}
 
     </div>
