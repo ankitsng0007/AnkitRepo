@@ -23,10 +23,14 @@ const Todos = () => {
     setTodos([...todos,payload]);
     setCurrentTodo("");
   };
-  const handleToggle = ()=>{
+  const handleToggle = (id)=>{
     let newtodos = todos.map((item)=>{
       return item.id===id ? {...item,status: !item.status} : item;
     });
+    setTodos(newtodos);
+  };
+  const handleDelete = ()=>{
+    let newtodos = todos.filter((item)=>item.id !==id);
     setTodos(newtodos);
   };
 
