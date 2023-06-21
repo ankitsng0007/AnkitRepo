@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import TodoItems from './TodoItems';
 
 
@@ -23,16 +23,16 @@ const Todos = () => {
     setTodos([...todos,payload]);
     setCurrentTodo("");
   };
-  const handleToggle = (id)=>{
+  const handleToggle = useCallback( (id)=>{
     let newtodos = todos.map((item)=>{
       return item.id === id ? {...item,status: !item.status} : item;
     });
     setTodos(newtodos);
-  };
-  const handleDelete = (id)=>{
+  },[todos]);
+  const handleDelete = useCallback( (id)=>{
     let newTodos = todos.filter((item)=>item.id !== id);
     setTodos(newTodos);
-  };
+  },[todos]);
 
   return (
     <div>

@@ -22,11 +22,13 @@ const TodoItems = ({ id,title,status,handleToggle,handleDelete }) => {
   );
 }
 
-const checkEquality = (prevProps,currentProps) =>{
-    return (
-        prevProps.status === currentProps.status &&
-        prevProps.title === currentProps.title
-    );
-};
+//const checkEquality = (prevProps,currentProps) =>{
+ //   return (
+ //       prevProps.status === currentProps.status &&
+ //       prevProps.title === currentProps.title
+ //   );
+//};
 
-export default React.memo(TodoItems,checkEquality);
+export default React.memo(TodoItems,
+    //checkEquality
+    );
