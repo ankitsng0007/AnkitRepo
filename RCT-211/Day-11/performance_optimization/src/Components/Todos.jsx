@@ -4,8 +4,8 @@ import TodoItems from './TodoItems';
 
 const initialState = [
   {id:1, title:"Learn React", status:false },
-  {id:1, title:"Learn Java", status:false },
-  {id:1, title:"Learn Python", status:false },
+  {id:2, title:"Learn Java", status:false },
+  {id:3, title:"Learn Python", status:false },
 ]
 const Todos = () => {
   const [todos,setTodos] = useState(initialState);
@@ -25,13 +25,13 @@ const Todos = () => {
   };
   const handleToggle = (id)=>{
     let newtodos = todos.map((item)=>{
-      return item.id===id ? {...item,status: !item.status} : item;
+      return item.id === id ? {...item,status: !item.status} : item;
     });
     setTodos(newtodos);
   };
   const handleDelete = (id)=>{
-    let newtodos = todos.filter((item)=>item.id !==id);
-    setTodos(newtodos);
+    let newTodos = todos.filter((item)=>item.id !== id);
+    setTodos(newTodos);
   };
 
   return (

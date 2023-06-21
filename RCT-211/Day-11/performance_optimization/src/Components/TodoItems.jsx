@@ -22,4 +22,11 @@ const TodoItems = ({ id,title,status,handleToggle,handleDelete }) => {
   );
 }
 
-export default React.memo(TodoItems);
+const checkEquality = (prevProps,currentProps) =>{
+    return (
+        prevProps.status === currentProps.status &&
+        prevProps.title === currentProps.title
+    );
+};
+
+export default React.memo(TodoItems,checkEquality);
