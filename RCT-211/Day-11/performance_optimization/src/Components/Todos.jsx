@@ -37,11 +37,15 @@ const Todos = () => {
     })
     );
   }, []);
-  const handleDelete = useCallback( (id)=>{
-    let newTodos = todos.filter((item)=>item.id !== id);
-    setTodos(newTodos);
-  },[todos]);
+  //const handleDelete = useCallback( (id)=>{
+  //  let newTodos = todos.filter((item)=>item.id !== id);
+  //  setTodos(newTodos);
+  //},[todos]);
 
+  const handleDelete = useCallback((id) =>{
+    setTodos((prev)=>prev.filter((item)=> item.id !== id));
+  }, []);
+  
   return (
     <div>
       <h1>Todos</h1>
