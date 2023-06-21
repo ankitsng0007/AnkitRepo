@@ -23,12 +23,20 @@ const Todos = () => {
     setTodos([...todos,payload]);
     setCurrentTodo("");
   };
-  const handleToggle = useCallback( (id)=>{
-    let newtodos = todos.map((item)=>{
+  //const handleToggle = useCallback( (id)=>{
+  //  let newtodos = todos.map((item)=>{
+  //    return item.id === id ? {...item,status: !item.status} : item;
+  //  });
+  //  setTodos(newtodos);
+  //},[todos]);
+
+  const handleToggle = useCallback((id) =>{
+    setTodos((prev)=>
+    prev.map((item)=>{
       return item.id === id ? {...item,status: !item.status} : item;
-    });
-    setTodos(newtodos);
-  },[todos]);
+    })
+    );
+  }, []);
   const handleDelete = useCallback( (id)=>{
     let newTodos = todos.filter((item)=>item.id !== id);
     setTodos(newTodos);
