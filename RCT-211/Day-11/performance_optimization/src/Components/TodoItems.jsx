@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 const expensiveOperation =(ms) =>{
     const start = Date.now();
@@ -10,7 +10,7 @@ const expensiveOperation =(ms) =>{
 
 const TodoItems = ({ id,title,status,handleToggle,handleDelete }) => {
   //syncronus function that takes some time
-  expensiveOperation(200);
+  useMemo(() => expensiveOperation(200), []);
 
     return (
     <div style={{display:"flex", justifyContent:"center" }}>
