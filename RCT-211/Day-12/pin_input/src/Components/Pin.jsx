@@ -12,6 +12,11 @@ const Pin = ({length,perInputBox}) => {
         if(index < length-1){
             inputRef.current[index +1].focus();
         }
+    };
+    const backspaceHandler = (e,index)=>{
+        if(index > 0){
+            inputRef.current[index-1].focus();
+        }
     }
   return (
     <div>
