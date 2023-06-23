@@ -1,9 +1,11 @@
 import React from 'react';
 
-const Pin = () => {
+const Pin = ({length}) => {
   return (
     <div>
-      
+      {new Array(length).fill("w").map((item,index)=>{
+        return <input key={index}/>
+      })}
     </div>
   );
 }
