@@ -1,11 +1,11 @@
-import React from 'react';
+import React ,{forwardRef} from 'react';
 
-const PinInput = () => {
-  return (
-    <div>
-        
-    </div>
-  );
-}
+const PinInput = forwardRef(({perInputBox,onChange},ref) => {
+  return(
+    <input ref={ref} maxLength={perInputBox}
+     onChange={onChange}
+    />
+  )
+})
 
 export default PinInput;
