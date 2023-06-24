@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import PinInput from './PinInput';
 
 
-const Pin = ({length,perInputBox=2}) => {
+const Pin = ({length,perInputBox=2,setPin}) => {
 
     const [inputBoxLength] = useState(new Array(length).fill(""));
     const [inputBoxValue] = useState(new Array(length).fill(""));
@@ -15,27 +15,39 @@ const Pin = ({length,perInputBox=2}) => {
         if(e.target.value.length > 0 && index < length-1){
             inputRef.current[index +1].focus();
         }
-        console.log(inputBoxValue)
+        //console.log(inputBoxValue)
+        setPin(inputBoxValue.join(""));
     };
-    const backspaceHolder = (e,index ) => {
+    const backspaceHandler = (e,index ) => {
       if(index > 0){
         inputRef.current[index - 1].focus(); 
       }
       inputBoxValue[index] = e.target.value;
-      console.log(inputBoxValue);
+      //console.log(inputBoxValue);
+      setPin(inputBoxValue.join(""));
     };
   
+    const handlePaste = (e)=>{
+      e.preventDefault();
+      const data = e.clipboardData.getData("text").split("").filter((item,index)=> index < length );
+
+      data.forEach((item,index)=>{
+        
+      })
+    }
   return (
-    <div>
+    <div onPaste={handlePaste}>
       {inputBoxLength.map((item,index)=>{
-        return <PinInput ref={(inputRefElement)=>{
+        return <PinInput 
+            ref={(inputRefElement)=>{
             //console.log(inputRefElement,index);
             inputRef.current[index] = inputRefElement;
             //console.log(inputRef.current);
         }}
-            key={index} perInputBox ={perInputBox} 
+            key={index} 
             onChange={(e) => onChangeHandler(e,index)}
-            backspaceHolder = {(e) => backspaceHolder(e,index)}
+            perInputBox ={perInputBox} 
+            backspaceHandler = {(e) => backspaceHandler(e,index)}
             />
       })}
     </div>
