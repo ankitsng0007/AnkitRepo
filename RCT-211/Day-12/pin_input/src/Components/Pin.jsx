@@ -6,13 +6,16 @@ import PinInput from './PinInput';
 const Pin = ({length,perInputBox}) => {
 
     const [inputBoxLength] = useState(new Array(length).fill(""));
+    const [inputBoxValue] = useState(new Array(length).fill(""));
     const inputRef = useRef([]);
-    console.log(inputRef);
+    //console.log(inputRef);
 
     const onChangeHandler = ( e,index ) => {
-        if(index < length-1){
+      inputBoxValue[index]= e.target.value;
+        if(e.target.value.length > 0 && index < length-1){
             inputRef.current[index +1].focus();
         }
+        console.log(inputBoxValue)
     };
     const backspaceHolder = (e,index ) => {
       if(index > 0){
@@ -24,9 +27,9 @@ const Pin = ({length,perInputBox}) => {
     <div>
       {inputBoxLength.map((item,index)=>{
         return <PinInput ref={(inputRefElement)=>{
-            console.log(inputRefElement,index);
+            //console.log(inputRefElement,index);
             inputRef.current[index] = inputRefElement;
-            console.log(inputRef.current);
+            //console.log(inputRef.current);
         }}
             key={index} perInputBox ={perInputBox} 
             onChange={(e) => onChangeHandler(e,index)}
