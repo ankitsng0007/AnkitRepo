@@ -32,7 +32,11 @@ const Pin = ({length,perInputBox=2,setPin}) => {
       const data = e.clipboardData.getData("text").split("").filter((item,index)=> index < length );
 
       data.forEach((item,index)=>{
-        
+        inputBoxValue[index] = item;
+        inputRef.current[index].value = item;
+        if(index < length -1){
+          inputRef.current[index + 1].focus();
+        }
       })
     }
   return (
