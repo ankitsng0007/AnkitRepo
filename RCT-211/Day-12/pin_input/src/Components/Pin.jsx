@@ -17,7 +17,7 @@ const Pin = ({length,perInputBox}) => {
         if(index > 0){
             inputRef.current[index-1].focus();
         }
-    }
+    };
   return (
     <div>
       {inputBoxLength.map((item,index)=>{
@@ -27,7 +27,9 @@ const Pin = ({length,perInputBox}) => {
             console.log(inputRef.current);
         }}
             key={index} perInputBox ={perInputBox} 
-            onChange={(e) => onChangeHandler(e,index)}/>
+            onChange={(e) => onChangeHandler(e,index)}
+            backspaceHandler = {(e)=>backspaceHandler(e,index)}
+            />
       })}
     </div>
   );
