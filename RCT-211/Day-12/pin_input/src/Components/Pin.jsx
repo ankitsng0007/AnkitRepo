@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import PinInput from './PinInput';
 
 
-const Pin = ({length,perInputBox}) => {
+const Pin = ({length,perInputBox=2}) => {
 
     const [inputBoxLength] = useState(new Array(length).fill(""));
     const [inputBoxValue] = useState(new Array(length).fill(""));
@@ -19,8 +19,10 @@ const Pin = ({length,perInputBox}) => {
     };
     const backspaceHolder = (e,index ) => {
       if(index > 0){
-        inputRef.current[index -1].focus(); 
+        inputRef.current[index - 1].focus(); 
       }
+      inputBoxValue[index] = e.target.value;
+      console.log(inputBoxValue);
     };
   
   return (
