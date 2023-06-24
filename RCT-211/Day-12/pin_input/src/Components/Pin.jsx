@@ -6,7 +6,7 @@ import PinInput from './PinInput';
 const Pin = ({length,perInputBox=2,setPin}) => {
 
     const [inputBoxLength] = useState(new Array(length).fill(""));
-    const [inputBoxValue] = useState(new Array(length).fill(""));
+    const [inputBoxValue] = useState(new Array(length).fill("")); 
     const inputRef = useRef([]);
     //console.log(inputRef);
 
@@ -29,7 +29,10 @@ const Pin = ({length,perInputBox=2,setPin}) => {
   
     const handlePaste = (e)=>{
       e.preventDefault();
-      const data = e.clipboardData.getData("text").split("").filter((item,index)=> index < length );
+      const data = e.clipboardData
+      .getData("text")
+      .split("")
+      .filter((item,index)=> index < length );
 
       data.forEach((item,index)=>{
         inputBoxValue[index] = item;
@@ -37,8 +40,8 @@ const Pin = ({length,perInputBox=2,setPin}) => {
         if(index < length -1){
           inputRef.current[index + 1].focus();
         }
-      })
-    }
+      });
+    };
   return (
     <div onPaste={handlePaste}>
       {inputBoxLength.map((item,index)=>{
