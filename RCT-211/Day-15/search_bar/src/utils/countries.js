@@ -1,4 +1,4 @@
-[
+const countries = [
     {
         "country": "Afghanistan",
         "city": "Kabul"
@@ -980,3 +980,4 @@
         "city": "Harare"
     }
 ]
+export default countries;
