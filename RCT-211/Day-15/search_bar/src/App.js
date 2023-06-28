@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <h1>Search Bar</h1>
       <h3>Search Qurey : {qurey}</h3>
-      <SearchBar />
+      <SearchBar setQurey={setQurey} />
     </div>
   );
 }
