@@ -12,6 +12,15 @@ const SearchBar = ({setQurey}) => {
 }
 
 const SearchBarWrapper = styled.div`
-border:1p solid red;
+border:1px solid red;
+display:flex;
+padding:5px 10px;
+align-items:center;
+`;
+const Input = styled.input`
+border:none;
+outline:none;
+font-size:20px;
+flex:1;
 `;
 export default SearchBar;
