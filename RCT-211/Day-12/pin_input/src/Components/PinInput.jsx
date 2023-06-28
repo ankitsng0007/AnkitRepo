@@ -1,18 +1,28 @@
 import React ,{forwardRef} from 'react';
 
-const PinInput = forwardRef(({perInputBox,onChange},ref) => {
+const PinInput = forwardRef(({ perInputBox,
+  onChange,backspaceHandler },ref) => {
 
-  const handleKeyUp = (e)=>{
-    console.log(e);
-    //if the user has clicked on the backspace button;
-    //then invoke backspaceHandler;
-    //else invoke default onchangehandler
-  }
+    const handleKeyUp = (e)=>{
+    //console.log(e);
+
+      //if the user has clicked on backspace button
+      //then invoke the backspaceHolder
+      //else the default onChangeHandler
+      if(e.keyCode === 8){
+        //backspace Logic
+        backspaceHandler(e)
+      }else{
+        onChangeHandler(e)
+      }
+    }
+
+  
   return(
     <input 
     ref={ref} 
     maxLength={perInputBox}
-    onChange={onChange}
+    //onChange={onChangeHandler}
     onKeyUp={handleKeyUp}
     />
   )
