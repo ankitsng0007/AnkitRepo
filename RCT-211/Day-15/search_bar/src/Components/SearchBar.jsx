@@ -9,19 +9,28 @@ const SearchBar = ({suggestions,qureyHandler}) => {
     const handleInputTextChange = (e) =>{
         setInputText(e.target.value);
     }
+    const handleActieSuggestions = (e)=>{
+        console.log(e.keyCode);
+    }
     useEffect(()=>{
         qureyHandler(inputText);
     },[inputText,qureyHandler]);
     console.log(active);
   return (
-        <Wrapper>
+        <Wrapper onKeyUp={handleActieSuggestions}>
         <SearchBarWrapper>
       <input value={inputText} onChange={handleInputTextChange}/>
         </SearchBarWrapper>
 
         <SuggestionBox len={5} active={active}>
-            {suggestions.map((item,index)=>{
-                return <div key={index} onMouseOver={()=> setActive(index+1)}>{item}</div>;
+            {suggestions.map((item,index) => {
+                return (
+                    <div 
+                key={index} 
+                onMouseOver={()=>{ 
+                setActive(index+1);
+                }}>{item}</div>
+            );
             })}
         </SuggestionBox>
         </Wrapper>
