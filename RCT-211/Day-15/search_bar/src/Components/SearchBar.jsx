@@ -11,23 +11,35 @@ const SearchBar = ({suggestions,qureyHandler}) => {
         qureyHandler(inputText);
     },[inputText,qureyHandler])
   return (
-    <div>
         <Wrapper>
         <SearchBarWrapper>
       <input value={inputText} onChange={handleInputTextChange}/>
         </SearchBarWrapper>
 
-        <SuggestionBox>
+        <SuggestionBox len={5}>
             {suggestions.map((item,index)=>{
                 return <div key={index}>{item}</div>;
             })}
         </SuggestionBox>
         </Wrapper>
-    </div>
   );
 };
 
-const SuggestionBox = styled.div``;
+const SuggestionBox = styled.div`
+border:1px solid black;
+display:flex;
+flex-direction:column;
+//max-height:200px;
+max-height:${({len})=>`${len*38.66}px`}
+margin:auto;
+overflow:auto;
+& *{
+    flex:1;
+    text-align:left;
+    padding:10px;
+    padding-left:30px;
+}
+`;
 const SearchBarWrapper = styled.div`
 border:1px solid red;
 display:flex;
