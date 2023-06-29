@@ -44,9 +44,9 @@ overflow:auto;
     padding:10px;
     padding-left:30px;
 }
-& :nth child(${({active})=>active}){
+& :nth-child(${({active})=>active}){
     background: rgba(0, 0, 0, 0.09);
-    cursor:pointer;
+    cursor: pointer;
 }
 `;
 const SearchBarWrapper = styled.div`
