@@ -19,15 +19,17 @@ function App() {
     }else{
       let newSuggestions = countries.filter((item)=>{
         return item.country.toLowerCase().indexOf(qurey) !== -1 ? true : false;
-      });
-      console.log(newSuggestions);
+      })
+      //console.log(newSuggestions);
+      .map((item)=>item.country);
+      setSuggestions(newSuggestions);
     }
   },[qurey]);
   return (
     <div className="App">
       <h1>Search Bar</h1>
       <h3>Search Qurey : {qurey}</h3>
-      <SearchBar qureyHandler={qureyHandler} />
+      <SearchBar suggestions={suggestions} qureyHandler={qureyHandler} />
     </div>
   );
 }

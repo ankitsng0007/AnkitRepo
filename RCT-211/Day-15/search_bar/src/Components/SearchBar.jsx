@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from "styled-components";
 
-const SearchBar = ({qureyHandler}) => {
+const SearchBar = ({suggestions,qureyHandler}) => {
     const [inputText,setInputText] = useState("");
 
     const handleInputTextChange = (e) =>{
@@ -12,15 +12,22 @@ const SearchBar = ({qureyHandler}) => {
     },[inputText,qureyHandler])
   return (
     <div>
-        <wrapper>
+        <Wrapper>
         <SearchBarWrapper>
       <input value={inputText} onChange={handleInputTextChange}/>
         </SearchBarWrapper>
-        </wrapper>
+
+        <SuggestionBox>
+            {suggestions.map((item,index)=>{
+                return <div key={index}>{item}</div>;
+            })}
+        </SuggestionBox>
+        </Wrapper>
     </div>
   );
-}
+};
 
+const SuggestionBox = styled.div``;
 const SearchBarWrapper = styled.div`
 border:1px solid red;
 display:flex;
@@ -33,7 +40,7 @@ outline:none;
 font-size:20px;
 flex:1;
 `;
-const wrapper = styled.div`
+const Wrapper = styled.div`
 max-width:400px;
 margin:auto;
 `;
