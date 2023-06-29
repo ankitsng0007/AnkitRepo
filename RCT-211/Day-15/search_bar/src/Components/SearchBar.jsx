@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
 
 const SearchBar = ({setQurey}) => {
+    const [inputText,setInputText] = useState("");
+
+    const handleInputTextChange = (e) =>{
+        setInputText(e.target.value);
+    }
   return (
     <div>
         <wrapper>
         <SearchBarWrapper>
-      <input />
+      <input value={inputText} onChange={handleInputTextChange}/>
         </SearchBarWrapper>
         </wrapper>
     </div>
