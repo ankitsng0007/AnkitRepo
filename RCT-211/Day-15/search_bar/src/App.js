@@ -7,7 +7,7 @@ import countries from './utils/countries';
 function App() {
   const [qurey,setQurey] = useState("");
   const [suggestions,setSuggestions] = useState([]);
-
+  
   const qureyHandler = useCallback((val)=>{
     setQurey(val);
   },[]);
