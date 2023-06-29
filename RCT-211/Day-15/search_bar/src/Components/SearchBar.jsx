@@ -11,7 +11,19 @@ const SearchBar = ({suggestions,qureyHandler}) => {
     }
     const handleActieSuggestions = (e)=>{
         console.log(e.keyCode);
-    }
+        //upArrow -38;
+        //downArrow -40;
+        switch(e.keyCode){
+            case 38 :
+                setActive((prev) => prev-1);
+                break;
+            case 40 :
+                setActive((prev) => prev+1);
+                break;
+            default:
+                return;
+        }
+    };
     useEffect(()=>{
         qureyHandler(inputText);
     },[inputText,qureyHandler]);
