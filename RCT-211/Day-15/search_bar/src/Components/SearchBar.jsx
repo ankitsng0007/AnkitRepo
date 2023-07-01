@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from "styled-components";
 
 const SearchBar = ({suggestions,qureyHandler}) => {
     const [inputText,setInputText] = useState("");
     const [active,setActive] = useState(0); 
+    const scrollRef = useRef();
 
 
     const handleInputTextChange = (e) =>{
@@ -15,11 +16,25 @@ const SearchBar = ({suggestions,qureyHandler}) => {
         //downArrow -40;
         switch(e.keyCode){
             case 38 :
+                if(active === 1){
+                    scrollRef.current.scrollTop = suggestions.length * 38.667;
+                    setActive(suggestions.length);
+                }else if(active <= suggestions.length -3){
+                    scrollRef.current.scrollTop -= 38.667;
+                }
+                if(active > 1){
                 setActive((prev) => prev-1);
+                }
                 break;
             case 40 :
-                setActive((prev) => prev+1);
-                break;
+                if(active === suggestions.length){
+                    scrollRef.current.scrollTop = 0;
+                    setActive(0);
+                }else if(active >=4){
+                    scrollRef.current.scrollTop +=38.667
+                }
+                    setActive((prev) => prev+1);
+                    break;
             default:
                 return;
         }
@@ -34,7 +49,7 @@ const SearchBar = ({suggestions,qureyHandler}) => {
       <input value={inputText} onChange={handleInputTextChange}/>
         </SearchBarWrapper>
 
-        <SuggestionBox len={5} active={active}>
+        <SuggestionBox len={5} active={active} ref={scrollRef} >
             {suggestions.map((item,index) => {
                 return (
                     <div 
