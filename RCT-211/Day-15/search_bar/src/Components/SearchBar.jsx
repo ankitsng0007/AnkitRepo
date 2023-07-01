@@ -41,10 +41,12 @@ const SearchBar = ({suggestions,qureyHandler}) => {
         }
     };
     const throttkedText = useThrottle(inputText, 1000);
-    useEffect(()=>{
-        qureyHandler(inputText);
-    },[inputText,qureyHandler]);
-    console.log(active);
+
+
+   // useEffect(()=>{
+     //   qureyHandler(inputText);
+    //},[inputText,qureyHandler]);
+    //console.log(active);
   return (
         <Wrapper onKeyUp={handleActieSuggestions}>
         <SearchBarWrapper>
