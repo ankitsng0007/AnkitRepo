@@ -40,9 +40,11 @@ const SearchBar = ({suggestions,qureyHandler}) => {
                 return;
         }
     };
-    const throttkedText = useThrottle(inputText, 1000);
+    const throttledText = useThrottle(inputText, 1000);
 
-
+    useEffect(()=>{
+        qureyHandler(throttledText);
+    },[qureyHandler, throttledText]);
    // useEffect(()=>{
      //   qureyHandler(inputText);
     //},[inputText,qureyHandler]);
