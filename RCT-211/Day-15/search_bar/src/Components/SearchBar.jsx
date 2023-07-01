@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from "styled-components";
+import {useThrottle} from "use-throttle";
 
 const SearchBar = ({suggestions,qureyHandler}) => {
     const [inputText,setInputText] = useState("");
