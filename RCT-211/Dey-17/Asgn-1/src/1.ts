@@ -15,11 +15,18 @@ let students:{
     { rollNo:1, name:"Ankit", batch:"RCT-101", class:1, age:25 }
 ];
 
+type product = {
+    id: number;
+    name: string;
+    price: number;
+    quantity: number;
+};
 type cart= {
     id:number;
-    products:any;
+    products: product[];
     total:number;
-}
+};
+
 let cartItems:cart[] =[
     {
     id:1, 
