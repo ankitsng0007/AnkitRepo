@@ -6,3 +6,11 @@ const gender:
     | "bi-gender"
     | "other"
     | "not to disclose" = "male";
+
+    gender : "female";
+
+    enum Gender {
+        male = "Male",
+        female = "Female",
+        other = "Other gender that dont want to justify",
+    }
