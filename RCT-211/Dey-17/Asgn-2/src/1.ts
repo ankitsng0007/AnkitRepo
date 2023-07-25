@@ -16,3 +16,4 @@ const gender:
     }
 
     const gender1 : Gender = Gender.male ;
+    console.log(gender1);
