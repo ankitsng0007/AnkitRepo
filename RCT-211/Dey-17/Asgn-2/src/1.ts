@@ -8,3 +8,5 @@
 
     const gender1 : Gender = Gender.male ;
     console.log(gender1);
+
+    //Tuple - Exactly how many elements we have in an array;
