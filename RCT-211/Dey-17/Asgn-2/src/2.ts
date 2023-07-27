@@ -23,3 +23,19 @@ getIdentity<number>(b);
 getIdentity<boolean>(c);
 getIdentity(undefined); //Error
 getIdentity(null); //ok
+
+
+
+
+const useState = (arg: number) : [number, (a:number) => void ] => {
+    let v: typeof arg = arg ;
+
+    const setV = (newvalue : number ): void => {
+        v = newValue;
+    };
+    return [ v , setV ];
+};
+
+const [count , setCount] = useState(0);
+const [value , setVaalue] = useState("");
+const [form , setForm] = useState({id:0, name:"", email:"", password:""});
