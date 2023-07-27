@@ -27,10 +27,10 @@ getIdentity(null); //ok
 
 
 
-const useState = (arg: number) : [number, (a:number) => void ] => {
+const useState = <A>(arg: A) : [A, (a: A ) => void ] => {
     let v: typeof arg = arg ;
 
-    const setV = (newvalue : number ): void => {
+    const setV = (newValue : A ): void => {
         v = newValue;
     };
     return [ v , setV ];
