@@ -5,6 +5,11 @@
 //2. any
 //3. arg type is our output type
 
-const getIdentity = (arg: string | number | boolean) : any => {
+const getIdentity = <T>(arg: T ) : T => {
     return arg;
 };
+
+// Input type ?
+// Output type ?
+// A: Output type is related to input type
+// One argument is related to other argument
