@@ -14,4 +14,10 @@
     let arr: [number,string] = [1,"Ankit"];
     arr[0] = 5; //ok
     arr[0] = "Hello" //not ok
-    
+
+    // 2D Array
+    let arr_2d : [number,number][] = [
+        [1,2] , //ok
+        [3,4,5] , //not ok
+        [6,7] , //ok
+    ]
