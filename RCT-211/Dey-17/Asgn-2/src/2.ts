@@ -13,3 +13,13 @@ const getIdentity = <T>(arg: T ) : T => {
 // Output type ?
 // A: Output type is related to input type
 // One argument is related to other argument
+
+let a : string ="Hello" ;
+let b : number = 5 ;
+let c : boolean = false;
+
+getIdentity<string>(a);
+getIdentity<number>(b);
+getIdentity<boolean>(c);
+getIdentity(undefined); //Error
+getIdentity(null); //ok
