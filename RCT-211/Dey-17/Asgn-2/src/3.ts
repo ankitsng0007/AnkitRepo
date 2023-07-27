@@ -19,3 +19,7 @@ interface PersonX {
 interface PersonX {
     address: string;
 };
+
+let p: PersonX {
+    id: 1,
+}
