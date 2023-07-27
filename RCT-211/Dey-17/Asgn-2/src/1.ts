@@ -10,3 +10,8 @@
     console.log(gender1);
 
     //Tuple - Exactly how many elements we have in an array;
+
+    let arr: [number,string] = [1,"Ankit"];
+    arr[0] = 5; //ok
+    arr[0] = "Hello" //not ok
+    
