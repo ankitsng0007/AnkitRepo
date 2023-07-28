@@ -44,9 +44,10 @@ class Nexon extends Car {
 
     constructor(
         place: NexonPlace,
+        carType: NexonCarType,
+        tyreSize: NexonTyreSize,
         fuelCapacity: number,
         engineCC: NexonEngineCC,
-        tyreSize: NexonTyreSize
     ){
         super(Date.now(),"Indica");
         this.place = place;
