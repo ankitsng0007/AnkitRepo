@@ -34,7 +34,8 @@ class Indica extends Car {
 type NexonPlace = "Factory-2" | "Factory-3";
 type NexonEngineCC = 1000 | 1500 | 4000;
 type NexonTyreSize = "22" | "26";
-type NexonCarType = "Petrol" | "Diesel" | "EV"
+type NexonCarType = "Petrol" | "Diesel" | "EV";
+
 class Nexon extends Car {
     place : NexonPlace;
     carType : NexonCarType;
@@ -46,8 +47,8 @@ class Nexon extends Car {
         place: NexonPlace,
         carType: NexonCarType,
         tyreSize: NexonTyreSize,
-        fuelCapacity: number,
-        engineCC: NexonEngineCC,
+        fuelCapacity ?: number,
+        engineCC ?: NexonEngineCC,
     ){
         super(Date.now(),"Nexon");
         this.place = place;
@@ -60,17 +61,8 @@ class Nexon extends Car {
         };
         this.tyreSize = tyreSize;
     }
-} 
-type Nexon = {
-    chasisNo: number;
-    name: string;
-    type: "petrol" | "Diesel" | "Ev";
-    place: "Factory-2" | "Factory-3";
-    fuelCapacity ?: number ;
-    tyreSize : "22" | "26";
-    engineCC ?: 1000 | 1500 | 4000; 
-};
+} ;
 
 let indica1 = new Indica("Gujrat", 20, 1000, "22");
 
-let nexon1 = new Nexon("Factory-2");
+let nexon1 = new Nexon("Factory-2", "EV", "26");
