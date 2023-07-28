@@ -40,6 +40,19 @@ class Nexon extends Car {
     engineCC : NexonEngineCC;
     tyreSize : NexonTyreSize;
     place : NexonPlace;
+
+    constructor(
+        place: NexonPlace,
+        fuelCapacity: number,
+        engineCC: NexonEngineCC,
+        tyreSize: NexonTyreSize
+    ){
+        super(Date.now(),"Indica");
+        this.place = place;
+        this.fuelCapacity = fuelCapacity;
+        this.engineCC = engineCC;
+        this.tyreSize = tyreSize
+    }
 } 
 type Nexon = {
     chasisNo: number;
