@@ -34,12 +34,13 @@ class Indica extends Car {
 type NexonPlace = "Factory-2" | "Factory-3";
 type NexonEngineCC = 1000 | 1500 | 4000;
 type NexonTyreSize = "22" | "26";
-
+type NexonCarType = "Petrol" | "Diesel" | "EV"
 class Nexon extends Car {
+    place : NexonPlace;
+    CarType : NexonCarType;
+    tyreSize : NexonTyreSize; 
     fuelCapacity ?: number;
     engineCC : NexonEngineCC;
-    tyreSize : NexonTyreSize;
-    place : NexonPlace;
 
     constructor(
         place: NexonPlace,
