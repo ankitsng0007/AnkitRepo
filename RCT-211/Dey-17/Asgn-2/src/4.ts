@@ -31,6 +31,16 @@ class Indica extends Car {
     }
 }
 
+type NexonPlace = "Factory-2" | "Factory-3";
+type NexonEngineCC = 1000 | 1500 | 4000;
+type NexonTyreSize = "22" | "26";
+
+class Nexon extends Car {
+    fuelCapacity ?: number;
+    engineCC : NexonEngineCC;
+    tyreSize : NexonTyreSize;
+    place : NexonPlace;
+} 
 type Nexon = {
     chasisNo: number;
     name: string;
@@ -42,3 +52,5 @@ type Nexon = {
 };
 
 let indica1 = new Indica("Gujrat", 20, 1000, "22");
+
+let nexon1 = new Nexon("Factory-2");
