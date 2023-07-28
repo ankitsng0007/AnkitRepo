@@ -30,3 +30,13 @@ class Indica extends Car {
         this.tyreSize = tyreSize
     }
 }
+
+type Nexon = {
+    chasisNo: number;
+    name: string;
+    type: "petrol" | "Diesel" | "Ev";
+    place: "Factory-2" | "Factory-3";
+    fuelCapacity ?: number ;
+    tyreSize : "22" | "26";
+    engineCC ?: 1000 | 1500 | 4000; 
+}
