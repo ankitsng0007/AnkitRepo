@@ -37,7 +37,7 @@ type NexonTyreSize = "22" | "26";
 type NexonCarType = "Petrol" | "Diesel" | "EV"
 class Nexon extends Car {
     place : NexonPlace;
-    CarType : NexonCarType;
+    carType : NexonCarType;
     tyreSize : NexonTyreSize; 
     fuelCapacity ?: number;
     engineCC : NexonEngineCC;
@@ -49,11 +49,16 @@ class Nexon extends Car {
         fuelCapacity: number,
         engineCC: NexonEngineCC,
     ){
-        super(Date.now(),"Indica");
+        super(Date.now(),"Nexon");
         this.place = place;
+        this.carType = carType;
+        if(fuelCapacity){
         this.fuelCapacity = fuelCapacity;
+        };
+        if(engineCC){
         this.engineCC = engineCC;
-        this.tyreSize = tyreSize
+        };
+        this.tyreSize = tyreSize;
     }
 } 
 type Nexon = {
