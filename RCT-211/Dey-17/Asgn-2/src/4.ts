@@ -2,7 +2,7 @@
 class Car {
     chasisNo: number;
     name: string;
-    constructor(chsisNo: number, name: string ){
+    constructor(chasisNo: number, name: string ){
         this.chasisNo = chasisNo ;
         this.name = name ;
     }
@@ -15,7 +15,7 @@ type IndicaTyreSize = "18" | "20 " | "22" ;
 class Indica extends Car {
     fuelCapacity: number;
     engineCC: IndicaEngineCC;
-    tyreSizes: IndicaTyreSize;
+    tyreSize: IndicaTyreSize;
     place: IndicaPlace;
     constructor(
         place: IndicaPlace,
@@ -24,5 +24,9 @@ class Indica extends Car {
         tyreSize: IndicaTyreSize
     ){
         super(Date.now(),"Indica");
+        this.place = place;
+        this.fuelCapacity = fuelCapacity;
+        this.engineCC = engineCC;
+        this.tyreSize = tyreSize
     }
 }
