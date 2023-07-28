@@ -19,5 +19,10 @@ class Indica extends Car {
     place: IndicaPlace;
     constructor(
         place: IndicaPlace,
-    )
+        fuelCapacity: number,
+        engineCC: IndicaEngineCC,
+        tyreSize: IndicaTyreSize
+    ){
+        super(Date.now(),"Indica");
+    }
 }
