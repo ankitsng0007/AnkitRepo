@@ -10,7 +10,7 @@ class Car {
 
 type IndicaPlace = "Gujrat" | "Factory_2" | "Factory_3" ;
 type IndicaEngineCC = 1000 | 1200 | 4000 ;
-type IndicaTyreSize = "18" | "20 " | "22" ;
+type IndicaTyreSize = "18" | "20" | "22" ;
 
 class Indica extends Car {
     fuelCapacity: number;
@@ -39,4 +39,6 @@ type Nexon = {
     fuelCapacity ?: number ;
     tyreSize : "22" | "26";
     engineCC ?: 1000 | 1500 | 4000; 
-}
+};
+
+let indica1 = new Indica("Gujrat", 20, 1000, "22");
