@@ -5,7 +5,7 @@
     { "id": 3, "type": "Learning", "message": "useRef", "likes": 0 },
     { "id": 4, "type": "Pending", "message": "useReducer", "likes": 5 },
     { "id": 5, "type": "Revision", "message": "React-101", "likes": 2 },
-    { "id": 6, "likes": 0, "message": "redux", "type": "Pending" },
-    { "id": 7, "likes": 0, "message": "Typescript", "type": "Learning" }
+    { "id": 6, "type": "Pending", "message": "redux", "likes": 0  },
+    { "id": 7, "type": "Learning", "message": "Typescript", "likes": 0  }
   ]
 }
