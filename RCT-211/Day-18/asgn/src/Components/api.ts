@@ -7,7 +7,9 @@ export const getTodos = async() => {
    return res.data ;
 };
 
+export const addTodo = async ( message:string, type:TodoType): Promise<Todo> =>{
 
+}
 export const updateTodo = async ( changedTodo : Todo) : Promise<Todo> =>{
    let res : AxiosResponse< Todo > = await axios.patch(`http://localhost:8080/todos${changedTodo.id}`,
    {
