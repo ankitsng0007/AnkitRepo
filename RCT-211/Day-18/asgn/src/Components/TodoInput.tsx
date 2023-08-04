@@ -12,9 +12,11 @@ const TodoInput = (props : TodoInputProps) => {
   const handleChange = (e) => {};
   const handleSubmit = (e) => {};
   return (
-    <div>
-      TodoInput
-    </div>
+    <form>
+      <input type='text' placeholder='Type Here ...' value={value} />
+      <select></select>
+      <button type='submit'>Add</button>
+    </form>
   );
 }
 
