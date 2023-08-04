@@ -9,7 +9,7 @@ const TodoApp = () => {
 
   useEffect(()=>{
     getTodos().then((d) => {
-      console.log(d);
+      setTodos(d);
     });
   }, []);
   return (
