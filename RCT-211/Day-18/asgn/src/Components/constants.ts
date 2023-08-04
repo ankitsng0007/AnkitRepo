@@ -1,7 +1,7 @@
 import { TodoComment } from "typescript";
 
 // Type
-enum TodoType {
+export enum TodoType {
     Learned = "Learned",
     Learning = "Learning",
     Pending = "Pending",

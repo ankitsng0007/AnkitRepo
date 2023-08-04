@@ -1,5 +1,5 @@
 import axios ,{ AxiosResponse } from "axios"
-import { Todo } from "./constants";
+import { Todo, TodoType } from "./constants";
 
 
 export const getTodos = async() => {
@@ -7,7 +7,7 @@ export const getTodos = async() => {
    return res.data ;
 };
 
-export const addTodo = async ( message:string, type:TodoType): Promise<Todo> =>{
+export const addTodo = async ( message: string, type: TodoType): Promise<Todo> =>{
    let res : AxiosResponse<Todo> = await axios.post("http://localhost:8080/todos",{
       message,type,likes: 0,
    });
