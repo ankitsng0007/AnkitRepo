@@ -9,11 +9,11 @@ const TodoInput = (props : TodoInputProps) => {
   const { OnAdd } = props;
   const [value,setValue] = useState<string>("");
 
-  const handleChange = (e) => {};
-  const handleSubmit = (e) => {};
+  const handleChange = () => {};
+  const handleSubmit = () => {};
   return (
     <form>
-      <input type='text' placeholder='Type Here ...' value={value} />
+      <input type='text' placeholder='Type Here ...' value={value} onChange={handleChange}/>
       <select></select>
       <button type='submit'>Add</button>
     </form>
