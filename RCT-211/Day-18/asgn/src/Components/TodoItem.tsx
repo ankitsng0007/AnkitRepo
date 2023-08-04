@@ -1,9 +1,11 @@
 import React from 'react';
+import { Todo } from './constants';
 
-const TodoItem = () => {
+type TodoItemProps = Todo ;
+const TodoItem = (props : TodoItemProps) => {
   return (
     <div>
-      TodoItem
+      {props.message} - {props.likes}
     </div>
   );
 }
