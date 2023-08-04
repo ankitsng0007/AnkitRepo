@@ -1,6 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Todo } from './constants';
 
-function TodoInput() {
+
+type TodoInputProps = {
+  OnAdd: (todo: Todo) => void ; 
+};
+const TodoInput = (props : TodoInputProps) => {
+  const { OnAdd } = props;
+  const [value,setValue] = useState<string>("");
+
+  const handleChange = (e) => {};
+  const handleSubmit = (e) => {};
   return (
     <div>
       TodoInput
