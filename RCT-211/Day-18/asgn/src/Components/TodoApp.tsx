@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { getTodos } from './api';
 import TodoInput from './TodoInput';
 import TodoItem from './TodoItem';
+import { Todo } from './constants';
 
 const TodoApp = () => {
-  const [todos, setTodos] = useState( [] );
+  const [todos, setTodos] = useState<Todo[] >( [] );
 
   useEffect(()=>{
     getTodos().then((d) => {
