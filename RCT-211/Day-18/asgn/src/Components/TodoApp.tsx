@@ -17,9 +17,7 @@ const TodoApp = () => {
       <h1>Todo App</h1>
       <TodoInput />
       {todos.map((item)=> (
-        <div key={item.id}>
-          <TodoItem />
-        </div>
+          <TodoItem key={item.id} {...item} />
       ))}
     </div>
   );
