@@ -1,11 +1,70 @@
 {
   "todos": [
-    { "id": 1, "type": "Learned", "message": "useState", "likes": 2 },
-    { "id": 2, "type": "Learned", "message": "useEffect", "likes": 3 },
-    { "id": 3, "type": "Learning", "message": "useRef", "likes": 0 },
-    { "id": 4, "type": "Pending", "message": "useReducer", "likes": 5 },
-    { "id": 5, "type": "Revision", "message": "React-101", "likes": 2 },
-    { "id": 6, "type": "Pending", "message": "redux", "likes": 0  },
-    { "id": 7, "type": "Learning", "message": "Typescript", "likes": 0  }
+    {
+      "id": 1,
+      "type": "Learned",
+      "message": "useState",
+      "likes": 2
+    },
+    {
+      "id": 2,
+      "type": "Learned",
+      "message": "useEffect",
+      "likes": 3
+    },
+    {
+      "id": 3,
+      "type": "Learning",
+      "message": "useRef",
+      "likes": 0
+    },
+    {
+      "id": 4,
+      "type": "Pending",
+      "message": "useReducer",
+      "likes": 5
+    },
+    {
+      "id": 5,
+      "type": "Revision",
+      "message": "React-101",
+      "likes": 2
+    },
+    {
+      "id": 6,
+      "type": "Pending",
+      "message": "redux",
+      "likes": 0
+    },
+    {
+      "id": 7,
+      "type": "Learning",
+      "message": "Typescript",
+      "likes": 0
+    },
+    {
+      "message": "CSS",
+      "type": "Learned",
+      "likes": 0,
+      "id": 8
+    },
+    {
+      "message": "CSS",
+      "type": "Learned",
+      "likes": 0,
+      "id": 9
+    },
+    {
+      "message": "HTML",
+      "type": "Learned",
+      "likes": 0,
+      "id": 10
+    },
+    {
+      "message": "REACT",
+      "type": "Learned",
+      "likes": 0,
+      "id": 11
+    }
   ]
 }

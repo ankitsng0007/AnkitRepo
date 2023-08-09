@@ -22,7 +22,7 @@ const TodoInput = (props : TodoInputProps) => {
     //onAdd
   };
   return (
-    <form>
+    <form onSubmit={handleSubmit} >
       <input type='text' placeholder='Type Here ...' value={value} onChange={handleChange}/>
       <select></select>
       <button type='submit'>Add</button>
