@@ -10,7 +10,7 @@ const TodoApp = () => {
   const onAdd = (todo : Todo) => {
     setTodos( [...todos, todo] );
   };
-  
+
   useEffect(()=>{
     getTodos().then((d) => {
       setTodos(d);
@@ -19,7 +19,7 @@ const TodoApp = () => {
   return (
     <div>
       <h1>Todo App</h1>
-      <TodoInput />
+      <TodoInput OnAdd={onAdd} />
       {todos.map((item)=> (
           <TodoItem key={item.id} {...item} />
       ))}
