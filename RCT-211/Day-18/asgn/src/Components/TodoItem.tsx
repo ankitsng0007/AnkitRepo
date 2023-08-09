@@ -1,10 +1,10 @@
 import React from 'react';
-import { Todo } from './constants';
+import { Todo, colorMap } from './constants';
 
 type TodoItemProps = Todo ;
 const TodoItem = (props : TodoItemProps) => {
   return (
-    <div style={}>
+    <div style={{padding:"5px",backgroundColor: colorMap[props.type]}}>
       {props.message} - {props.likes}
     </div>
   );
