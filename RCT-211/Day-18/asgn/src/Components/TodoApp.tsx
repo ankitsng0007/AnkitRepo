@@ -11,6 +11,16 @@ const TodoApp = () => {
     setTodos( [...todos, todo] );
   };
 
+const onUpdate = (updatedTodo : Todo) =>{
+  let updatedTodos = todos.map((item) =>{
+    if(item.id === updatedTodo.id){
+      return updatedTodo;
+    }
+    return item;
+  });
+  setTodos(updatedTodos);
+};
+
   useEffect(()=>{
     getTodos().then((d) => {
       setTodos(d);
