@@ -19,7 +19,7 @@ const TodoApp = () => {
   return (
     <div>
       <h1>Todo App</h1>
-      <TodoInput OnAdd={onAdd} />
+      <TodoInput onAdd={onAdd} />
       {todos.map((item)=> (
           <TodoItem key={item.id} {...item} />
       ))}

@@ -1,20 +1,23 @@
 import React, { useState } from 'react';
-import { Todo } from './constants';
+import { Todo, TodoType } from './constants';
+import { addTodo } from './api';
 
 
 type TodoInputProps = {
-  OnAdd: (todo: Todo) => void ; 
+  onAdd: (todo: Todo) => void ; 
 };
 const TodoInput = (props : TodoInputProps) => {
-  const { OnAdd } = props;
+  const { onAdd } = props;
   const [value,setValue] = useState<string>("");
 
   const handleChange = (e : React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
 
-  const handleSubmit = (e : React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e : React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    let data = await addTodo(value, TodoType.Learned);
+    onAdd(data);
     //addTodo api
     //onAdd
   };
