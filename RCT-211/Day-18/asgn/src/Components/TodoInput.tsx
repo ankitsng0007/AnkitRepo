@@ -13,7 +13,11 @@ const TodoInput = (props : TodoInputProps) => {
     setValue(e.target.value);
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = (e : React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    //addTodo api
+    //onAdd
+  };
   return (
     <form>
       <input type='text' placeholder='Type Here ...' value={value} onChange={handleChange}/>
