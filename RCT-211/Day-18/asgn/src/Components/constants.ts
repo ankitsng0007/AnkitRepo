@@ -14,3 +14,9 @@ export type Todo = {
     likes : number;  
 };
 //color
+export const colorMap : Record<TodoType, string> = {
+    Learned : "green",
+    Learning : "yellow",
+    Pending : "orange",
+    Revision : "blue",
+};

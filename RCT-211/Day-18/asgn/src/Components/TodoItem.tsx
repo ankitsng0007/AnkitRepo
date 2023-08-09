@@ -4,7 +4,7 @@ import { Todo } from './constants';
 type TodoItemProps = Todo ;
 const TodoItem = (props : TodoItemProps) => {
   return (
-    <div>
+    <div style={}>
       {props.message} - {props.likes}
     </div>
   );
