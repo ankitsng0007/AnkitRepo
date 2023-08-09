@@ -7,6 +7,10 @@ import { Todo } from './constants';
 const TodoApp = () => {
   const [todos, setTodos] = useState<Todo[] >( [] );
 
+  const onAdd = (todo : Todo) => {
+    setTodos( [...todos, todo] );
+  };
+  
   useEffect(()=>{
     getTodos().then((d) => {
       setTodos(d);
