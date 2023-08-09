@@ -9,7 +9,10 @@ const TodoInput = (props : TodoInputProps) => {
   const { OnAdd } = props;
   const [value,setValue] = useState<string>("");
 
-  const handleChange = () => {};
+  const handleChange = (e : React.ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+  };
+
   const handleSubmit = () => {};
   return (
     <form>
