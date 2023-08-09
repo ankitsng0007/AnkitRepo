@@ -15,8 +15,8 @@ export type Todo = {
 };
 //color
 export const colorMap : Record<TodoType, string> = {
-    Learned : "green",
+    Learned : "Lightgreen",
     Learning : "yellow",
-    Pending : "orange",
-    Revision : "blue",
+    Pending : "Lightorange",
+    Revision : "Lightblue",
 };
