@@ -31,7 +31,7 @@ const onUpdate = (updatedTodo : Todo) =>{
       <h1>Todo App</h1>
       <TodoInput onAdd={onAdd} />
       {todos.map((item)=> (
-          <TodoItem key={item.id} {...item} />
+          <TodoItem key={item.id} {...item} onUpdate={onUpdate}/>
       ))}
     </div>
   );
