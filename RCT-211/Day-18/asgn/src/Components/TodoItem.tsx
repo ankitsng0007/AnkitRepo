@@ -9,15 +9,16 @@ interface TodoItemProps extends Todo {
 
 //type TodoItemProps = Todo ;
 const TodoItem = (props : TodoItemProps) => {
-  const handleClick = async () =>{
+  const handleLikeCount = async () =>{
     let updatedTodo = await updateTodo({...props, likes: props.likes +1,});
 
     props.onUpdate(updatedTodo);
   };
 
   return (
-    <div onClick={handleClick} style={{padding:"5px",backgroundColor: colorMap[props.type]}}>
+    <div style={{padding:"5px",backgroundColor: colorMap[props.type]}}>
       {props.message} - {props.likes}
+      <button onClick={handleLikeCount}>Like</button>
     </div>
   );
 }
