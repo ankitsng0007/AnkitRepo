@@ -30,7 +30,7 @@ const TodoInput = (props : TodoInputProps) => {
       <input type='text' placeholder='Type Here ...' value={value} onChange={handleChange}/>
       <select value={type} onChange={handleTypeChange}>
         {Object.values(TodoType).map((todoType) =>(
-          <option key={}>
+          <option key={todoType} value={todoType}>
             {todoType}
           </option>
         ))}
