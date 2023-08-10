@@ -14,6 +14,9 @@ const TodoInput = (props : TodoInputProps) => {
     setValue(e.target.value);
   };
 
+  const handleTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setType(e.target.value as TodoType);
+  };
   const handleSubmit = async (e : React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     let data = await addTodo(value, TodoType.Learned);
