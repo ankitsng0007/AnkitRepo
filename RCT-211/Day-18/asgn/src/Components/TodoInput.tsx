@@ -28,7 +28,13 @@ const TodoInput = (props : TodoInputProps) => {
   return (
     <form onSubmit={handleSubmit} >
       <input type='text' placeholder='Type Here ...' value={value} onChange={handleChange}/>
-      <select></select>
+      <select value={type} onChange={handleTypeChange}>
+        {Object.values(TodoType).map((todoType) =>(
+          <option key={}>
+            {todoType}
+          </option>
+        ))}
+      </select>
       <button type='submit'>Add</button>
     </form>
   );
