@@ -20,7 +20,7 @@ const TodoInput = (props : TodoInputProps) => {
   };
   const handleSubmit = async (e : React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    let data = await addTodo(value, TodoType.Learned);
+    let data = await addTodo(value, type);
     onAdd(data);
     //addTodo api
     //onAdd
