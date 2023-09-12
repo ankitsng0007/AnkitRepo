@@ -14,4 +14,4 @@ const pro = (a,b) => {
 const div = (a,b) => {
     console.log(a/b);
 }
-module.exports = sum ;
+module.exports = {sum,diff,pro,div} ;
