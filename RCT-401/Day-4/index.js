@@ -14,7 +14,8 @@ const server = http.createServer((request,response)=>{
             }
         })
     } else if(request.url==="/report"){
-        response.end("Reports")
+        response.setHeader("content-type","text/html")
+        response.end("<h1>Reports<h1>")
     } else {
         response.end("Invalid End Point")
     }
