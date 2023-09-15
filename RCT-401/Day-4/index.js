@@ -1,10 +1,18 @@
 const http = require("http");
+const fs = require("fs");
 
 const server = http.createServer((request,response)=>{
     if(request.url==="/"){
-        response.end("Homepage")
+        response.end("Home page")
     } else if(request.url==="/data"){
-        response.end("Data will be here")
+        fs.readFile("./data.json",(err,data)=>{
+            if(err){
+                response.write(err)
+                response.end()
+            }else{
+                response.end(data)
+            }
+        })
     } else if(request.url==="/report"){
         response.end("Reports")
     } else {
