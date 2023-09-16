@@ -13,7 +13,11 @@ const server = http.createServer((request,response)=>{
                 response.end(data)
             }
         })
-    } else if(request.url==="/report"){
+    }else if(request.url === "/addDetail" && request.method ==="POST"){
+         //someLogic to get the data
+         response.end("Data has been entered")
+    }
+     else if(request.url==="/report"){
         response.setHeader("content-type","text/html")
         response.end("<h1>Reports<h1>")
     } else {
