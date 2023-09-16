@@ -19,6 +19,9 @@ const server = http.createServer((request,response)=>{
          request.on("data",(chunk)=>{
             str+=chunk
          })
+         request.on("end",()=>{
+            console.log(str)
+         })
          response.end("Data has been entered")
     }
      else if(request.url==="/report"){
