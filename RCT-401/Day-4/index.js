@@ -15,6 +15,10 @@ const server = http.createServer((request,response)=>{
         })
     }else if(request.url === "/addDetail" && request.method ==="POST"){
          //someLogic to get the data
+         let str="";
+         request.on("data",(chunk)=>{
+            str+=chunk
+         })
          response.end("Data has been entered")
     }
      else if(request.url==="/report"){
