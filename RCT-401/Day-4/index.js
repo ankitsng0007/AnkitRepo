@@ -27,6 +27,10 @@ const server = http.createServer((request,response)=>{
      else if(request.url==="/report"){
         response.setHeader("content-type","text/html")
         response.end("<h1>Reports<h1>")
+    }else if(request.url="/movie"){
+         //without stream
+         const movie = fs.readFileSync("./lecture.txt","utf-8")
+         response.end(movie)
     } else {
         response.end("Invalid End Point")
     }
