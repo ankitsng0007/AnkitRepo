@@ -1,0 +1,12 @@
+{
+    "student":[
+        {
+            "name":"Manu",
+            "city":"patna"
+        },
+        {
+            "name":"Danu",
+            "city":"Delhi"
+        }
+    ]
+}
