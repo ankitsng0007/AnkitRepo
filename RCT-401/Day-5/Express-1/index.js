@@ -11,7 +11,13 @@ app.get("/allData",(req,res)=>{
     const data = fs.readFileSync("./db.json","utf-8")
     const parsed_data = JSON.parse(data)
     console.log(parsed_data)
-    res.send("You got data in terminal.")
+    res.send(parsed_data)
+})
+app.get("/allStudent",(req,res)=>{
+    const data = fs.readFileSync("./db.json","utf-8")
+    const parsed_data = JSON.parse(data)
+    console.log(parsed_data.student)
+    res.send(parsed_data.student)
 })
 
 app.listen(3500,()=>{
