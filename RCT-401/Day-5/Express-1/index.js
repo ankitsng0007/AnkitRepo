@@ -9,7 +9,8 @@ app.get("/",(req,res)=>{
 })
 app.get("/allData",(req,res)=>{
     const data = fs.readFileSync("./db.json","utf-8")
-    console.log(data)
+    const parsed_data = JSON.parse(data)
+    console.log(parsed_data)
     res.send("You got data in terminal.")
 })
 
