@@ -8,5 +8,15 @@
             "name":"Danu",
             "city":"Delhi"
         }
+    ],
+    "teacher":[
+        {
+            "name":"Nurpul",
+            "sub":"Coding"
+        },
+        {
+            "name":"Ankush",
+            "sub":"DSA"
+        }
     ]
 }
