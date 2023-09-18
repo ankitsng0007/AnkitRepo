@@ -4,6 +4,8 @@ const {timeLogger} = require("./Middlewares/timeLogger")
 const {watchman} = require("./Middlewares/watchman")
 const {logger} = require("./Middlewares/logger")
 
+app.use(express.json())
+
 const app = express()
 //app.use(middleware)
 app.use(timeLogger)
@@ -21,6 +23,10 @@ app.get("/contact",(req,res)=>{
     res.send("Contact Page")
 })
 
+app.post("/newStudent",(req,res)=>{
+    console.log(req.body)
+    res.send("New Student has been added")
+})
 app.get("/data",(req,res)=>{
     const data = fs.readFileSync("./dummy.txt","utf-8")
     res.send(data)
