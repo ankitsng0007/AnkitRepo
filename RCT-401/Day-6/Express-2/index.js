@@ -10,8 +10,6 @@ const timeLogger = (req,res,next)=>{
     const endTime = new Date().getTime()
     console.log(endTime-startTime)
 }
-    
-    app.use(timeLogger)
 
 app.get("/",(req,res)=>{
     res.send("Wellcome Page")
@@ -22,6 +20,9 @@ app.get("/about",(req,res)=>{
 app.get("/contact",(req,res)=>{
     res.send("Contact Page")
 })
+
+    app.use(timeLogger)
+    
 app.get("/data",(req,res)=>{
     const data = fs.readFileSync("./dummy.txt","utf-8")
     res.send(data)
