@@ -2,11 +2,13 @@ const express = require("express")
 const fs = require("fs")
 const {timeLogger} = require("./Middlewares/timeLogger")
 const {watchman} = require("./Middlewares/watchman")
+const {logger} = require("./Middlewares/logger")
 
 const app = express()
 //app.use(middleware)
 app.use(timeLogger)
 //app.use(watchman)
+app.use(logger)
 
 
 app.get("/",(req,res)=>{
