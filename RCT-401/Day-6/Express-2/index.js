@@ -4,9 +4,11 @@ const {timeLogger} = require("./Middlewares/timeLogger")
 const {watchman} = require("./Middlewares/watchman")
 const {logger} = require("./Middlewares/logger")
 
-app.use(express.json())
 
 const app = express()
+
+app.use(express.json())
+
 //app.use(middleware)
 app.use(timeLogger)
 //app.use(watchman)

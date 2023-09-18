@@ -1,2 +1,4 @@
 Route:/ Method:GET
 Route:/data Method:GET
+Route:/newStudent Method:POST
+Route:/newStudent Method:POST
