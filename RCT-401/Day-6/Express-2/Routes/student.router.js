@@ -6,7 +6,7 @@ studentRouter.get("/",(req,res)=>{
     res.send("All Students")
 })
 
-studentRouter.post("/addStudent",(req,res)=>{
+studentRouter.post("/addstudent",(req,res)=>{
     console.log(req.body)
     res.send("Student Added")
 })

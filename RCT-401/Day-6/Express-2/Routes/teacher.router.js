@@ -5,7 +5,7 @@ teacherRouter.get("/",(req,res)=>{
     res.send("All Teachers")
 })
 
-teacherRouter.post("/addTeacher",(req,res)=>{
+teacherRouter.post("/addteacher",(req,res)=>{
     console.log(req.body)
     res.send("Added Teacher")
 })
