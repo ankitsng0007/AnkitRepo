@@ -2,7 +2,7 @@ const express = require("express")
 
 const studentRouter = express.Router()
 
-studentRouter.get("/students",(req,res)=>{
+studentRouter.get("/",(req,res)=>{
     res.send("All Students")
 })
 
@@ -13,5 +13,5 @@ studentRouter.post("/addStudent",(req,res)=>{
 
 module.exports={
     studentRouter
-    
+
 }

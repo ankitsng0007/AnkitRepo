@@ -1,36 +1,26 @@
-const express = require("express")
-const fs = require("fs")
-const {timeLogger} = require("./Middlewares/timeLogger")
-const {watchman} = require("./Middlewares/watchman")
-const {logger} = require("./Middlewares/logger")
-const {addRoll} = require("./Middlewares/addRoll")
+//Student Management System
 
+const express = require("express")
+const {studentRouter} = require("./Routes/student.router")
+const {teacherRouter} = require("./Routes/teacher.router")
 
 const app = express()
 
-app.use(express.json())
+//app.use(express.json())
+app.use("/students",studentRouter)
+app.use("/teachers",teacherRouter)
 
 //app.use(middleware)
-app.use(timeLogger)
+//app.use(timeLogger)
 //app.use(watchman)
-app.use(logger)
-app.use(addRoll)
+//app.use(logger)
+//app.use(addRoll)
 
 
 app.get("/",(req,res)=>{
     res.send("Wellcome Page")
 })
-app.get("/about",(req,res)=>{
-    res.send("About Page")
-})
-app.get("/contact",(req,res)=>{
-    res.send("Contact Page")
-})
 
-app.post("/newStudent",(req,res)=>{
-    console.log(req.body)
-    res.send("New Student has been added")
-})
 app.get("/data",(req,res)=>{
     const data = fs.readFileSync("./dummy.txt","utf-8")
     res.send(data)
