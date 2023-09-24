@@ -14,3 +14,11 @@ const main = async ()=>{
 }
 }
 main();
+
+const studentSchema = mongoose.Schema({
+    name:String,
+    age:Number,
+    city:String,
+    is_married:Boolean
+})
+const studentModel = mongoose.model()
