@@ -15,5 +15,6 @@ const heroSchema = mongoose.Schema({
 const heroModel = mongoose.model("hero",heroSchema)
 
 module.exports = {
-    connection
+    connection,
+    heroModel
 }
