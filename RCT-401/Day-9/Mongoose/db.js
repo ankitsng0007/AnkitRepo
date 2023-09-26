@@ -8,10 +8,10 @@ const main = async ()=>{
     console.log("connected to DBs")
     //await studentModel.insertMany([{name:"Ankit",age:25,city:"Bangalore",is_married:false}])
     const student = new studentModel({
-        name:"Priya",
-        age:22,
+        name:"Vedika",
+        age:26,
         city:"Delhi",
-        is_married:true
+        is_married:false
     })
     await student.save()
     console.log("Added to DB")
