@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 
 
-const connection = mongoose.connect("mongodb://127.0.0.1:27017/superheroDB")
+const connection = mongoose.connect("mongodb+srv://ankitsng:ankit@cluster0.yqt7jzv.mongodb.net/superheroes?retryWrites=true&w=majority")
 
 const heroSchema = mongoose.Schema({
     name:String,
