@@ -1,5 +1,6 @@
 const express = require("express")
 const {connection,heroModel} = require("./db")
+require("dotenv").config()
 
 const app = express()
 app.use(express.json())
@@ -52,7 +53,7 @@ app.post("/addhero",async (req,res)=>{
     console.log(hero)
     res.send("Added the Hero")
 })
-app.listen(4500,async ()=>{
+app.listen(process.env.port,async ()=>{
     try{
         await connection
         console.log("Connected to db")
@@ -60,5 +61,5 @@ app.listen(4500,async ()=>{
         console.log("Error while connecting to db")
         console.log(err)
     }
-    console.log("server is running on the port 4500")
+    console.log(`Server is running at port ${process.env.port}`)
 })

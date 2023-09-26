@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
+require("dotenv").config()
 
-
-const connection = mongoose.connect("mongodb+srv://ankitsng:ankit@cluster0.yqt7jzv.mongodb.net/superheroes?retryWrites=true&w=majority")
+const connection = mongoose.connect(process.env.mongoURL)
 
 const heroSchema = mongoose.Schema({
     name:String,
