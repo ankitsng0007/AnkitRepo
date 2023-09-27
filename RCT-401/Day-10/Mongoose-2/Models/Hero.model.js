@@ -1,3 +1,4 @@
+const mongoose = require("mongoose")
 
 const heroSchema = mongoose.Schema({
     name:String,
