@@ -1,4 +1,7 @@
 const express = require("express")
+const {heroModel} = require("../Models/Hero.model")
+
+
 const heroRouter = express.Router()
 
 
@@ -43,3 +46,7 @@ heroRouter.post("/addhero",async (req,res)=>{
     console.log(hero)
     res.send("Added the Hero")
 })
+
+module.exports ={
+    heroRouter
+}

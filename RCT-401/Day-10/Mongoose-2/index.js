@@ -55,13 +55,6 @@ app.post("/addhero",async (req,res)=>{
     res.send("Added the Hero")
 })
 
-app.post("/addvillian",async (req,res)=>{
-    const data = req.body
-    const villian = new villianModel(data)
-    await villian.save()
-    console.log(villian)
-    res.send("Added the Villian")
-})
 
 app.listen(process.env.port,async ()=>{
     try{
