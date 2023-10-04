@@ -2,10 +2,10 @@ const mongoose = require("mongoose")
 
 const villianSchema = mongoose.Schema({
     name:String,
-    power:Number,
+    power:Number
 })
 
-const villianModel = mongoose.model("hero",heroSchema)
+const villianModel = mongoose.model("villian",villianSchema)
 
 module.exports = {
     villianModel

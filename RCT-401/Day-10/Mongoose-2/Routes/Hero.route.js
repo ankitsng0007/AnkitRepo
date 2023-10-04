@@ -5,7 +5,7 @@ const {heroModel} = require("../Models/Hero.model")
 const heroRouter = express.Router()
 
 
-heroRouter.get("/heroes",async (req,res)=>{
+heroRouter.get("/",async (req,res)=>{
     let query=req.query
     try{
      const heroes = await heroModel.find({query})
@@ -16,7 +16,7 @@ heroRouter.get("/heroes",async (req,res)=>{
     }
 })
 
-heroRouter.patch("/edithero/:id", async (req,res)=>{
+heroRouter.patch("/edit/:id", async (req,res)=>{
     const ID = req.params.id
     const payload = req.body
     try{
@@ -28,7 +28,7 @@ heroRouter.patch("/edithero/:id", async (req,res)=>{
     }
 })
 
-heroRouter.delete("/edithero/:id", async (req,res)=>{
+heroRouter.delete("/edit/:id", async (req,res)=>{
     const ID = req.params.id
     try{
         await heroModel.findByIdAndDelete({_id:ID})
@@ -39,7 +39,7 @@ heroRouter.delete("/edithero/:id", async (req,res)=>{
     }
 })
 
-heroRouter.post("/addhero",async (req,res)=>{
+heroRouter.post("/add",async (req,res)=>{
     const data = req.body
     const hero = new heroModel(data)
     await hero.save()
