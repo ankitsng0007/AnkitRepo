@@ -1,6 +1,6 @@
 const express = require("express")
 const {connection} = require("./Config/db")
-const { userModel } = require("./Models/user.model")
+const {userModel} = require("./Models/User.model")
 
 const app = express()
 app.use(express.json())
@@ -21,14 +21,14 @@ app.post("/register", async(req,res)=>{
     }
 })
 
-app.post("/login", async(req,res)=>{
+app.post("/login",async (req,res)=>{
     const {email,pass} = req.body
     try{
-        const user = await userModel.find({email,pass})
+        const user =await userModel.find({email,pass})
         console.log(user)
         res.send("Working on it")
     }catch(err){
-        res.send("Something Went Wrong")
+        res.send("Something went wrong")
         console.log(err)
     }
 })
