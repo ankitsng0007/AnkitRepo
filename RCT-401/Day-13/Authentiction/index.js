@@ -1,6 +1,6 @@
 const express = require("express")
 const {connection} = require("./Config/db")
-
+const {UserModel} = require("./Models/User.model")
 
 const app = express()
 app.use(express.json())
