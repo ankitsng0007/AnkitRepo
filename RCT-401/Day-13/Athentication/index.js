@@ -52,7 +52,7 @@ app.get("/data",(req,res)=>{
     });
 })
 app.get("/cart",(req,res)=>{
-    const token = req.query.token;
+    const token = req.headers.authorization;
     jwt.verify(token, "masai", (err,decoded)=>{
         if(err){
             res.send("Invalid Token")
