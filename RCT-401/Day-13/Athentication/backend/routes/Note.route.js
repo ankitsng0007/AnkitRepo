@@ -21,16 +21,27 @@ noteRouter.post("/create", async(req,res)=>{
     }
 })
 
-noteRouter.patch("/update/:id",(req,res)=>{
-    
+noteRouter.patch("/update/:id", async(req,res)=>{
     const payload = req.body
-    res.send("Updated the Note")
+    const id = req.params.id
+    try{
+        await NoteModel.findByIdAndUpdate({"_id":id},payload)
+        res.send("Updated the Note")
+    }catch(err){
+        console.log(err)
+        res.send({"msg":"Something Went wrong"})
+    }
 })
 
 noteRouter.delete("/delete/:id",(req,res)=>{
-    
-    const payload = req.body
-    res.send("Deleted that Note")
+    const id = req.params.id
+    try{
+        await NoteModel.findByIdAndDelete({"_id":id})
+        res.send("Deleted that Note")
+    }catch(err){
+        console.log(err)
+        res.send({"msg":"Something went wrong"})
+    }
 })
 
 module.exports = {
