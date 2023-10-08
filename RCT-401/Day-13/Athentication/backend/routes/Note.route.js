@@ -22,7 +22,7 @@ noteRouter.post("/create", async(req,res)=>{
 })
 
 noteRouter.patch("/update/:id",(req,res)=>{
-    //verify token
+    
     const payload = req.body
     res.send("Updated the Note")
 })
