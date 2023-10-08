@@ -28,7 +28,7 @@ noteRouter.patch("/update/:id",(req,res)=>{
 })
 
 noteRouter.delete("/delete/:id",(req,res)=>{
-    //verify token
+    
     const payload = req.body
     res.send("Deleted that Note")
 })
