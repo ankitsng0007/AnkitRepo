@@ -3,8 +3,12 @@ const {connection} = require("./configs/db")
 const {userRouter} = require("./routes/User.routes")
 const {noteRouter} = require("./routes/Note.route")
 const {authenticate} = require("./middlewares/authenticate.middleware")
+const cors = require("cors")
+
 
 const app = express()
+app.use(cors())
+
 app.use(express.json())
 
 app.get("/",(req,res)=>{

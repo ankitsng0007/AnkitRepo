@@ -1,17 +1,15 @@
 import { useState } from "react"
 
-const Register = ()=>{
-    const [name,setName] = useState("");
+const Login = ()=>{
     const [email,setEmail] = useState("");
     const [pass,setPass] = useState("");
-    const [age,setAge] = useState("");
 
     const handleSubmit = ()=>{
         const payload={
-            name,email,pass,age
+            email,pass
         }
         console.log(payload)
-        fetch("http://localhost:8080/users/register",{
+        fetch("http://localhost:8080/users/login",{
             method:"POST",
             body:JSON.stringify(payload),
             headers:{
@@ -24,14 +22,12 @@ const Register = ()=>{
 
     return(
     <div>
-        <h2>Registration Page</h2>
-        <input type="text" placeholder="Enter Name" value={name} onChange={(e)=>setName(e.target.value)}/>
+        <h2>Log In Page</h2>
         <input type="email" placeholder="Enter Email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
         <input type="password" placeholder="Enter Password" value={pass} onChange={(e)=>setPass(e.target.value)}/>
-        <input type="number" placeholder="Enter Age" value={age} onChange={(e)=>setAge(e.target.value)}/>
         <button onClick={handleSubmit} >Submit</button>
     </div>
     )
 }
 
-export {Register}
+export {Login}
