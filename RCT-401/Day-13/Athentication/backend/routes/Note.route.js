@@ -24,7 +24,9 @@ noteRouter.post("/create", async(req,res)=>{
 noteRouter.patch("/update/:id", async(req,res)=>{
     const payload = req.body
     const id = req.params.id
+    console.log(id)
     const note = await NoteModel.findOne({"_id":id})
+    console.log(note)
     const userId_in_note = note.userId
     const userId_making_req = req.body.userId
 
@@ -43,12 +45,19 @@ noteRouter.patch("/update/:id", async(req,res)=>{
 
 noteRouter.delete("/delete/:id", async(req,res)=>{
     const id = req.params.id
+    const note = await NoteModel.findOne({"_id":id})
+    const userId_in_note = note.userId
+    const userId_making_req = req.body.userId
     try{
-        await NoteModel.findByIdAndDelete({"_id":id})
-        res.send("Deleted that Note")
+        if(userId_making_req !==userId_in_note){
+            res.send({"msg":"You are not authorized"})
+        }else{
+            await NoteModel.findByIdAndDelete({"_id":id})
+            res.send("Deleted the Note")
+        }
     }catch(err){
         console.log(err)
-        res.send({"msg":"Something went wrong"})
+        res.send({"msg":"Someething went wrong"})
     }
 })
 
