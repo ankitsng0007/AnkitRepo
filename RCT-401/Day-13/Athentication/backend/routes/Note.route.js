@@ -24,9 +24,9 @@ noteRouter.post("/create", async(req,res)=>{
 noteRouter.patch("/update/:id", async(req,res)=>{
     const payload = req.body
     const id = req.params.id
-    console.log(id)
+    //console.log(id)
     const note = await NoteModel.findOne({"_id":id})
-    console.log(note)
+    //console.log(note)
     const userId_in_note = note.userId
     const userId_making_req = req.body.userId
 
