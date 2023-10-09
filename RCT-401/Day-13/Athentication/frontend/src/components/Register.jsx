@@ -6,6 +6,22 @@ const Register = ()=>{
     const [pass,setPass] = useState("");
     const [age,setAge] = useState("");
 
+    const handleSubmit = ()=>{
+        const payload={
+            name,email,pass,age
+        }
+        console.log(payload)
+        fetch("http://localhost:8080/users/register",{
+            method:"POST",
+            body:JSON.stringify(payload),
+            headers:{
+                "content-type":"application/json"
+            }
+        }).then(res => res.json())
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+    }
+
     return(
     <div>
         <h2>Registration Page</h2>
