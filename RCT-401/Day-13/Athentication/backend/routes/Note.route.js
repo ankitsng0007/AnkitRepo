@@ -3,9 +3,16 @@ const {NoteModel} = require("../models/Note.model")
 const noteRouter = express.Router()
 
 
-noteRouter.get("/",(req,res)=>{
-    //verify Token
-    res.send("All the Notes")
+noteRouter.get("/",async(req,res)=>{
+    let query = req.query
+    try{
+        const notes = await NoteModel.find(query)
+        //console.log(notes)
+        res.send(notes)
+    }catch(err){
+        console.log(err)
+        res.send({"err":"Something went wrong"})
+    }
 })
 
 noteRouter.post("/create", async(req,res)=>{

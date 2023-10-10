@@ -3,7 +3,7 @@ import { useState } from "react"
 const CreateNote = ()=>{
     const [title,setTitle] = useState("");
     const [note,setNote] = useState("");
-    const [category,setCtegory] = useState("");
+    const [category,setCategory] = useState("");
 
     const handleSubmit = ()=>{
         const payload={
@@ -14,7 +14,8 @@ const CreateNote = ()=>{
             method:"POST",
             body:JSON.stringify(payload),
             headers:{
-                "content-type":"application/json"
+                "content-type":"application/json",
+                "Authorization":localStorage.getItem("token")
             }
         }).then(res => res.json())
         .then(res => console.log(res))

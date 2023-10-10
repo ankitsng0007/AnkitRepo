@@ -2,6 +2,8 @@ import './App.css';
 import {Route,Routes} from "react-router-dom";
 import {Register} from "./components/Register"
 import { Login } from './components/Login';
+import { CreateNote } from './components/CreateNote';
+import {Notes} from './components/Notes';
 
 
 function App() {
@@ -11,6 +13,8 @@ function App() {
       <Routes>
         <Route path='/register' element={<Register/>}></Route>
         <Route path='/login' element={<Login/>}></Route>
+        <Route path='/createnote' element={<CreateNote/>}></Route>
+        <Route path='/notes' element={<Notes/>}></Route>
       </Routes>
     </div>
   );
