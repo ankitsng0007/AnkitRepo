@@ -16,7 +16,10 @@ const Login = ()=>{
                 "content-type":"application/json"
             }
         }).then(res => res.json())
-        .then(res => console.log(res))
+        .then(res => {
+            console.log(res)
+            localStorage.setItem("token",res.token)
+        })
         .catch(err => console.log(err))
     }
 
